@@ -1,0 +1,1300 @@
+/* ==========================================================================
+   POWER HOUSE GYM - ENHANCED FEATURES & LAYOUT STYLESHEET
+   Implements Comparison Matrix, Google Reviews Grid, Diet Plan Add-On & Float WA
+   ========================================================================== */
+
+/* --- Comparison Matrix (Regular vs Personal Training) --- */
+.comparison-section {
+  padding: 80px 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.comparison-header h2 {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.comparison-header h2 .highlight {
+  color: var(--primary, #a8ff00);
+}
+
+.comparison-header p {
+  color: #a1a1aa;
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.comparison-card-wrapper {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.9);
+}
+
+.comparison-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.92rem;
+  vertical-align: middle;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table th {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.02);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.comparison-table th.col-feature {
+  width: 32%;
+}
+
+.comparison-table th.col-regular {
+  width: 34%;
+}
+
+.comparison-table th.col-pt,
+.comparison-table td.col-pt {
+  width: 34%;
+  background: rgba(168, 255, 0, 0.025);
+  border-left: 1px solid rgba(168, 255, 0, 0.15);
+}
+
+.comparison-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+.comparison-table tr:hover td.col-pt {
+  background-color: rgba(168, 255, 0, 0.04);
+}
+
+.comparison-table td.col-feature {
+  font-weight: 600;
+  color: #f4f4f5;
+}
+
+.comparison-table .feature-subtext {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: #71717a;
+  margin-top: 3px;
+}
+
+.check-green {
+  color: var(--primary, #a8ff00);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cross-gray {
+  color: #71717a;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-pt {
+  display: inline-block;
+  background: rgba(168, 255, 0, 0.15);
+  color: var(--primary, #a8ff00);
+  border: 1px solid rgba(168, 255, 0, 0.35);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.pill-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.pill-badge.gray {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+}
+
+.pill-badge.green {
+  background: rgba(168, 255, 0, 0.15);
+  color: var(--primary, #a8ff00);
+  border: 1px solid rgba(168, 255, 0, 0.3);
+}
+
+.comparison-table .price-val {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #ffffff;
+}
+
+.comparison-table .suit-text {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  line-height: 1.45;
+}
+
+.comparison-table .table-cta-cell {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.btn-table-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid rgba(168, 255, 0, 0.5);
+  padding: 10px 22px;
+  border-radius: 9999px;
+  transition: all 180ms ease;
+}
+.btn-table-outline:hover {
+  background: rgba(168, 255, 0, 0.1);
+  border-color: var(--primary, #a8ff00);
+  color: var(--primary, #a8ff00);
+  transform: translateY(-2px);
+}
+
+.btn-table-filled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px -2px rgba(168, 255, 0, 0.4);
+  transition: all 180ms ease;
+}
+.btn-table-filled:hover {
+  background: var(--accent, #c4ff45);
+  box-shadow: 0 6px 20px -2px rgba(168, 255, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* --- Google Reviews & Rating Card (Image 4 & Image 2) --- */
+.reviews-hero-section {
+  padding: 60px 24px 30px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.rating-breakdown-card {
+  background: #111111;
+  border: 1px solid rgba(168, 255, 0, 0.25);
+  border-radius: 16px;
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 48px;
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.95), 0 0 24px -8px rgba(168, 255, 0, 0.12);
+  margin-bottom: 50px;
+}
+
+@media (max-width: 860px) {
+  .rating-breakdown-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 28px 20px;
+  }
+}
+
+.rating-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.g-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.g-profile-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.big-rating-number {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(4.5rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.star-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #fbbf24;
+  margin: 12px 0 6px;
+}
+.star-rating-row svg {
+  width: 22px;
+  height: 22px;
+  fill: #fbbf24;
+}
+
+.rating-count-label {
+  font-size: 0.92rem;
+  color: #a1a1aa;
+  margin-bottom: 24px;
+}
+
+.btn-read-google-reviews {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(168, 255, 0, 0.4);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  width: fit-content;
+  transition: all 180ms ease;
+}
+.btn-read-google-reviews:hover {
+  background: rgba(168, 255, 0, 0.12);
+  border-color: var(--primary, #a8ff00);
+  color: var(--primary, #a8ff00);
+  transform: translateY(-2px);
+}
+
+.rating-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dist-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dist-header-row h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.dist-badge {
+  background: rgba(168, 255, 0, 0.12);
+  color: var(--primary, #a8ff00);
+  border: 1px solid rgba(168, 255, 0, 0.3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.dist-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dist-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.star-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 32px;
+  color: #d4d4d8;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.star-label svg {
+  width: 14px;
+  height: 14px;
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.progress-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary, #a8ff00);
+  border-radius: 9999px;
+  transition: width 1s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.dist-percent {
+  font-weight: 700;
+  color: #ffffff;
+  width: 38px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.dist-count {
+  font-size: 0.8rem;
+  color: #71717a;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+/* --- Review Cards Grid (Image 2) --- */
+.reviews-grid-section {
+  padding: 0 24px 80px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 220ms cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 220ms ease,
+              box-shadow 220ms ease;
+  overflow: hidden;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 255, 0, 0.35);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.85);
+}
+
+.review-card-quotes {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-family: serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(168, 255, 0, 0.12);
+  pointer-events: none;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: #fbbf24;
+  margin-bottom: 16px;
+}
+.review-stars svg {
+  width: 16px;
+  height: 16px;
+  fill: #fbbf24;
+}
+
+.review-card-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #d4d4d8;
+  font-style: italic;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(168, 255, 0, 0.12);
+  border: 1px solid rgba(168, 255, 0, 0.3);
+  color: var(--primary, #a8ff00);
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reviewer-details strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.reviewer-details span {
+  font-size: 0.78rem;
+  color: var(--primary, #a8ff00);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* --- Diet Plan Add-On Section (Image 3 & Image 5) --- */
+.diet-section {
+  padding: 60px 24px 80px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.diet-card-main {
+  background: #111111;
+  border: 1px solid rgba(168, 255, 0, 0.3);
+  border-radius: 20px;
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr;
+  gap: 48px;
+  box-shadow: 0 24px 64px -20px rgba(0, 0, 0, 0.95), 0 0 28px -10px rgba(168, 255, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .diet-card-main {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 36px;
+  }
+}
+
+.diet-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.diet-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.diet-title {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.diet-title .highlight {
+  color: var(--primary, #a8ff00);
+}
+
+.diet-copy {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.diet-actions-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.btn-diet-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px -2px rgba(168, 255, 0, 0.4);
+  transition: all 180ms ease;
+}
+.btn-diet-primary:hover {
+  background: var(--accent, #c4ff45);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px -2px rgba(168, 255, 0, 0.5);
+}
+
+.btn-diet-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 13px 24px;
+  border-radius: 9999px;
+  transition: all 180ms ease;
+}
+.btn-diet-secondary:hover {
+  border-color: var(--primary, #a8ff00);
+  color: var(--primary, #a8ff00);
+  background: rgba(168, 255, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.diet-right-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.diet-right-col h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* --- Image 3: What The Diet Plan Covers (4-item Checklist Card) --- */
+.diet-covers-box {
+  background: #161716;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.diet-covers-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.diet-covers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.diet-covers-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.diet-covers-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary, #a8ff00);
+  box-shadow: 0 0 10px rgba(168, 255, 0, 0.8);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.diet-covers-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.diet-covers-text p {
+  font-size: 0.82rem;
+  color: #a1a1aa;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* --- Image 1: Nutrition Plan Curriculum & Standalone Pricing Card --- */
+.nutrition-curriculum-section {
+  padding: 0 24px 60px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.nutrition-curriculum-card {
+  background: #0f110f;
+  background-image: radial-gradient(circle at 95% 5%, rgba(168, 255, 0, 0.12) 0%, transparent 55%);
+  border: 1px solid rgba(168, 255, 0, 0.25);
+  border-radius: 24px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 40px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.95), 0 0 30px -10px rgba(168, 255, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .nutrition-curriculum-card {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 32px;
+  }
+}
+
+.nutrition-pricing-box {
+  background: #141514;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nutrition-price-badge {
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.nutrition-price-num {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: 4rem;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.nutrition-price-sub {
+  font-size: 0.82rem;
+  color: #a1a1aa;
+  line-height: 1.45;
+  margin-bottom: 24px;
+  max-width: 220px;
+}
+
+.btn-add-nutrition {
+  width: 100%;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 180ms ease;
+  box-shadow: 0 4px 16px rgba(168, 255, 0, 0.35);
+}
+
+.btn-add-nutrition:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(168, 255, 0, 0.45);
+}
+
+.nutrition-modules-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+}
+
+.nutrition-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .nutrition-modules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nutrition-module-item {
+  background: #141514;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 180ms ease;
+}
+
+.nutrition-module-item:hover {
+  border-color: rgba(168, 255, 0, 0.3);
+  background: #191b19;
+  transform: translateY(-2px);
+}
+
+.nutrition-module-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nutrition-module-icon {
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-module-item h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.nutrition-module-item p {
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Floating WhatsApp Button --- */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: transform 200ms cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 200ms ease;
+  text-decoration: none;
+}
+.floating-wa-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+.floating-wa-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+}
+.floating-wa-btn:active {
+  transform: scale(0.95);
+}
+
+/* On mobile screens, elevate above mobile-actions bar */
+@media (max-width: 768px) {
+  .floating-wa-btn {
+    bottom: 82px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+  }
+  .floating-wa-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ==========================================================================
+   IMAGE 1: TRAINING EXPERIENCE COMPARISON (SOLO VS 1-ON-1 PT)
+   ========================================================================== */
+.training-experience-section {
+  padding: 80px 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.exp-copy-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exp-heading {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.exp-heading .highlight {
+  color: var(--primary, #a8ff00);
+  display: block;
+}
+
+.exp-lead-text {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #d4d4d8;
+  margin: 0;
+}
+
+.exp-stat-boxes-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.exp-stat-box {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.exp-stat-box:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 255, 0, 0.3);
+}
+
+.exp-stat-num {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: 2.5rem;
+  color: var(--primary, #a8ff00);
+  line-height: 1;
+}
+
+.exp-stat-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exp-stat-sub {
+  font-size: 0.8rem;
+  color: #71717a;
+  line-height: 1.4;
+}
+
+/* Comparison Container on Right */
+.exp-card-container {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exp-container-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin: 0 0 4px 0;
+}
+
+/* Nested Cards inside Right Container */
+.exp-inner-card {
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 200ms ease;
+}
+
+/* Solo / Generic card */
+.exp-inner-card.solo-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+}
+
+.exp-inner-card.solo-card:hover {
+  border-color: rgba(239, 68, 68, 0.45);
+  background: rgba(239, 68, 68, 0.02);
+}
+
+/* 1-on-1 PT Card */
+.exp-inner-card.coaching-card {
+  background: rgba(168, 255, 0, 0.035);
+  border: 1px solid rgba(168, 255, 0, 0.3);
+  box-shadow: 0 0 24px rgba(168, 255, 0, 0.06);
+}
+
+.exp-inner-card.coaching-card:hover {
+  border-color: rgba(168, 255, 0, 0.6);
+  background: rgba(168, 255, 0, 0.05);
+}
+
+/* Header row inside inner cards */
+.exp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.exp-card-header h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.exp-inner-card.coaching-card .exp-card-header h4 {
+  color: var(--primary, #a8ff00);
+}
+
+/* Badges */
+.exp-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.exp-badge.risk-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.exp-badge.results-badge {
+  background: rgba(168, 255, 0, 0.15);
+  color: var(--primary, #a8ff00);
+  border: 1px solid rgba(168, 255, 0, 0.35);
+}
+
+/* Bullet list inside cards */
+.exp-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp-bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #d4d4d8;
+}
+
+.exp-bullet-list .icon-cross {
+  color: #ef4444;
+  font-weight: 900;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.exp-bullet-list .icon-check {
+  color: var(--primary, #a8ff00);
+  font-weight: 900;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* ==========================================================================
+   IMAGE 2: ENHANCED GOOGLE MAPS CARD & FLOATING BADGE
+   ========================================================================== */
+.enhanced-map-section {
+  padding: 60px 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.enhanced-map-card {
+  position: relative;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+}
+
+.enhanced-map-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: #18181b;
+}
+
+.enhanced-map-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Floating overlay card over Google Maps (pixel-perfect matching image 2) */
+.map-floating-info-card {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 10;
+  background: rgba(18, 18, 18, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 16px 20px;
+  max-width: 360px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-floating-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.map-floating-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.map-floating-link-icon {
+  color: var(--primary, #a8ff00);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+  border-radius: 6px;
+  background: rgba(168, 255, 0, 0.1);
+  text-decoration: none;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.map-floating-link-icon:hover {
+  transform: scale(1.1);
+  background: rgba(168, 255, 0, 0.2);
+}
+
+.map-floating-address {
+  font-size: 0.78rem;
+  color: #a1a1aa;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.map-floating-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.map-floating-rating .rating-num {
+  color: #ffffff;
+}
+
+.map-floating-rating .rating-count {
+  color: #71717a;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.map-floating-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.btn-map-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: var(--primary, #a8ff00);
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+.btn-map-directions:hover {
+  background: #c4ff45;
+  transform: translateY(-1px);
+}
+
+.btn-map-view {
+  font-size: 0.76rem;
+  color: #a1a1aa;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 150ms ease;
+}
+
+.btn-map-view:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .enhanced-map-frame-wrapper {
+    height: 380px;
+  }
+  .map-floating-info-card {
+    position: static;
+    border-radius: 0;
+    max-width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+

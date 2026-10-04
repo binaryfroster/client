@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /owner.html
+Disallow: /owner
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+Sitemap: https://powerhouse.in/sitemap.xml

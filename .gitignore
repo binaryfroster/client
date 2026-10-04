@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Vercel
+.vercel/
+
+# Temporary / Scraped files
+scraped/
+scraped_pages/
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.bak
+.vscode/
+.idea/
