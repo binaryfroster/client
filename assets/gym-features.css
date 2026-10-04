@@ -1298,3 +1298,7 @@
   }
 }
 
+
+/* Safeguard against stale intro active */
+html.ph-intro-active, html.ph-intro-active body { background: var(--background, #080808) !important; }
+html.ph-intro-active .site-shell { visibility: visible !important; opacity: 1 !important; }

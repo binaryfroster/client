@@ -1,3 +1,4 @@
+(function(){try{document.documentElement.classList.remove('ph-intro-active');sessionStorage.setItem('ph-intro','seen');}catch(e){}})();
 /**
  * ==========================================================================
  * POWER HOUSE GYM - CORE INTERACTION & EXPERIENCE CONTROLLER
