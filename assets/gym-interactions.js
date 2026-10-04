@@ -1,4 +1,4 @@
-(function(){try{document.documentElement.classList.remove('ph-intro-active');sessionStorage.setItem('ph-intro','seen');}catch(e){}})();
+(function(){try{document.documentElement.classList.remove('ph-intro-active');}catch(e){}})();
 /**
  * ==========================================================================
  * POWER HOUSE GYM - CORE INTERACTION & EXPERIENCE CONTROLLER
@@ -785,8 +785,119 @@
     });
   }
 
+  // ==========================================================================
+  // BRAND INTRO VIDEO CONTROLLER
+  // Autoplays on first visit to homepage with smooth fade, skip button, and safety fallbacks
+  // ==========================================================================
+  function initBrandIntro() {
+    try {
+      const isHome = location.pathname === '/' || location.pathname === '/index.html' || location.pathname === '';
+      if (!isHome) return;
+
+      const forceReplay = location.search.indexOf('intro=1') !== -1 || location.search.indexOf('replay=1') !== -1;
+      const alreadySeen = sessionStorage.getItem('ph-intro') === 'seen';
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if ((alreadySeen && !forceReplay) || prefersReducedMotion) {
+        document.documentElement.classList.remove('ph-intro-playing');
+        const existingOverlay = document.getElementById('brand-intro');
+        if (existingOverlay) existingOverlay.remove();
+        return;
+      }
+
+      let overlay = document.getElementById('brand-intro');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'brand-intro';
+        overlay.className = 'brand-intro';
+        overlay.innerHTML = `
+          <video class="brand-intro-video" autoplay muted playsinline webkit-playsinline preload="auto">
+            <source src="/__l5e/assets-v1/16a6db73-973c-4aa6-8333-34654f2ac9e9/power-house-intro.mp4" type="video/mp4" />
+            <source src="/__l5e/assets-v1/858f4991-caef-42eb-a81a-3a5b1b84b1ed/power-house-intro.webm" type="video/webm" />
+          </video>
+          <button type="button" class="skip-intro-btn" id="skip-intro-btn" aria-label="Skip brand intro">
+            <span>Skip Intro</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        `;
+        document.body.prepend(overlay);
+      }
+
+      document.documentElement.classList.add('ph-intro-playing');
+      const video = overlay.querySelector('video');
+      const skipBtn = overlay.querySelector('#skip-intro-btn');
+
+      let dismissed = false;
+      function dismissIntro() {
+        if (dismissed) return;
+        dismissed = true;
+        try {
+          sessionStorage.setItem('ph-intro', 'seen');
+        } catch (e) {}
+
+        overlay.classList.add('intro-fading');
+        setTimeout(() => {
+          document.documentElement.classList.remove('ph-intro-playing');
+          overlay.classList.add('intro-hidden');
+          try {
+            if (video) {
+              video.pause();
+              video.removeAttribute('src');
+              video.load();
+            }
+            overlay.remove();
+          } catch (e) {}
+        }, 350);
+      }
+
+      if (skipBtn) {
+        skipBtn.addEventListener('click', dismissIntro);
+      }
+
+      if (video) {
+        video.addEventListener('ended', dismissIntro);
+        video.addEventListener('error', dismissIntro);
+
+        video.muted = true;
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {
+            setTimeout(dismissIntro, 1200);
+          });
+        }
+
+        // Safety fallback: if video is stalled (< 0.1s after 2.5s), dismiss
+        setTimeout(() => {
+          if (!dismissed && video.currentTime < 0.1) {
+            dismissIntro();
+          }
+        }, 2500);
+
+        // Max duration fallback (~4s video)
+        setTimeout(() => {
+          if (!dismissed) {
+            dismissIntro();
+          }
+        }, 5500);
+      } else {
+        dismissIntro();
+      }
+
+      window.replayIntro = function() {
+        sessionStorage.removeItem('ph-intro');
+        location.href = '/?intro=1';
+      };
+    } catch (err) {
+      console.error('Intro error:', err);
+      document.documentElement.classList.remove('ph-intro-playing');
+      const overlay = document.getElementById('brand-intro');
+      if (overlay) overlay.remove();
+    }
+  }
+
   // --- Initialize Everything on DOM Ready ---
   function init() {
+    initBrandIntro();
     removeLovableBadges();
     initHeaderScroll();
     initMobileDrawer();
@@ -806,3 +917,4 @@
     init();
   }
 })();
+
