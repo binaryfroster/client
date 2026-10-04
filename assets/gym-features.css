@@ -1346,40 +1346,62 @@ html.ph-intro-playing #brand-intro {
 
 .skip-intro-btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
   z-index: 100001;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(18, 18, 18, 0.75);
-  color: #f0f0f0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-  font-family: 'Manrope', -apple-system, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  height: 38px !important;
+  padding: 0 16px !important;
+  gap: 8px !important;
+  background: rgba(18, 18, 18, 0.85) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 9999px !important;
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
 }
 
-.skip-intro-btn:hover {
-  background: rgba(168, 255, 0, 0.15);
-  border-color: #a8ff00;
-  color: #a8ff00;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(168, 255, 0, 0.2);
+.skip-intro-btn:hover, .skip-intro-btn:active {
+  background: rgba(168, 255, 0, 0.2) !important;
+  border-color: #a8ff00 !important;
+  color: #a8ff00 !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 6px 24px rgba(168, 255, 0, 0.3) !important;
+}
+
+.skip-intro-btn span {
+  white-space: nowrap !important;
+  display: inline-block !important;
+  line-height: 1 !important;
 }
 
 .skip-intro-btn svg {
-  width: 12px;
-  height: 12px;
+  width: 14px !important;
+  height: 14px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 
 .replay-intro-link {
