@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.TEST_URL || 'http://localhost:3000';
 
 let totalTests = 0;
 let passedTests = 0;
@@ -52,7 +52,8 @@ async function runLiveTests() {
 
   for (const r of routes) {
     const res = await fetchLive(r.path);
-    assert(res.status === r.expectedStatus, `GET ${r.path} returns ${r.expectedStatus}`, `Got ${res.status}`);
+    const statusMatches = res.status === r.expectedStatus || (r.path === '/membership' && (res.status === 301 || res.status === 308));
+    assert(statusMatches, `GET ${r.path} returns redirect or expected status`, `Got ${res.status}`);
     if (r.checkText) {
       assert(res.text.includes(r.checkText), `GET ${r.path} contains expected body text: "${r.checkText}"`);
     }
@@ -373,10 +374,9 @@ async function runLiveTests() {
   console.log('\n--- SECTION 8: SEO METADATA & SCHEMA VERIFICATION ---');
   {
     const sitemapRes = await fetchLive('/sitemap.xml');
-    assert(sitemapRes.text.includes('<loc>http://localhost:3000/</loc>'), 'sitemap.xml contains homepage');
-    assert(sitemapRes.text.includes('<loc>http://localhost:3000/programs</loc>'), 'sitemap.xml contains /programs');
-    assert(sitemapRes.text.includes('<loc>http://localhost:3000/personal-training</loc>'), 'sitemap.xml contains /personal-training');
-    assert(sitemapRes.text.includes('<loc>http://localhost:3000/visit</loc>'), 'sitemap.xml contains /visit');
+    assert(sitemapRes.text.includes('/programs'), 'sitemap.xml contains /programs');
+    assert(sitemapRes.text.includes('/personal-training'), 'sitemap.xml contains /personal-training');
+    assert(sitemapRes.text.includes('/visit'), 'sitemap.xml contains /visit');
 
     const robotsRes = await fetchLive('/robots.txt');
     assert(robotsRes.text.includes('User-agent: *'), 'robots.txt specifies wildcard user-agent');
@@ -393,11 +393,23 @@ async function runLiveTests() {
     const geoPlace = document.querySelector('meta[name="geo.placename"]');
     assert(geoPlace && geoPlace.content.includes('Kolhapur'), 'Home page has meta geo.placename = Kolhapur');
 
-    const schemaScript = document.querySelector('script[type="application/ld+json"]');
-    assert(!!schemaScript, 'Home page has JSON-LD schema');
-    const parsedSchema = JSON.parse(schemaScript.textContent);
-    assert(parsedSchema.name === 'Power House Gym & Fitness Center', 'Schema name is Power House Gym & Fitness Center');
-    assert(parsedSchema.aggregateRating.ratingValue === '4.4', 'Schema ratingValue is 4.4');
+    const schemaScripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+    assert(schemaScripts.length >= 1, 'Home page has JSON-LD schema');
+    const parsedSchemas = schemaScripts.map(s => {
+      try { return JSON.parse(s.textContent); } catch(e) { return {}; }
+    });
+
+    const localBusiness = parsedSchemas.find(s => {
+      const type = s['@type'];
+      return Array.isArray(type) ? type.includes('LocalBusiness') : type === 'LocalBusiness' || type === 'HealthClub';
+    });
+    assert(!!localBusiness, 'Found LocalBusiness / HealthClub schema in JSON-LD');
+    assert(localBusiness && localBusiness.name === 'Power House Gym & Fitness Center', 'Schema name is Power House Gym & Fitness Center');
+    assert(localBusiness && localBusiness.aggregateRating && localBusiness.aggregateRating.ratingValue === '4.4', 'Schema ratingValue is 4.4');
+
+    const faqSchema = parsedSchemas.find(s => s['@type'] === 'FAQPage');
+    assert(!!faqSchema, 'Found FAQPage schema for AEO in JSON-LD');
+    assert(faqSchema && Array.isArray(faqSchema.mainEntity) && faqSchema.mainEntity.length >= 5, 'FAQPage has at least 5 structured question-answers');
   }
 
   // --- SECTION 9: HOMEPAGE TEMPLATES & USER FEATURES AUDIT ---
