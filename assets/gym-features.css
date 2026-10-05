@@ -1423,3 +1423,69 @@ html.ph-intro-playing #brand-intro {
 .replay-intro-link:hover {
   color: var(--primary, #a8ff00);
 }
+
+/* ==========================================================================
+   SEO LOCATION & POPULAR TAG CLOUD
+   High-contrast, responsive semantic tags for local & city discoverability
+   ========================================================================== */
+.footer-seo-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 32px auto 0 auto;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+}
+
+.footer-seo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.seo-tag-title {
+  font-family: var(--font-display, 'Bebas Neue', sans-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--primary, #a8ff00);
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+.seo-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  font-family: var(--font-body, 'Manrope', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-tag:hover {
+  color: #080808;
+  background: var(--primary, #a8ff00);
+  border-color: var(--primary, #a8ff00);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .footer-seo-section {
+    padding: 14px 16px;
+    margin-top: 24px;
+  }
+  .seo-tag-title {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+}
+

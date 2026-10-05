@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /owner.html
-Disallow: /owner
 
+# Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -12,16 +11,44 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: Baiduspider
 Allow: /
 
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Dedicated AI Answer Engines & LLM Retrieval Agents (AEO / GEO)
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Baiduspider
+User-agent: Google-Extended
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Disallow non-public internal paths
+Disallow: /scripts/
+Disallow: /assets/*.bak
+Disallow: /assets/*.map
+
+Host: https://powerhouse.in
 Sitemap: https://powerhouse.in/sitemap.xml
