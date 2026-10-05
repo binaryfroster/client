@@ -4,6 +4,7 @@
 **Physical Facility:** Vardhmane House, 718, 3rd Ln, near Nitin Medical, E Ward, Shahupuri, Kolhapur, Maharashtra 416001  
 **Founder & Head Coach:** Ameer Mullani (12+ Years Experience)  
 **Primary Domain:** `https://powerhouse.in` | **Production Mirror:** `https://gym-two-pink.vercel.app`  
+**Location Focus:** Kolhapur, Maharashtra, India  
 **Execution Date:** October 2026  
 **Governing Standard:** Google Search Central, Schema.org v26.0, OpenAI GPTBot/ChatGPT-User Guidelines, Perplexity AI Citation Protocols
 
@@ -33,57 +34,72 @@ flowchart TD
     D --> D3[Rich Schema Graph JSON-LD]
 
     E --> E1[Primary: Kolhapur Shahupuri 416001]
-    E --> E2[Targeted: Kolkata Tag & City Search]
+    E --> E2[Regional: Maharashtra Fitness Search]
     E --> E3[Geo-Coordinates & areaServed Array]
 ```
 
 ### The Three Pillars of Modern Search
 
-1. **SEO (Search Engine Optimization)**: Captures high-intent searchers on Google and Bing looking for *"gym near me"*, *"best gym in Kolhapur"*, *"gym in Kolkata"*, or *"personal trainer fees"*.
-2. **AEO (Answer Engine Optimization)**: Ensures AI conversational engines (ChatGPT, Perplexity, Claude, Google Gemini) synthesize and directly cite Power House Gym when users ask natural-language questions like: *"Which gym in Maharashtra or West Bengal offers personalized diet plans for ₹800 and 1-on-1 coaching?"*
-3. **GEO (Generative Engine Optimization)**: Positions Power House Gym inside Google's AI Overviews (SGE) by feeding Google Knowledge Graph clear entity triples: `(Power House Gym) --[operatedBy]--> (Ameer Mullani)`, `(Power House Gym) --[price]--> (₹1500/month)`, `(Power House Gym) --[rating]--> (4.4 Google Stars)`.
+1. **SEO (Search Engine Optimization)**: Captures high-intent searchers on Google and Bing looking for *"gym near me"*, *"best gym in Kolhapur"*, *"gym in Shahupuri"*, or *"personal trainer fees in Kolhapur"*.
+2. **AEO (Answer Engine Optimization)**: Ensures AI conversational engines (ChatGPT, Perplexity, Claude, Google Gemini) synthesize and directly cite Power House Gym when users ask natural-language questions like: *"Which gym in Kolhapur offers personalized diet plans for ₹800 and 1-on-1 coaching?"*
+3. **GEO (Generative Engine Optimization)**: Positions Power House Gym inside Google's AI Overviews (SGE) by feeding Google Knowledge Graph clear entity triples: `(Power House Gym) --[operatedBy]--> (Ameer Mullani)`, `(Power House Gym) --[price]--> (₹1500/month)`, `(Power House Gym) --[rating]--> (4.4 Google Stars)`, `(Power House Gym) --[locatedIn]--> (Shahupuri, Kolhapur, Maharashtra)`.
 
 ---
 
-## 2. Geolocation Architecture: Kolhapur & Kolkata Strategy
+## 2. Geolocation Architecture: Kolhapur, Maharashtra Strategy
 
-### The Algorithm Reality: How Google Handles City Searches
-Google uses two distinct ranking engines for location-based searches:
+### The Algorithm Reality: How Google Handles Local Search
+Google's local algorithm relies strictly on NAP consistency (Name, Address, Phone) and geographic proximity signals:
 
 | Search Type | Engine Used | Primary Ranking Signal | How Power House Wins |
 | :--- | :--- | :--- | :--- |
-| **Local 3-Pack / Maps** (`gym near me`, `gym in Shahupuri`) | Google Maps / Local Algorithm | GPS Distance, Google Business Profile (GBP), Physical Address (`Shahupuri, Kolhapur`) | Exact coordinates (`16.704987, 74.243253`), verified address, phone `+91 9860252720`, 4.4 Google rating. |
-| **Organic Search & SERPs** (`best gym in Kolkata`, `Powerhouse gym Kolkata`) | Google Core Web Ranking | Meta keywords, title tags, page content, backlink anchor text, schema `areaServed` | Standalone tag `Kolkata`, dedicated meta tags, schema inclusion, footer semantic tag cloud. |
-| **Generative AI Overviews** (`recommend a top rated gym in Kolkata or Kolhapur`) | LLM Retrieval & RAG | High-trust schema tables, transparent pricing, verified customer reviews | Structured FAQPage schema, comparison matrix, transparent fees (₹1,500 - ₹9,000). |
+| **Local 3-Pack / Maps** (`gym near me`, `gym in Shahupuri`, `gym in Kolhapur`) | Google Maps / Local Algorithm | GPS Proximity, Google Business Profile (GBP), Physical Address (`Shahupuri, Kolhapur`) | Exact coordinates (`16.704987, 74.243253`), verified address, phone `+91 9860252720`, 4.4 Google rating. |
+| **Organic Search & SERPs** (`best gym in Kolhapur`, `Powerhouse gym Kolhapur`) | Google Core Web Ranking | Meta keywords, title tags, page content, backlink anchor text, schema `areaServed` | Targeted Kolhapur tags, dedicated meta tags, schema inclusion, footer semantic tag cloud. |
+| **Generative AI Overviews** (`recommend a top rated gym in Kolhapur, Maharashtra`) | LLM Retrieval & RAG | High-trust schema tables, transparent pricing, verified customer reviews | Structured FAQPage schema, comparison matrix, transparent fees (₹1,500 - ₹9,000). |
 
-### Dedicated Kolkata Tag Strategy
-To satisfy the requirement that **"Kolkata must be a tag on its own so that whenever someone searches for any gym in Kolkata, the website comes in top Google pages"**:
-1. **Standalone Keyword Injection**: `<meta name="keywords" content="Kolkata, Kolkata gym, gym in Kolkata, best gym in Kolkata, Powerhouse gym Kolkata, ...">`.
-2. **Geographical Scope in Metadata**: `<meta name="geo.placename" content="Kolhapur, Kolkata, Maharashtra, India">`.
-3. **Multi-Region Structured Data**: The JSON-LD schema declares `"areaServed"` covering both **Kolhapur** and **Kolkata**, permitting Google and Bing knowledge graphs to associate the brand with national fitness queries.
-4. **Visible Semantic Tag Cloud**: A responsive, crawlable tag cloud in the footer featuring `<a href="/?tag=kolkata" class="seo-tag">Kolkata</a>` and `<a href="/?tag=kolkata-gym" class="seo-tag">Kolkata Gym</a>`. This passes internal PageRank with exact-match anchor text without triggering keyword-stuffing filters.
-5. **Future Branch / Remote Coaching Page**: If the gym expands physical operations or offers remote coaching to clients in Kolkata, a dedicated URL `/kolkata` (e.g., `https://powerhouse.in/kolkata`) can be activated immediately.
+### Dedicated Kolhapur & Maharashtra Tag Strategy
+To ensure maximum local dominance across all search terms in Kolhapur:
+1. **Targeted Keyword Injection**: `<meta name="keywords" content="Kolhapur gym, gym in Kolhapur, best gym in Kolhapur, Shahupuri gym, gym in Shahupuri Kolhapur, gym near me, Ameer Mullani, personal training Kolhapur, fitness center Kolhapur, gym membership Kolhapur, weight loss Kolhapur, bodybuilding Kolhapur, custom diet plan Kolhapur, gym in Maharashtra" />`.
+2. **Geographical Scope in Metadata**:
+   - `<meta name="geo.region" content="IN-MH" />`
+   - `<meta name="geo.placename" content="Shahupuri, Kolhapur, Maharashtra, India" />`
+   - `<meta name="geo.position" content="16.704987;74.243253" />`
+   - `<meta name="ICBM" content="16.704987, 74.243253" />`
+3. **Structured Data with Accurate Area Served**:
+   The JSON-LD schema declares `"areaServed"` covering **Kolhapur**, **Shahupuri**, **Maharashtra**, and **India**, associating the brand authoritatively with local fitness queries.
+4. **Visible Semantic Tag Cloud**:
+   A responsive, crawlable tag cloud in the footer featuring internal links for:
+   - `Kolhapur Gym` (`/?tag=kolhapur-gym`)
+   - `Best Gym in Kolhapur` (`/?tag=best-gym-kolhapur`)
+   - `Shahupuri` (`/?tag=shahupuri`)
+   - `Maharashtra` (`/?tag=maharashtra`)
+   - `Gym Membership` (`/programs`)
+   - `Personal Training` (`/personal-training`)
+   - `Diet Plan ₹800` (`/programs#diet-plan`)
+   - `Free Gym Trial` (`/visit?trial=1#book-trial`)
+   - `Ameer Mullani` (`/about`)
+   - `Google 4.4 Rated` (`/reviews`)
 
 ---
 
 ## 3. The Complete Meta Tags Specification
 
-The following meta tags have been deployed across all pages of the website:
+The following meta tags are deployed across the site:
 
 ```html
 <!-- Primary Search Engine Directives -->
-<title>Power House Gym | Best Gym in Kolhapur &amp; Kolkata | Strength &amp; Personal Training</title>
+<title>Power House Gym Shahupuri | Best Gym in Kolhapur, Maharashtra</title>
 <meta name="description" content="Power House Gym &amp; Fitness Center in Shahupuri, Kolhapur. Regular training from ₹1,500/mo, dedicated 1-on-1 personal training, custom diet plans (₹800), and free trial visits." />
 <meta name="author" content="Power House Gym &amp; Fitness Center" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-<!-- Target Keywords (Including Dedicated Kolkata & Kolhapur Clusters) -->
-<meta name="keywords" content="Kolkata, Kolkata gym, gym in Kolkata, best gym in Kolkata, Powerhouse gym Kolkata, Kolhapur gym, gym in Kolhapur, best gym in Kolhapur, Shahupuri gym, gym near me, Ameer Mullani, personal training Kolhapur, personal training Kolkata, fitness center, weight loss, bodybuilding, custom diet plan" />
-<meta name="news_keywords" content="Kolkata gym, Kolhapur gym, Power House Gym, fitness center, Ameer Mullani" />
+<!-- Target Keywords (Kolhapur, Shahupuri & Maharashtra Focus) -->
+<meta name="keywords" content="Kolhapur gym, gym in Kolhapur, best gym in Kolhapur, Shahupuri gym, gym in Shahupuri Kolhapur, gym near me, Ameer Mullani, personal training Kolhapur, fitness center Kolhapur, gym membership Kolhapur, weight loss Kolhapur, bodybuilding Kolhapur, custom diet plan Kolhapur, gym in Maharashtra" />
+<meta name="news_keywords" content="Kolhapur gym, Shahupuri gym, Power House Gym, fitness center Kolhapur, Ameer Mullani" />
 
 <!-- Geolocation & Local Positioning Meta Tags -->
 <meta name="geo.region" content="IN-MH" />
-<meta name="geo.placename" content="Kolhapur, Kolkata, Maharashtra, India" />
+<meta name="geo.placename" content="Shahupuri, Kolhapur, Maharashtra, India" />
 <meta name="geo.position" content="16.704987;74.243253" />
 <meta name="ICBM" content="16.704987, 74.243253" />
 
@@ -91,7 +107,7 @@ The following meta tags have been deployed across all pages of the website:
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Power House Gym &amp; Fitness Center" />
 <meta property="og:locale" content="en_IN" />
-<meta property="og:title" content="Power House Gym &amp; Fitness Center | Best Gym in Kolhapur &amp; Kolkata" />
+<meta property="og:title" content="Power House Gym Shahupuri | Best Gym in Kolhapur, Maharashtra" />
 <meta property="og:description" content="Build your strongest self at Power House Gym. Transparent memberships from ₹1,500/mo, 1-on-1 personal training, and ₹800 custom diet plan." />
 <meta property="og:url" content="https://powerhouse.in/" />
 <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_6zeys162qe986asby6kjqk36j0/0cd8a298f4da1d7d06ff12c9466bd179_1790061871177.png" />
@@ -101,15 +117,15 @@ The following meta tags have been deployed across all pages of the website:
 
 <!-- Twitter / X Card Metadata -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Power House Gym &amp; Fitness Center | Best Gym in Kolhapur &amp; Kolkata" />
+<meta name="twitter:title" content="Power House Gym Shahupuri | Best Gym in Kolhapur, Maharashtra" />
 <meta name="twitter:description" content="Build your strongest self at Power House Gym. Transparent memberships from ₹1,500/mo, 1-on-1 personal training, and ₹800 custom diet plan." />
 <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_6zeys162qe986asby6kjqk36j0/0cd8a298f4da1d7d06ff12c9466bd179_1790061871177.png" />
 
 <!-- Dublin Core Metadata (Semantic Authority) -->
-<meta name="DC.title" content="Power House Gym &amp; Fitness Center | Best Gym in Kolhapur &amp; Kolkata" />
+<meta name="DC.title" content="Power House Gym &amp; Fitness Center | Best Gym in Kolhapur, Maharashtra" />
 <meta name="DC.creator" content="Ameer Mullani" />
-<meta name="DC.subject" content="Kolkata, Kolkata gym, Kolhapur gym, gym in Kolhapur, Shahupuri gym, personal training, Ameer Mullani" />
-<meta name="DC.coverage" content="Kolhapur, Kolkata, India" />
+<meta name="DC.subject" content="Kolhapur gym, gym in Kolhapur, Shahupuri gym, best gym in Kolhapur, personal training Kolhapur, Ameer Mullani, Maharashtra fitness center" />
+<meta name="DC.coverage" content="Shahupuri, Kolhapur, Maharashtra, India" />
 <meta name="DC.language" content="en" />
 
 <!-- Canonical Reference -->
@@ -212,12 +228,12 @@ Power House Gym utilizes a multi-entity JSON-LD schema graph in `index.html` tha
       "@type": ["HealthClub", "ExerciseGym", "SportsActivityLocation", "LocalBusiness"],
       "@id": "https://powerhouse.in/#gym",
       "name": "Power House Gym & Fitness Center",
-      "alternateName": ["Power House Gym Shahupuri", "Power House Kolkata"],
+      "alternateName": ["Power House Gym Shahupuri", "Power House Gym Kolhapur"],
       "url": "https://powerhouse.in/",
       "logo": "https://powerhouse.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png",
       "telephone": "+91 9860252720",
       "email": "amirmullani7272@gmail.com",
-      "priceRange": "₹1,500 - ₹52,500",
+      "priceRange": "INR 1,500 - 52,500",
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, UPI, Credit Card, Debit Card",
       "address": {
@@ -243,15 +259,15 @@ Power House Gym utilizes a multi-entity JSON-LD schema graph in `index.html` tha
           "name": "Shahupuri"
         },
         {
-          "@type": "City",
-          "name": "Kolkata"
+          "@type": "AdministrativeArea",
+          "name": "Maharashtra"
         },
         {
           "@type": "Country",
           "name": "India"
         }
       ],
-      "keywords": "Kolkata, Kolkata gym, best gym in Kolkata, Kolhapur gym, gym in Kolhapur, best gym in Kolhapur, Shahupuri gym, Ameer Mullani, personal training, diet plan, fitness center",
+      "keywords": "Kolhapur gym, gym in Kolhapur, best gym in Kolhapur, Shahupuri gym, Ameer Mullani, personal training Kolhapur, diet plan Kolhapur, fitness center Maharashtra",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -304,24 +320,24 @@ When AI agents (Perplexity, ChatGPT, Claude) synthesize recommendations, they ex
 * **Trial Policy**: 100% Free 1-Day Trial session with no contract requirement
 * **Operating Hours**: Monday – Saturday: Morning 6:00 AM – 11:30 AM | Evening 4:30 PM – 9:00 PM (Sunday Closed)
 * **Phone / WhatsApp**: `+91 9860252720`
-* **Address**: Vardhmane House, 718, 3rd Ln, near Nitin Medical, Shahupuri, Kolhapur 416001
+* **Address**: Vardhmane House, 718, 3rd Ln, near Nitin Medical, Shahupuri, Kolhapur 416001, Maharashtra, India
 
 ---
 
-## 8. Keyword Matrix: Kolkata & Kolhapur Search Targets
+## 8. Keyword Matrix: Kolhapur & Maharashtra Search Targets
 
 | Keyword Phrase | Search Intent | Target Geolocation | Recommended Page | SERP Feature Target |
 | :--- | :--- | :--- | :--- | :--- |
-| `Kolkata gym` | Commercial / Local | Kolkata | `/` (Homepage) | Organic Top 3 |
-| `best gym in Kolkata` | Commercial Investigation | Kolkata | `/?tag=kolkata-gym` | AI Overview / Featured Snippet |
-| `gym in Kolkata with fees` | Transactional | Kolkata | `/programs` | Table Snippet |
-| `Powerhouse gym Kolkata` | Navigational / Branded | Kolkata | `/` | Position 1 |
 | `gym in Kolhapur` | Local / Commercial | Kolhapur | `/` | Local 3-Pack & Organic #1 |
-| `best gym in Kolhapur` | Commercial Investigation | Kolhapur | `/` | Local 3-Pack |
-| `Shahupuri gym Kolhapur` | Hyperlocal | Shahupuri | `/visit` | Local Map Pack |
+| `best gym in Kolhapur` | Commercial Investigation | Kolhapur | `/?tag=best-gym-kolhapur` | Local 3-Pack & AI Overview |
+| `gym in Kolhapur with fees` | Transactional | Kolhapur | `/programs` | Table Snippet |
+| `Powerhouse gym Kolhapur` | Navigational / Branded | Kolhapur | `/` | Position 1 |
+| `Shahupuri gym Kolhapur` | Hyperlocal | Shahupuri, Kolhapur | `/visit` | Local Map Pack |
+| `best gym in Shahupuri` | Hyperlocal | Shahupuri, Kolhapur | `/` | Local 3-Pack |
 | `personal trainer in Kolhapur fees` | Transactional | Kolhapur | `/personal-training` | Direct Answer / PAA |
-| `Ameer Mullani gym trainer` | Branded / Entity | Kolhapur & National | `/about` | Knowledge Panel |
-| `gym diet plan 800 rupees` | Commercial | Pan-India | `/programs#diet-plan` | Rich Snippet |
+| `Ameer Mullani gym trainer` | Branded / Entity | Kolhapur, Maharashtra | `/about` | Knowledge Panel |
+| `gym diet plan 800 rupees` | Commercial | Maharashtra / Pan-India | `/programs#diet-plan` | Rich Snippet |
+| `gym membership Kolhapur` | Transactional | Kolhapur | `/programs#regular-training` | Featured Snippet |
 
 ---
 
@@ -330,5 +346,5 @@ When AI agents (Perplexity, ChatGPT, Claude) synthesize recommendations, they ex
 1. **Verify `robots.txt`**: Visit `https://gym-two-pink.vercel.app/robots.txt` & ensure HTTP 200 with all AI crawlers allowed.
 2. **Verify `sitemap.xml`**: Visit `https://gym-two-pink.vercel.app/sitemap.xml` & validate through XML syntax parser.
 3. **Google Search Console**: Once custom domain `powerhouse.in` DNS is active, submit `https://powerhouse.in/sitemap.xml`.
-4. **Google Business Profile (GBP)**: Add `https://powerhouse.in/` as the primary website link and include secondary service areas (Kolhapur, Maharashtra, and expanded zones).
-5. **Periodic Inspection**: Keep all NAP (Name, Address, Phone `+91 9860252720`) 100% synchronized across Instagram (`@power_house_gym_and_fitness`), Justdial, Google Maps, and website footers.
+4. **Google Business Profile (GBP)**: Add `https://powerhouse.in/` as the primary website link and set primary service area to Kolhapur, Maharashtra.
+5. **Periodic Inspection**: Keep all NAP (Name, Address, Phone `+91 9860252720`) 100% synchronized across Instagram (`@power_house_gym_and_fitness`), Google Maps, and website footers.
