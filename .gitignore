@@ -5,10 +5,15 @@ package-lock.json
 # Vercel
 .vercel/
 
+# Internal Tooling & Scratch Scripts
+scripts/
+src/
+
 # Temporary / Scraped files
 scraped/
 scraped_pages/
 *.log
+*.pdf
 
 # OS & Editor files
 .DS_Store
@@ -16,5 +21,3 @@ Thumbs.db
 *.bak
 .vscode/
 .idea/
-
-.vercel

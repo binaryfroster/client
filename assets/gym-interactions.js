@@ -824,6 +824,46 @@
     }
   }
 
+  // --- Contact Form Parameter Autofill ---
+  function initContactFormAutofill() {
+    const interestSelect = document.getElementById('c-interest');
+    if (!interestSelect) return;
+
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const plan = params.get('plan') || params.get('program');
+      const assistant = params.get('assistant');
+      const goal = params.get('goal');
+      const subject = params.get('subject') || params.get('interest');
+
+      const targetTerm = plan || assistant || goal || subject;
+      if (!targetTerm) return;
+
+      const normalized = targetTerm.toLowerCase().trim();
+
+      for (let i = 0; i < interestSelect.options.length; i++) {
+        const opt = interestSelect.options[i];
+        const val = opt.value.toLowerCase();
+        const txt = opt.text.toLowerCase();
+        if (val.includes(normalized) || txt.includes(normalized) || (normalized.includes('diet') && val.includes('diet')) || (normalized.includes('trial') && val.includes('trial'))) {
+          interestSelect.selectedIndex = i;
+          break;
+        }
+      }
+
+      const msgTextarea = document.getElementById('c-message');
+      if (msgTextarea && !msgTextarea.value.trim()) {
+        if (plan) {
+          msgTextarea.value = `Hello Coach Ameer, I am interested in joining under the "${plan}" plan. Please share the details and timings.`;
+        } else if (targetTerm) {
+          msgTextarea.value = `Hello Power House team, I would like to inquire about ${targetTerm}.`;
+        }
+      }
+    } catch (e) {
+      console.warn('Form autofill notice:', e);
+    }
+  }
+
   // --- Initialize Everything on DOM Ready ---
   function init() {
     initBrandIntro();
@@ -838,6 +878,7 @@
     initProgramSelector();
     initNavDropdown();
     initScrollReveal();
+    initContactFormAutofill();
   }
 
   if (document.readyState === 'loading') {
