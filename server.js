@@ -35,9 +35,9 @@ const server = http.createServer((req, res) => {
     urlPath = '/index.html';
   }
 
-  // Explicit redirect from /membership to /contact
-  if (urlPath === '/membership' || urlPath === '/membership.html') {
-    res.writeHead(301, { 'Location': '/contact' });
+  // Explicit redirect from /membership and /contact to /visit
+  if (urlPath === '/membership' || urlPath === '/membership.html' || urlPath === '/contact' || urlPath === '/contact.html') {
+    res.writeHead(301, { 'Location': '/visit' });
     res.end();
     return;
   }

@@ -116,10 +116,9 @@
               </div>
             </div>
             <a href="/personal-training">Personal Training <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
-            <a href="/contact">Contact <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
             <a href="/gallery">Gallery <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
             <a href="/reviews">Reviews <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
-            <a href="/visit">Visit &amp; Hours <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+            <a href="/visit">Visit Us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
           </div>
           <div class="mobile-drawer-footer">
             <a href="/visit?trial=1#book-trial" class="mobile-drawer-cta">
@@ -864,6 +863,125 @@
     }
   }
 
+  // --- 14. Visit Us FAQ & Pop-Out Modal Controller ---
+  function initVisitFAQ() {
+    const faqSection = document.getElementById('visit-faq');
+    if (!faqSection) return;
+
+    const faqItems = faqSection.querySelectorAll('.faq-item');
+    const modalOverlay = document.getElementById('faq-modal-overlay');
+    const modalBadge = document.getElementById('faq-modal-badge');
+    const modalTitle = document.getElementById('faq-modal-q-title');
+    const modalContent = document.getElementById('faq-modal-a-content');
+    const modalCloseBtn = document.getElementById('faq-modal-close');
+    const modalPrevBtn = document.getElementById('faq-modal-prev');
+    const modalNextBtn = document.getElementById('faq-modal-next');
+
+    // Build data array from DOM items
+    const faqData = [];
+    faqItems.forEach((item, idx) => {
+      const qText = item.querySelector('.faq-q-text')?.textContent.trim() || '';
+      const numText = item.querySelector('.faq-num')?.textContent.trim() || String(idx + 1).padStart(2, '0');
+      const aText = item.querySelector('.faq-answer-text')?.innerHTML.trim() || '';
+      faqData.push({ id: idx, num: numText, question: qText, answer: aText, element: item });
+    });
+
+    let currentModalIndex = 0;
+
+    function openModal(index) {
+      if (!modalOverlay || !faqData[index]) return;
+      currentModalIndex = index;
+      const data = faqData[index];
+
+      if (modalBadge) modalBadge.textContent = `QUESTION ${data.num} OF ${String(faqData.length).padStart(2, '0')}`;
+      if (modalTitle) modalTitle.textContent = data.question;
+      if (modalContent) modalContent.innerHTML = `<p>${data.answer}</p>`;
+
+      if (modalPrevBtn) modalPrevBtn.disabled = index === 0;
+      if (modalNextBtn) modalNextBtn.disabled = index === faqData.length - 1;
+
+      modalOverlay.classList.add('is-active');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modalCloseBtn?.focus();
+    }
+
+    function closeModal() {
+      if (!modalOverlay) return;
+      modalOverlay.classList.remove('is-active');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Modal navigation
+    modalCloseBtn?.addEventListener('click', closeModal);
+    modalOverlay?.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    modalPrevBtn?.addEventListener('click', () => {
+      if (currentModalIndex > 0) openModal(currentModalIndex - 1);
+    });
+
+    modalNextBtn?.addEventListener('click', () => {
+      if (currentModalIndex < faqData.length - 1) openModal(currentModalIndex + 1);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!modalOverlay?.classList.contains('is-active')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft' && currentModalIndex > 0) openModal(currentModalIndex - 1);
+      if (e.key === 'ArrowRight' && currentModalIndex < faqData.length - 1) openModal(currentModalIndex + 1);
+    });
+
+    // Accordion toggle & Pop-out triggers
+    faqItems.forEach((item, index) => {
+      const questionBar = item.querySelector('.faq-question-bar');
+      const popoutBtn = item.querySelector('.faq-popout-btn');
+      const modalLink = item.querySelector('.faq-ans-modal-link');
+
+      // Pop-out button opens modal directly
+      popoutBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openModal(index);
+      });
+
+      modalLink?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openModal(index);
+      });
+
+      // Question bar toggles inline pop-out accordion
+      questionBar?.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+
+        // Close other items for focus
+        faqItems.forEach(other => {
+          if (other !== item) {
+            other.classList.remove('is-open');
+            other.querySelector('.faq-question-bar')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (isOpen) {
+          item.classList.remove('is-open');
+          questionBar.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          questionBar.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Keyboard support for question bar
+      questionBar?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          questionBar.click();
+        }
+      });
+    });
+  }
+
   // --- Initialize Everything on DOM Ready ---
   function init() {
     initBrandIntro();
@@ -879,6 +997,7 @@
     initNavDropdown();
     initScrollReveal();
     initContactFormAutofill();
+    initVisitFAQ();
   }
 
   if (document.readyState === 'loading') {

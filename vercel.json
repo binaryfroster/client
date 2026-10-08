@@ -6,13 +6,23 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/contact",
+      "destination": "/visit",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/visit",
+      "permanent": true
+    },
+    {
       "source": "/membership",
-      "destination": "/contact",
+      "destination": "/visit",
       "permanent": true
     },
     {
       "source": "/membership.html",
-      "destination": "/contact",
+      "destination": "/visit",
       "permanent": true
     }
   ],
