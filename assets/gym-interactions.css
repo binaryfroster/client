@@ -930,3 +930,43 @@ select optgroup {
   }
 }
 
+/* --- Legal Pages Header (Text-Only, No Images) --- */
+.legal-hero {
+  padding: 80px 24px 32px;
+  max-width: 908px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-hero .hero-kicker {
+  display: inline-block;
+  color: var(--primary, #a8ff00);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.legal-hero h1 {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  color: #ffffff;
+  line-height: 1.05;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.03em;
+}
+
+.legal-hero p {
+  color: #a1a1aa;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: 60px 20px 24px;
+  }
+}
+
