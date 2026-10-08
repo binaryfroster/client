@@ -1,0 +1,52 @@
+# Power House Gym & Fitness Center
+
+> Power House Gym & Fitness Center is a premier strength, bodybuilding, and fitness training facility located in Shahupuri, Kolhapur, Maharashtra, India. Founded and led by certified Head Coach Ameer Mullani (12+ years experience), the gym provides structured regular memberships, 1-on-1 personal training, and customized Indian diet plans.
+
+## Facility & Business Information
+- **Full Legal/Trade Name**: Power House Gym & Fitness Center
+- **Alternate Name**: Power House Gym Shahupuri
+- **Founder & Head Coach**: Ameer Mullani
+- **Experience**: 12+ Years Coaching & Transformation Experience
+- **Active Community**: 200+ Active Members
+- **Rating**: 4.4 / 5.0 (Google verified rating across 48+ member reviews)
+- **Facility Address**: Vardhmane House, 718, 3rd Lane, near Nitin Medical, E Ward, Shahupuri, Kolhapur, Maharashtra 416001, India
+- **Coordinates (Geo/ICBM)**: 16.704987, 74.243253
+- **Primary Phone**: +91 9860252720
+- **Official WhatsApp**: +91 9860252720
+- **Official Email**: amirmullani7272@gmail.com
+- **Official Website**: https://powerhouse.in
+- **Live Deployment Mirror**: https://gym-two-pink.vercel.app
+
+## Operating Hours
+- **Monday – Saturday (Split Shift)**:
+  - Morning Shift: 6:00 AM – 11:30 AM IST
+  - Evening Shift: 4:30 PM – 9:00 PM IST
+- **Sunday**: Closed (Facility maintenance and member recovery)
+
+## Pricing & Membership Plans
+### Regular Gym Memberships
+- **1 Month**: ₹1,500
+- **3 Months**: ₹4,000 (₹1,333/month)
+- **6 Months**: ₹6,000 (₹1,000/month)
+- **1 Year**: ₹9,000 (₹750/month)
+
+### Personal Training (1-on-1 Dedicated Coaching by Ameer Mullani)
+- **1 Month**: ₹6,000
+- **3 Months**: ₹15,000 (₹5,000/month)
+- **6 Months**: ₹27,500 (₹4,583/month)
+- **1 Year**: ₹52,500 (₹4,375/month)
+
+### Add-Ons & Passes
+- **Custom Diet & Nutrition Plan**: ₹800 (One-time, tailored to everyday local Indian/Kolhapuri diet, vegetarian, eggetarian, or non-veg)
+- **Complimentary 1-Day Trial Pass**: Free (Includes full workout session, facility walkthrough, and coach consultation with zero joining pressure)
+
+## Key Pages & Resources
+- [Home](https://powerhouse.in/): Gym overview, facility tour, intro video, verified reviews, and free trial pass reservation.
+- [About Head Coach Ameer Mullani](https://powerhouse.in/about): Background, coaching philosophy, 12+ years experience, and biomechanics approach.
+- [Programs & Memberships](https://powerhouse.in/programs): Detailed breakdown of Regular Gym Training, Personal Training, Diet Plan Add-On, and interactive Membership Plan Finder.
+- [Personal Training (1-on-1)](https://powerhouse.in/personal-training): 1-on-1 focused coaching curriculum, session scheduling, accountability, and pricing.
+- [Gym Gallery](https://powerhouse.in/gallery): Authentic photography of strength machinery, free weights, dumbbells, barbells, and cardio equipment.
+- [Member Reviews](https://powerhouse.in/reviews): Verified member testimonials and live Google reviews link.
+- [Visit Us & Trial Booking](https://powerhouse.in/visit): Location map, directions, visit checklist, operating hours, and interactive trial booking form.
+- [Terms & Gym Rules](https://powerhouse.in/terms): Facility rules, hygiene policies, equipment etiquette, and membership terms.
+- [Privacy Policy](https://powerhouse.in/privacy-policy): DPDP Act 2023 compliant data protection and privacy policy.

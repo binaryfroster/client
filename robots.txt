@@ -50,6 +50,10 @@ Disallow: /scripts/
 Disallow: /assets/*.bak
 Disallow: /assets/*.map
 
+# Generative Engine Optimization (GEO) Resources
+# LLMs.txt authoritative markdown context: https://powerhouse.in/llms.txt
+
 Host: https://powerhouse.in
 Sitemap: https://powerhouse.in/sitemap.xml
 Sitemap: https://gym-two-pink.vercel.app/sitemap.xml
+
