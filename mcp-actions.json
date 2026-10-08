@@ -1,0 +1,138 @@
+{
+  "$schema": "https://webmcp.org/schema/v1/actions.json",
+  "name": "Power House Gym & Fitness Center",
+  "version": "1.0.0",
+  "description": "WebMCP machine-readable action manifest for Power House Gym & Fitness Center in Shahupuri, Kolhapur, Maharashtra, India. Led by Head Coach Ameer Mullani.",
+  "canonicalUrl": "https://powerhouse.in",
+  "mirrorUrl": "https://gym-two-pink.vercel.app",
+  "provider": {
+    "name": "Power House Gym & Fitness Center",
+    "coach": "Ameer Mullani",
+    "phone": "+91 9860252720",
+    "email": "amirmullani7272@gmail.com",
+    "address": {
+      "street": "Vardhmane House, 718, 3rd Ln, near Nitin Medical, E Ward",
+      "locality": "Shahupuri",
+      "city": "Kolhapur",
+      "state": "Maharashtra",
+      "postalCode": "416001",
+      "country": "India",
+      "coordinates": {
+        "latitude": 16.704987,
+        "longitude": 74.243253
+      }
+    },
+    "openingHours": {
+      "morning": "6:00 AM – 11:30 AM",
+      "evening": "4:30 PM – 9:00 PM",
+      "days": "Monday – Saturday"
+    }
+  },
+  "actions": [
+    {
+      "id": "book-free-trial",
+      "name": "Book Free 1-Day Trial Pass",
+      "description": "Book a complimentary 1-day workout trial pass at Power House Gym Shahupuri, Kolhapur. No credit card required.",
+      "page": "/visit",
+      "targetSelector": "#trial-form",
+      "httpMethod": "POST",
+      "parameters": {
+        "type": "object",
+        "required": ["full_name", "phone", "time_slot"],
+        "properties": {
+          "full_name": {
+            "type": "string",
+            "description": "Full name of the visitor"
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^[0-9+ -]{10,14}$",
+            "description": "Mobile contact number for WhatsApp / SMS pass confirmation"
+          },
+          "time_slot": {
+            "type": "string",
+            "enum": ["Morning (6:00 AM – 11:30 AM)", "Evening (4:30 PM – 9:00 PM)"],
+            "description": "Preferred training shift"
+          },
+          "goal": {
+            "type": "string",
+            "enum": ["Weight Loss", "Muscle Gain", "General Fitness", "Personal Training", "Strength & Conditioning"],
+            "description": "Primary fitness objective"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Optional notes or training background"
+          }
+        }
+      }
+    },
+    {
+      "id": "inquire-via-whatsapp",
+      "name": "Chat on WhatsApp with Coach Ameer",
+      "description": "Start a direct WhatsApp conversation with Coach Ameer Mullani regarding membership pricing, personal training, or nutrition guidance.",
+      "page": "/",
+      "targetSelector": ".floating-wa-btn",
+      "urlTemplate": "https://wa.me/919860252720?text={message}",
+      "parameters": {
+        "type": "object",
+        "required": ["message"],
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Question or inquiry text sent to Coach Ameer"
+          }
+        }
+      }
+    },
+    {
+      "id": "call-gym",
+      "name": "Call Power House Gym",
+      "description": "Direct phone call to Power House Gym desk and Coach Ameer Mullani.",
+      "page": "/",
+      "targetSelector": "a[href^='tel:']",
+      "url": "tel:+919860252720"
+    },
+    {
+      "id": "get-directions",
+      "name": "Get Gym Directions on Google Maps",
+      "description": "Get GPS turn-by-turn directions to Power House Gym in Shahupuri, Kolhapur.",
+      "page": "/visit",
+      "targetSelector": "a[href*='maps']",
+      "url": "https://maps.app.goo.gl/baXPDWPsxsrzSxm6A"
+    },
+    {
+      "id": "inquire-diet-plan",
+      "name": "Inquire About Custom Diet Plan (₹800)",
+      "description": "Ask Coach Ameer about the ₹800 one-time custom nutrition add-on tailored to authentic Kolhapur home foods (vegetarian, eggetarian, or non-veg).",
+      "page": "/programs#diet-plan",
+      "targetSelector": ".btn-ask-nutrition, .btn-diet-secondary",
+      "urlTemplate": "https://wa.me/919860252720?text=Hello%20Coach%20Ameer%2C%20I%20have%20a%20few%20questions%20about%20your%20diet%20%26%20nutrition%20coaching."
+    },
+    {
+      "id": "select-personal-training",
+      "name": "Explore 1-on-1 Personal Training Plans",
+      "description": "Explore personal training plans starting at ₹6,000/month with dedicated coaching from Ameer Mullani.",
+      "page": "/personal-training",
+      "targetSelector": "#compare-training, .price-grid",
+      "pricing": {
+        "1_month": "₹6,000",
+        "3_months": "₹15,000 (₹5,000/mo)",
+        "6_months": "₹27,500 (₹4,583/mo)",
+        "12_months": "₹52,500 (₹4,375/mo)"
+      }
+    },
+    {
+      "id": "select-regular-membership",
+      "name": "Explore Regular Gym Memberships",
+      "description": "Explore regular gym memberships starting at ₹1,500/month with full access to weights, machines, cardio, and morning/evening shifts.",
+      "page": "/programs",
+      "targetSelector": "#regular-training, .membership-grid",
+      "pricing": {
+        "1_month": "₹1,500",
+        "3_months": "₹4,000 (₹1,333/mo)",
+        "6_months": "₹6,000 (₹1,000/mo)",
+        "12_months": "₹9,000 (₹750/mo)"
+      }
+    }
+  ]
+}

@@ -52,3 +52,4 @@ Disallow: /assets/*.map
 
 Host: https://powerhouse.in
 Sitemap: https://powerhouse.in/sitemap.xml
+Sitemap: https://gym-two-pink.vercel.app/sitemap.xml
