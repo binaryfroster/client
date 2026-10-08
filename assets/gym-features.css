@@ -2284,3 +2284,75 @@ html.ph-intro-playing #brand-intro {
     padding: 12px 14px !important;
   }
 }
+
+/* ==========================================================================
+   PT PRICING CARDS CONTRAST & VISIBILITY FIX
+   ========================================================================== */
+.price-card {
+  background: var(--background, #080808) !important;
+  color: var(--foreground, #ffffff) !important;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1)) !important;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.price-card span {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.price-card strong {
+  color: #ffffff !important;
+  font: 3.1rem var(--font-display, Anton, Impact, sans-serif) !important;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.price-card p {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: 0.82rem;
+  transition: color 0.2s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(220, 255, 0, 0.45) !important;
+  background: #121212 !important;
+  color: #ffffff !important;
+}
+
+.price-card:hover strong,
+.price-card:hover span {
+  color: #ffffff !important;
+}
+
+.price-card:hover p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.price-card.selected,
+.price-card.is-selected {
+  border-color: var(--primary, #dcff00) !important;
+  background: #141c00 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px var(--primary, #dcff00), 0 12px 28px -8px rgba(220, 255, 0, 0.25) !important;
+}
+
+.price-card.selected span,
+.price-card.is-selected span {
+  color: var(--primary, #dcff00) !important;
+  font-weight: 700;
+}
+
+.price-card.selected strong,
+.price-card.is-selected strong {
+  color: #ffffff !important;
+  text-shadow: 0 0 20px rgba(220, 255, 0, 0.25);
+}
+
+.price-card.selected p,
+.price-card.is-selected p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
