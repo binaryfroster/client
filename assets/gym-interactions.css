@@ -904,10 +904,16 @@ select optgroup {
 
 .plan-finder-result-img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  object-position: center 30%;
   border-radius: 10px;
   margin-bottom: 8px;
+  transition: opacity 0.25s ease, object-position 0.25s ease;
+}
+
+.selector-photo {
+  transition: object-position 0.25s ease;
 }
 
 .plan-finder-price {

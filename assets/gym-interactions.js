@@ -600,14 +600,16 @@
         3: 4000,
         6: 6000,
         12: 9000,
-        img: '/__l5e/assets-v1/999a7365-6d25-41c6-9039-422f61c11750/gym-floor-1.jpeg'
+        img: '/__l5e/assets-v1/999a7365-6d25-41c6-9039-422f61c11750/gym-floor-1.jpeg',
+        objectPosition: 'center center'
       },
       'Personal Training': {
         1: 6000,
         3: 15000,
         6: 27500,
         12: 52500,
-        img: '/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg'
+        img: '/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani-portrait.jpeg',
+        objectPosition: 'center 35%'
       }
     };
 
@@ -656,6 +658,8 @@
       }
       if (imgDisplay && pricing[activeType].img) {
         imgDisplay.src = pricing[activeType].img;
+        imgDisplay.style.objectPosition = pricing[activeType].objectPosition || 'center center';
+        imgDisplay.alt = activeType === 'Personal Training' ? 'Coach Ameer Mullani - Power House Gym 1-on-1 Personal Trainer' : 'Power House Gym training floor';
       }
       if (ctaBtn) {
         const planStr = `${months} Month${months > 1 ? 's' : ''} ${activeType} (₹${price.toLocaleString('en-IN')})`;
@@ -698,13 +702,15 @@
         title: 'PERSONAL TRAINING.',
         desc: 'A more individualized experience with focused attention, structure and accountability led directly by Ameer Mullani.',
         price: 'From ₹6,000',
-        img: '/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg'
+        img: '/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani-portrait.jpeg',
+        objectPosition: 'center 35%'
       },
       'diet': {
         title: 'CUSTOM DIET PLAN.',
         desc: 'General fitness nutrition guidance tailored around authentic Kolhapuri home food without expensive imports or unsustainable fads.',
         price: 'Add-On ₹800',
-        img: '/__l5e/assets-v1/4e34613a-5a9f-4229-a167-484b83333d3f/gym-cardio.jpeg'
+        img: '/__l5e/assets-v1/4e34613a-5a9f-4229-a167-484b83333d3f/gym-cardio.jpeg',
+        objectPosition: 'center center'
       }
     };
 
@@ -723,7 +729,11 @@
           titleEl.textContent = item.title;
           descEl.textContent = item.desc;
           priceEl.textContent = item.price;
-          if (imgEl && item.img) imgEl.src = item.img;
+          if (imgEl && item.img) {
+            imgEl.src = item.img;
+            imgEl.style.objectPosition = item.objectPosition || '50% 40%';
+            imgEl.alt = key === 'pt' ? 'Coach Ameer Mullani - 1-on-1 Personal Training' : (key === 'diet' ? 'Custom Diet & Nutrition Planning' : 'Power House strength training floor');
+          }
         }
       });
     });
