@@ -982,6 +982,152 @@
     });
   }
 
+  // --- 15. Personal Training 8-Step Journey Controller ---
+  function initPTJourney() {
+    const journeySection = document.getElementById('pt-journey-section') || document.querySelector('.journey');
+    if (!journeySection) return;
+
+    const card = journeySection.querySelector('.journey-card');
+    const cardNum = journeySection.querySelector('.journey-card-num') || journeySection.querySelector('.journey-card > span');
+    const cardTitle = journeySection.querySelector('.journey-card-title') || journeySection.querySelector('.journey-card > h3');
+    const cardDesc = journeySection.querySelector('.journey-card-desc') || journeySection.querySelector('.journey-card > p');
+    const counter = journeySection.querySelector('.journey-card-counter') || journeySection.querySelector('.journey-card small');
+    const prevBtn = journeySection.querySelector('.journey-btn-prev') || journeySection.querySelector('button[aria-label="Previous step"]');
+    const nextBtn = journeySection.querySelector('.journey-btn-next') || journeySection.querySelector('button[aria-label="Next step"]');
+    const stepButtons = journeySection.querySelectorAll('.journey-step-btn, .journey-steps-nav button, .journey nav button');
+
+    if (!card || stepButtons.length === 0) return;
+
+    const PT_STEPS_DATA = [
+      {
+        num: '01',
+        title: 'Assessment',
+        desc: 'Discuss height, weight, goal and training background where applicable.'
+      },
+      {
+        num: '02',
+        title: 'Goal',
+        desc: 'Establish clear, measurable fitness benchmarks—whether fat loss, muscle hypertrophy, or functional strength.'
+      },
+      {
+        num: '03',
+        title: 'Personalized Plan',
+        desc: 'Design a tailored periodized workout split adapted to your body mechanics, schedule, and recovery capacity.'
+      },
+      {
+        num: '04',
+        title: 'Daily Routine',
+        desc: 'Structure daily activity targets, warm-up habits, and sleep-recovery discipline to sustain consistency.'
+      },
+      {
+        num: '05',
+        title: 'Training',
+        desc: 'Hands-on, 1-on-1 guided sessions on the floor with direct form correction, tempo control, and spot assistance.'
+      },
+      {
+        num: '06',
+        title: 'Monitoring',
+        desc: 'Track progressive overload week by week—recording lifting numbers, form maturity, and cardiovascular capacity.'
+      },
+      {
+        num: '07',
+        title: 'Diet',
+        desc: 'Align daily nutrition and macro targets with your training demands; optional customized meal planning guidance.'
+      },
+      {
+        num: '08',
+        title: 'Progress',
+        desc: 'Evaluate biometric measurements and physical transformations, recalculating targets for sustained growth.'
+      }
+    ];
+
+    let currentStepIndex = 0;
+
+    function renderStep(index) {
+      if (index < 0) index = PT_STEPS_DATA.length - 1;
+      if (index >= PT_STEPS_DATA.length) index = 0;
+      currentStepIndex = index;
+      const data = PT_STEPS_DATA[currentStepIndex];
+
+      // Update card contents
+      if (cardNum) cardNum.textContent = data.num;
+      if (cardTitle) cardTitle.textContent = data.title;
+      if (cardDesc) cardDesc.textContent = data.desc;
+      if (counter) counter.textContent = `${currentStepIndex + 1} / ${PT_STEPS_DATA.length}`;
+
+      // Animation feedback
+      card.classList.remove('fade-step');
+      void card.offsetWidth; // trigger reflow
+      card.classList.add('fade-step');
+
+      // Update active state in nav buttons
+      stepButtons.forEach((btn, idx) => {
+        if (idx === currentStepIndex) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-current', 'step');
+        } else {
+          btn.classList.remove('active');
+          btn.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    // Step button click listeners
+    stepButtons.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        renderStep(idx);
+      });
+    });
+
+    // Prev / Next button listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        renderStep(currentStepIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        renderStep(currentStepIndex + 1);
+      });
+    }
+
+    // Keyboard navigation when focus is inside journey section
+    journeySection.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        renderStep(currentStepIndex + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        renderStep(currentStepIndex - 1);
+      }
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    card.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    card.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const diffX = touchEndX - touchStartX;
+      if (Math.abs(diffX) > 45) {
+        if (diffX < 0) {
+          renderStep(currentStepIndex + 1); // swipe left = next
+        } else {
+          renderStep(currentStepIndex - 1); // swipe right = prev
+        }
+      }
+    }, { passive: true });
+
+    // Initial render
+    renderStep(0);
+  }
+
   // --- Initialize Everything on DOM Ready ---
   function init() {
     initBrandIntro();
@@ -998,6 +1144,7 @@
     initScrollReveal();
     initContactFormAutofill();
     initVisitFAQ();
+    initPTJourney();
   }
 
   if (document.readyState === 'loading') {
