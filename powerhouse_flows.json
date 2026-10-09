@@ -1,0 +1,294 @@
+{
+  "target_base_url": "http://127.0.0.1:3000",
+  "surface_summary": {
+    "total_routes_detected": 11,
+    "routes_sample": [
+      "/",
+      "/about",
+      "/programs",
+      "/personal-training",
+      "/gallery",
+      "/reviews",
+      "/visit",
+      "/privacy-policy",
+      "/terms",
+      "/cookie-policy",
+      "/refund-policy"
+    ]
+  },
+  "user_flows": [
+    {
+      "flow_id": "flow_01_guest_discovery",
+      "flow_name": "Guest Discovery & Public Route Exploration",
+      "persona": {
+        "name": "Arjun (Prospective Gym Member)",
+        "role": "Guest / Unauthenticated Visitor",
+        "auth_state": "Unauthenticated (Clean session)",
+        "credentials": null
+      },
+      "preconditions": [
+        "Browser opens in clean session",
+        "Public gym website accessible"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/",
+          "description": "Navigate to Power House Gym homepage",
+          "expected_outcome": "HTTP 200 OK, brand header and hero load"
+        },
+        {
+          "step_num": 2,
+          "action": "assert_visible",
+          "selector": ".site-header",
+          "value": null,
+          "description": "Verify persistent navigation header is visible",
+          "expected_outcome": "Header is visible"
+        },
+        {
+          "step_num": 3,
+          "action": "assert_visible",
+          "selector": "#cookie-consent-banner",
+          "value": null,
+          "description": "Verify GDPR/DPDPA cookie consent banner displays for first-time visitor",
+          "expected_outcome": "Cookie consent banner appears"
+        },
+        {
+          "step_num": 4,
+          "action": "click",
+          "selector": "#cookie-btn-accept",
+          "value": null,
+          "description": "Accept cookies in consent banner",
+          "expected_outcome": "Banner closes and choice is stored"
+        },
+        {
+          "step_num": 5,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/about",
+          "description": "Navigate to About Us page",
+          "expected_outcome": "Coach Ameer story and credentials load"
+        },
+        {
+          "step_num": 6,
+          "action": "assert_visible",
+          "selector": "main",
+          "value": null,
+          "description": "Verify About Us main section is visible",
+          "expected_outcome": "Content visible"
+        },
+        {
+          "step_num": 7,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/programs",
+          "description": "Navigate to Programs & Membership page",
+          "expected_outcome": "Membership tiers and plan finder render"
+        },
+        {
+          "step_num": 8,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/personal-training",
+          "description": "Navigate to 1-on-1 Personal Training page",
+          "expected_outcome": "Personal training details render"
+        },
+        {
+          "step_num": 9,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/reviews",
+          "description": "Navigate to Reviews page",
+          "expected_outcome": "Verified member testimonials render"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 9,
+        "description": "Verify public exploration completes with valid page states across all core pages",
+        "assertion": "User has explored all main informational pages with zero console errors"
+      }
+    },
+    {
+      "flow_id": "flow_02_trial_booking_journey",
+      "flow_name": "Free 1-Day Trial Booking & Legal Consent Submission",
+      "persona": {
+        "name": "Pooja (Fitness Goal Seeker)",
+        "role": "Lead / Trial Applicant",
+        "auth_state": "Visitor seeking trial workout pass",
+        "credentials": null
+      },
+      "preconditions": [
+        "User intends to book free 1-day pass at Shahupuri facility"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/visit?trial=1#book-trial",
+          "description": "Navigate directly to trial booking form on Visit page",
+          "expected_outcome": "Visit page and trial booking section render"
+        },
+        {
+          "step_num": 2,
+          "action": "assert_visible",
+          "selector": "#book-trial",
+          "value": null,
+          "description": "Verify trial booking form is visible",
+          "expected_outcome": "Form is visible"
+        },
+        {
+          "step_num": 3,
+          "action": "type",
+          "selector": "#v-name",
+          "value": "Pooja Kulkarni",
+          "description": "Enter applicant full name",
+          "expected_outcome": "Name input receives value"
+        },
+        {
+          "step_num": 4,
+          "action": "type",
+          "selector": "#v-phone",
+          "value": "9822012345",
+          "description": "Enter WhatsApp phone number",
+          "expected_outcome": "Phone input receives value"
+        },
+        {
+          "step_num": 5,
+          "action": "click",
+          "selector": "#v-consent",
+          "value": null,
+          "description": "Check mandatory privacy & terms legal consent checkbox",
+          "expected_outcome": "Consent checkbox is checked"
+        },
+        {
+          "step_num": 6,
+          "action": "assert_visible",
+          "selector": "button[type='submit']",
+          "value": null,
+          "description": "Verify trial pass submission button is active",
+          "expected_outcome": "Submit button is ready"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 6,
+        "description": "Verify form readiness and affirmative legal consent state",
+        "assertion": "Lead form is completely validated with legal consent active"
+      }
+    },
+    {
+      "flow_id": "flow_03_gallery_equipment_explorer",
+      "flow_name": "Gym Equipment Gallery & Machine Carousel Inspection",
+      "persona": {
+        "name": "Rohan (Bodybuilding Athlete)",
+        "role": "Prospective Lifter inspecting biomechanics & equipment",
+        "auth_state": "Unauthenticated explorer",
+        "credentials": null
+      },
+      "preconditions": [
+        "User visits gallery to check equipment brands and specs"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/gallery",
+          "description": "Navigate to Gallery page",
+          "expected_outcome": "Gallery photos, filter tabs, and machines load"
+        },
+        {
+          "step_num": 2,
+          "action": "assert_visible",
+          "selector": ".gallery-grid, .equipment-grid, .gallery-card, .equipment-card",
+          "value": null,
+          "description": "Verify gallery image grid renders cards",
+          "expected_outcome": "Gallery cards visible"
+        },
+        {
+          "step_num": 3,
+          "action": "click",
+          "selector": ".gallery-card:first-child, .equipment-card:first-child, [data-category='strength']",
+          "value": null,
+          "description": "Interact with gallery item or category filter",
+          "expected_outcome": "Gallery responds to user click"
+        },
+        {
+          "step_num": 4,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/gallery#supplements",
+          "description": "Scroll to Supplements & Nutrition Fuel counter section",
+          "expected_outcome": "Supplement inventory details and pricing render"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 4,
+        "description": "Verify equipment gallery and nutrition counter are accessible",
+        "assertion": "Gallery showcases gym floor machines and fuel counter without rendering breaks"
+      }
+    },
+    {
+      "flow_id": "flow_04_legal_compliance_audit",
+      "flow_name": "Legal Compliance & Policy Verification Journey",
+      "persona": {
+        "name": "Advocate Deshmukh (Compliance Auditor)",
+        "role": "Regulatory & Legal Compliance Auditor",
+        "auth_state": "Auditing consumer protection and privacy frameworks",
+        "credentials": null
+      },
+      "preconditions": [
+        "Auditing DPDPA 2023, Consumer Protection Act 2019, and cookie controls"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/cookie-policy",
+          "description": "Navigate to Cookie Policy page",
+          "expected_outcome": "Cookie policy text, storage matrix, and preferences controls load"
+        },
+        {
+          "step_num": 2,
+          "action": "assert_visible",
+          "selector": ".legal-content",
+          "value": null,
+          "description": "Verify legal content article is visible",
+          "expected_outcome": "Article visible"
+        },
+        {
+          "step_num": 3,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/refund-policy",
+          "description": "Navigate to Refund & Cancellation Policy page",
+          "expected_outcome": "Refund policy, 60-day medical freeze, and supplement returns load"
+        },
+        {
+          "step_num": 4,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/privacy-policy",
+          "description": "Navigate to Privacy Policy page",
+          "expected_outcome": "DPDPA 2023 compliance terms render"
+        },
+        {
+          "step_num": 5,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/terms",
+          "description": "Navigate to Terms of Service & Gym Rules page",
+          "expected_outcome": "Facility etiquette and liability terms render"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 5,
+        "description": "Verify full legal suite is active, indexed, and linked across footers",
+        "assertion": "All 4 legal policies render with complete business details and zero broken links"
+      }
+    }
+  ]
+}

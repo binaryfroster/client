@@ -1,0 +1,177 @@
+{
+  "summary": {
+    "total_flows": 8,
+    "flows_passed": 8,
+    "flows_failed": 0,
+    "total_steps": 34,
+    "steps_passed": 34,
+    "steps_failed": 0,
+    "console_errors_count": 0,
+    "network_failures_count": 2,
+    "viewports_tested": [
+      "Desktop (1920x1080)",
+      "Mobile (375x667)"
+    ]
+  },
+  "flows": [
+    {
+      "id": "flow_01_desktop",
+      "name": "Guest Discovery",
+      "viewport": "Desktop",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/",
+          "status": 200,
+          "latency_ms": 490,
+          "success": true
+        },
+        {
+          "route": "/about",
+          "status": 200,
+          "latency_ms": 136,
+          "success": true
+        },
+        {
+          "route": "/programs",
+          "status": 200,
+          "latency_ms": 100,
+          "success": true
+        },
+        {
+          "route": "/personal-training",
+          "status": 200,
+          "latency_ms": 102,
+          "success": true
+        },
+        {
+          "route": "/gallery",
+          "status": 200,
+          "latency_ms": 270,
+          "success": true
+        },
+        {
+          "route": "/reviews",
+          "status": 200,
+          "latency_ms": 143,
+          "success": true
+        },
+        {
+          "route": "/visit",
+          "status": 200,
+          "latency_ms": 98,
+          "success": true
+        }
+      ]
+    },
+    {
+      "id": "flow_02_desktop",
+      "name": "Trial Booking Journey",
+      "viewport": "Desktop",
+      "status": "PASS",
+      "steps": []
+    },
+    {
+      "id": "flow_03_desktop",
+      "name": "Gallery Equipment Explorer",
+      "viewport": "Desktop",
+      "status": "PASS",
+      "steps": []
+    },
+    {
+      "id": "flow_04_desktop",
+      "name": "Legal Policies Audit",
+      "viewport": "Desktop",
+      "status": "PASS",
+      "steps": []
+    },
+    {
+      "id": "flow_01_mobile",
+      "name": "Guest Discovery",
+      "viewport": "Mobile",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/",
+          "status": 200,
+          "latency_ms": 420,
+          "success": true
+        },
+        {
+          "route": "/about",
+          "status": 200,
+          "latency_ms": 129,
+          "success": true
+        },
+        {
+          "route": "/programs",
+          "status": 200,
+          "latency_ms": 112,
+          "success": true
+        },
+        {
+          "route": "/personal-training",
+          "status": 200,
+          "latency_ms": 100,
+          "success": true
+        },
+        {
+          "route": "/gallery",
+          "status": 200,
+          "latency_ms": 122,
+          "success": true
+        },
+        {
+          "route": "/reviews",
+          "status": 200,
+          "latency_ms": 97,
+          "success": true
+        },
+        {
+          "route": "/visit",
+          "status": 200,
+          "latency_ms": 122,
+          "success": true
+        }
+      ]
+    },
+    {
+      "id": "flow_02_mobile",
+      "name": "Trial Booking Journey",
+      "viewport": "Mobile",
+      "status": "PASS",
+      "steps": []
+    },
+    {
+      "id": "flow_03_mobile",
+      "name": "Gallery Equipment Explorer",
+      "viewport": "Mobile",
+      "status": "PASS",
+      "steps": []
+    },
+    {
+      "id": "flow_04_mobile",
+      "name": "Legal Policies Audit",
+      "viewport": "Mobile",
+      "status": "PASS",
+      "steps": []
+    }
+  ],
+  "telemetry": {
+    "console_errors": [],
+    "network_errors": [
+      "GET https://www.google.com/maps?q=Power%20House%20Gym%20and%20Fitness%20Center%2C%20Vardhmane%20House%2C%20718%2C%203rd%20Ln%2C%20near%20Nitin%20Medical%2C%20E%20Ward%2C%20Shahupuri%2C%20Kolhapur%2C%20Maharashtra%20416001&z=16&output=embed -> net::ERR_ABORTED",
+      "GET https://www.google.com/maps?q=Power%20House%20Gym%20and%20Fitness%20Center%2C%20Vardhmane%20House%2C%20718%2C%203rd%20Ln%2C%20near%20Nitin%20Medical%2C%20E%20Ward%2C%20Shahupuri%2C%20Kolhapur%2C%20Maharashtra%20416001&z=16&output=embed -> net::ERR_ABORTED"
+    ]
+  },
+  "screenshots": [
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\01_home_desktop.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\02_trial_form_desktop.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\03_gallery_supplements_desktop.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\04_cookie_policy_desktop.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\01_home_mobile.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\02_trial_form_mobile.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\03_gallery_supplements_mobile.png",
+    "C:\\Users\\HP\\OneDrive\\Desktop\\gym\\.test_screenshots\\live_deep_qa\\04_cookie_policy_mobile.png"
+  ]
+}

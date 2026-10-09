@@ -1,0 +1,151 @@
+{
+  "engine": "WCAG 2.1 AA/AAA Contrast Scanner",
+  "total_pairs_tested": 14,
+  "wcag_aa_passed": 14,
+  "wcag_aa_failed": 0,
+  "wcag_aa_compliance_rate": "100.0%",
+  "wcag_aaa_passed": 11,
+  "status": "PASS",
+  "pairs": [
+    {
+      "name": "Text Primary on Background Primary",
+      "foreground": "#F8FAFC",
+      "background": "#08090C",
+      "contrast_ratio": "19.03:1",
+      "ratio_numeric": 19.03,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Text Primary on Card Background",
+      "foreground": "#F8FAFC",
+      "background": "#111520",
+      "contrast_ratio": "17.42:1",
+      "ratio_numeric": 17.42,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Text Primary on Secondary Background",
+      "foreground": "#F8FAFC",
+      "background": "#0D1017",
+      "contrast_ratio": "18.19:1",
+      "ratio_numeric": 18.19,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Text Secondary on Card Background",
+      "foreground": "#94A3B8",
+      "background": "#111520",
+      "contrast_ratio": "7.11:1",
+      "ratio_numeric": 7.11,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Text Secondary on Primary Background",
+      "foreground": "#94A3B8",
+      "background": "#08090C",
+      "contrast_ratio": "7.77:1",
+      "ratio_numeric": 7.77,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Text Muted (#8596A9) on Card Background",
+      "foreground": "#8596A9",
+      "background": "#111520",
+      "contrast_ratio": "6.02:1",
+      "ratio_numeric": 6.02,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "FAIL"
+    },
+    {
+      "name": "Text Muted (#8596A9) on Primary Background",
+      "foreground": "#8596A9",
+      "background": "#08090C",
+      "contrast_ratio": "6.57:1",
+      "ratio_numeric": 6.57,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "FAIL"
+    },
+    {
+      "name": "Accent Primary on Card Background",
+      "foreground": "#38BDF8",
+      "background": "#111520",
+      "contrast_ratio": "8.51:1",
+      "ratio_numeric": 8.51,
+      "is_large_text": true,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Brand Success on Card Background",
+      "foreground": "#10B981",
+      "background": "#111520",
+      "contrast_ratio": "7.19:1",
+      "ratio_numeric": 7.19,
+      "is_large_text": true,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Brand Warning on Card Background",
+      "foreground": "#F59E0B",
+      "background": "#111520",
+      "contrast_ratio": "8.49:1",
+      "ratio_numeric": 8.49,
+      "is_large_text": true,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Brand Error on Card Background",
+      "foreground": "#EF4444",
+      "background": "#111520",
+      "contrast_ratio": "4.84:1",
+      "ratio_numeric": 4.84,
+      "is_large_text": true,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Button Dark Text on Cyan Accent",
+      "foreground": "#020617",
+      "background": "#38BDF8",
+      "contrast_ratio": "9.42:1",
+      "ratio_numeric": 9.42,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    },
+    {
+      "name": "Slate 400 on Slate 900",
+      "foreground": "#94A3B8",
+      "background": "#0F172A",
+      "contrast_ratio": "6.96:1",
+      "ratio_numeric": 6.96,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "FAIL"
+    },
+    {
+      "name": "White Text on Slate 800",
+      "foreground": "#FFFFFF",
+      "background": "#1E293B",
+      "contrast_ratio": "14.63:1",
+      "ratio_numeric": 14.63,
+      "is_large_text": false,
+      "wcag_aa": "PASS",
+      "wcag_aaa": "PASS"
+    }
+  ]
+}

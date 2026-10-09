@@ -62,3 +62,5 @@
 - [Visit Us & Trial Booking](https://powerhouse.in/visit): Location map, directions, visit checklist, operating hours, and interactive trial booking form.
 - [Terms & Gym Rules](https://powerhouse.in/terms): Facility rules, hygiene policies, equipment etiquette, and membership terms.
 - [Privacy Policy](https://powerhouse.in/privacy-policy): DPDP Act 2023 compliant data protection and privacy policy.
+- [Cookie Policy](https://powerhouse.in/cookie-policy): Transparent disclosure on cookies, storage mechanisms, and user controls.
+- [Refund & Cancellation Policy](https://powerhouse.in/refund-policy): Clear consumer rights, trial protection, membership freezes, and refund guidelines under CPA 2019.

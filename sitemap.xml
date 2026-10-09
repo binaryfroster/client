@@ -89,4 +89,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
+  <url>
+    <loc>https://powerhouse.in/cookie-policy</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://powerhouse.in/refund-policy</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
 </urlset>

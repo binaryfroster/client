@@ -66,3 +66,10 @@ Yes, the custom diet plan add-on (₹800) accommodates vegetarian, eggetarian, a
 
 ### Do you sell gym supplements and protein snacks at Power House Gym?
 Yes! Power House Gym maintains an authentic nutrition fuel counter at reception in Shahupuri, Kolhapur. We sell Pintola High-Protein Chocolate Oats (26g protein), RiteBite Max Protein crisps and energy bars, Kuike pre-workout, Pro-Muscle intra-workout hydration, MuscleTech 100% Omega-3 fish oil, and MyFitness peanut butter. All products are 100% genuine, batch-verified, and sold separately at or below MRP to members and outside fitness enthusiasts. Instant UPI payment and coach dosage guidance are included.
+
+## Legal Framework & Consumer Protection
+- **Privacy Policy**: Compliant with India's Digital Personal Data Protection Act, 2023 (DPDP Act). Zero third-party ad-tracking cookies.
+- **Terms of Service**: Full etiquette guidelines, safety waiver, and facility rules.
+- **Cookie Policy**: Transparent disclosures on local storage keys (`phg_cookie_consent_v1`, `ph-intro`) and cookie preferences.
+- **Refund & Cancellation Policy**: 1-day free trial guarantee, cooling-off cancellations prior to workout initiation, 60-day medical freezes with doctor certification, and 7-day unopened supplement return guarantee under the Consumer Protection Act, 2019.
+

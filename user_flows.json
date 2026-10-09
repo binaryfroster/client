@@ -1,0 +1,271 @@
+{
+  "target_base_url": "http://127.0.0.1:3000",
+  "surface_summary": {
+    "total_routes_detected": 2,
+    "routes_sample": [
+      "/",
+      "/scraped_pages"
+    ],
+    "total_api_endpoints": 0,
+    "auth_mechanisms": [],
+    "roles_detected": [
+      "Editor",
+      "Manager",
+      "Member",
+      "User"
+    ]
+  },
+  "user_flows": [
+    {
+      "flow_id": "flow_01_guest_discovery",
+      "flow_name": "Guest Discovery & Public Route Exploration",
+      "persona": {
+        "name": "Alex (Curious Visitor)",
+        "role": "Guest / Unauthenticated Visitor",
+        "auth_state": "Unauthenticated (Empty localStorage & zero session cookies)",
+        "credentials": null
+      },
+      "preconditions": [
+        "Browser session starts in pristine state (incognito / cleared storage)",
+        "No authentication tokens present in cookies or localStorage"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/",
+          "description": "Navigate to application homepage",
+          "expected_outcome": "HTTP 200 OK and root DOM container is rendered"
+        },
+        {
+          "step_num": 2,
+          "action": "assert_visible",
+          "selector": "body",
+          "value": null,
+          "description": "Verify homepage body and content wrapper are visible",
+          "expected_outcome": "Homepage content displays without fatal errors"
+        },
+        {
+          "step_num": 3,
+          "action": "type",
+          "selector": "input[type='search'], input[name='search'], input[placeholder*='search' i], input[placeholder*='find' i]",
+          "value": "sample query",
+          "description": "Enter search query in discovery search bar",
+          "expected_outcome": "Search input receives text without component crashing"
+        },
+        {
+          "step_num": 4,
+          "action": "press",
+          "selector": "input[type='search'], input[name='search'], input[placeholder*='search' i]",
+          "value": "Enter",
+          "description": "Execute search query",
+          "expected_outcome": "Search results view or filtered list updates"
+        },
+        {
+          "step_num": 5,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/scraped_pages",
+          "description": "Navigate to public secondary page (/scraped_pages)",
+          "expected_outcome": "Secondary route loads with clean console and valid DOM"
+        },
+        {
+          "step_num": 6,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/dashboard",
+          "description": "Attempt to access protected dashboard as unauthenticated guest",
+          "expected_outcome": "Protected route guard triggers"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 6,
+        "description": "Verify access to protected route is rejected or redirected to login",
+        "assertion": "Current URL does not expose protected /dashboard data; redirects to login or displays auth modal"
+      },
+      "edge_cases": [
+        "Search bar with empty query string or special symbols (!@#$%^&*)",
+        "Navigation to deeply nested nonexistent public subpage"
+      ]
+    },
+    {
+      "flow_id": "flow_02_registered_user",
+      "flow_name": "Registered User Authentication & Primary Transactional Journey",
+      "persona": {
+        "name": "Jordan (Registered Customer)",
+        "role": "Standard Registered User",
+        "auth_state": "Authenticated Session",
+        "credentials": {
+          "email": "user@example.com",
+          "password": "ValidPassword123!"
+        }
+      },
+      "preconditions": [
+        "Application authentication endpoints are accessible",
+        "User account exists or test mock auth is enabled"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/login",
+          "description": "Navigate to login / authentication portal (/login)",
+          "expected_outcome": "Login page renders with username/email and password inputs"
+        },
+        {
+          "step_num": 2,
+          "action": "type",
+          "selector": "input[type='email'], input[name='email'], input[name='username'], input[placeholder*='email' i]",
+          "value": "user@example.com",
+          "description": "Enter registered user email / username",
+          "expected_outcome": "Email input accepts value cleanly"
+        },
+        {
+          "step_num": 3,
+          "action": "type",
+          "selector": "input[type='password'], input[name='password'], input[placeholder*='password' i]",
+          "value": "ValidPassword123!",
+          "description": "Enter secure password",
+          "expected_outcome": "Password input securely masked and filled"
+        },
+        {
+          "step_num": 4,
+          "action": "click",
+          "selector": "button[type='submit'], button:has-text('Sign in'), button:has-text('Log in'), form button",
+          "value": null,
+          "description": "Click login submission button",
+          "expected_outcome": "Form triggers authentication API without unhandled promise rejections"
+        },
+        {
+          "step_num": 5,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/dashboard",
+          "description": "Navigate to authenticated member dashboard (/dashboard)",
+          "expected_outcome": "Authenticated session recognized and user dashboard renders"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 5,
+        "description": "Verify core user state persistence and confirmation feedback",
+        "assertion": "User session is established, dashboard components rendered, and primary business action confirms via UI badge, toast, or list update"
+      },
+      "edge_cases": [
+        "Attempt login with invalid password format",
+        "Rapid double-click on login submission button",
+        "Form submission with trailing whitespace in email"
+      ]
+    },
+    {
+      "flow_id": "flow_03_admin_management",
+      "flow_name": "Privileged Admin & Configuration Management Journey",
+      "persona": {
+        "name": "Morgan (System Administrator)",
+        "role": "SuperAdmin / Staff",
+        "auth_state": "Elevated Privileges (ROLE_ADMIN)",
+        "credentials": {
+          "email": "admin@example.com",
+          "role": "Administrator"
+        }
+      },
+      "preconditions": [
+        "Administrative route endpoints mapped",
+        "RBAC permissions gate active"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/admin",
+          "description": "Navigate to administrative dashboard (/admin)",
+          "expected_outcome": "Admin console or role-guard verification initiates"
+        },
+        {
+          "step_num": 2,
+          "action": "assert_visible",
+          "selector": "body",
+          "value": null,
+          "description": "Verify admin interface elements render without 500 error",
+          "expected_outcome": "Admin table, metrics widgets, or access-control gate renders cleanly"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 2,
+        "description": "Verify administrative permissions enforcement and data rendering",
+        "assertion": "Admin console renders data cleanly or securely enforces role verification without uncaught server exceptions"
+      },
+      "edge_cases": [
+        "Non-admin role attempting direct URL access to administrative endpoints",
+        "Handling of empty data tables in admin dashboard"
+      ]
+    },
+    {
+      "flow_id": "flow_04_boundary_fuzzing",
+      "flow_name": "Boundary, Validation & Fault Recovery Journey",
+      "persona": {
+        "name": "Taylor (QA Fuzzer & Stress Tester)",
+        "role": "Adversarial Quality Tester",
+        "auth_state": "Dynamic / Edge Context",
+        "credentials": null
+      },
+      "preconditions": [
+        "Application error boundaries and 404 handlers active",
+        "Form validation rules initialized"
+      ],
+      "steps": [
+        {
+          "step_num": 1,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/login",
+          "description": "Navigate to form under test",
+          "expected_outcome": "Form renders ready for input"
+        },
+        {
+          "step_num": 2,
+          "action": "click",
+          "selector": "button[type='submit'], form button",
+          "value": null,
+          "description": "Submit empty form without filling required fields",
+          "expected_outcome": "HTML5 or custom validation flags missing input without unhandled JS crash"
+        },
+        {
+          "step_num": 3,
+          "action": "type",
+          "selector": "input[type='text'], input[type='email'], input:not([type='hidden'])",
+          "value": "<script>alert('xss')</script>' OR '1'='1",
+          "description": "Inject fuzz / boundary special characters into text field",
+          "expected_outcome": "Input text is properly escaped and handled safely by sanitizers"
+        },
+        {
+          "step_num": 4,
+          "action": "navigate",
+          "selector": null,
+          "value": "http://127.0.0.1:3000/__qa_non_existent_route_404__",
+          "description": "Trigger explicit 404 navigation to non-existent route",
+          "expected_outcome": "Application gracefully displays custom 404 Not Found page"
+        },
+        {
+          "step_num": 5,
+          "action": "click",
+          "selector": "a[href='/'], a:has-text('Home'), a:has-text('Back')",
+          "value": null,
+          "description": "Click recovery link from 404 page",
+          "expected_outcome": "User smoothly recovered back to homepage"
+        }
+      ],
+      "terminal_step": {
+        "step_num": 5,
+        "description": "Verify application recovers gracefully to home state after fault injection",
+        "assertion": "Zero white screens of death, zero unhandled promise rejections, and working recovery navigation from 404 view"
+      },
+      "edge_cases": [
+        "Excessively long string payloads (10,000+ characters)",
+        "Browser history back/forward navigation during form submission"
+      ]
+    }
+  ]
+}
