@@ -2677,13 +2677,15 @@ html.ph-intro-playing #brand-intro {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+              visibility 0s 0.28s;
 }
 
 .equipment-modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0s 0s;
 }
 
 .equipment-modal-backdrop {
@@ -2743,12 +2745,13 @@ html.ph-intro-playing #brand-intro {
 .equipment-modal-nav-floating {
   position: absolute;
   top: 50%;
-  inset-inline: 16px;
+  inset-inline: 12px;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   pointer-events: none;
   z-index: 15;
+  width: calc(100% - 24px);
 }
 
 .modal-nav-arrow {
@@ -2775,6 +2778,14 @@ html.ph-intro-playing #brand-intro {
   transform: scale(1.1);
 }
 
+.equipment-modal-close:focus-visible,
+.modal-nav-arrow:focus-visible,
+.modal-btn-trial:focus-visible,
+.modal-btn-wa:focus-visible {
+  outline: 2px solid var(--primary, #a8ff00);
+  outline-offset: 3px;
+}
+
 .equipment-modal-body-split {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -2787,9 +2798,6 @@ html.ph-intro-playing #brand-intro {
   .equipment-modal-body-split {
     grid-template-columns: 1fr;
     max-height: 85vh;
-  }
-  .equipment-modal-nav-floating {
-    top: 220px;
   }
 }
 

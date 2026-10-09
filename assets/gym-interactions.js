@@ -452,6 +452,201 @@
 
     const EQUIPMENT_CATALOG = [
       {
+        id: "viva-fitness-flat-bench-press",
+        name: "Viva Fitness Olympic Flat Bench Press (Floor Perspective)",
+        category: "Strength & Free Weights",
+        categorySlug: "strength",
+        tag: "Olympic Bench Press",
+        shortDesc: "Full training floor view of the Viva Fitness Olympic flat bench press station showing Olympic bar knurling, bumper plates, conditioning battle ropes, and mirror alignment.",
+        targetMuscles: "Pectoralis Major, Triceps Brachii, Anterior Deltoids",
+        specs: "Wide-base stability frame \u2022 High-density sweat-resistant upholstery \u2022 Competition width bench pad \u2022 Non-slip rubber footings",
+        coachTip: "Ameer's Tip: Always control the eccentric descent to your sternum before driving up with explosive power.",
+        image: "/assets/equipment/viva-fitness-flat-bench-press.webp",
+        alt: "Viva Fitness Olympic flat bench press floor station at Power House Gym"
+      },
+      {
+        id: "olympic-flat-bench-battle-ropes",
+        name: "Viva Fitness Olympic Flat Bench & Conditioning Battle Ropes",
+        category: "Strength & Free Weights",
+        categorySlug: "strength",
+        tag: "Chest & Battle Ropes",
+        shortDesc: "Viva Fitness heavy-gauge steel flat bench press station with knurled Olympic barbell and safety bar catches, paired with heavy conditioning battle ropes for high-intensity metabolic conditioning.",
+        targetMuscles: "Pectoralis Major (Mid-Chest), Anterior Deltoids, Triceps, Core, Grip",
+        specs: "Heavy-duty Viva Fitness steel bench \u2022 Dual-height bar rest catches \u2022 50mm poly-dacron battle ropes \u2022 Floor-anchored safety hook",
+        coachTip: "Ameer's Tip: Retract your scapula and keep feet firmly planted to push maximum weight safely without shoulder strain.",
+        image: "/assets/equipment/olympic-flat-bench-battle-ropes.webp",
+        alt: "Viva Fitness Olympic flat bench press and battle ropes at Power House Gym"
+      },
+      {
+        id: "viva-fitness-incline-bench-press",
+        name: "Viva Fitness Olympic Incline Bench Press Station",
+        category: "Strength & Free Weights",
+        categorySlug: "strength",
+        tag: "Upper Chest & Shoulders",
+        shortDesc: "Dedicated Olympic incline bench press featuring a 30-degree ergonomic press angle, multi-tiered gun-rack bar catches, and an adjustable contoured seat to isolate upper chest development.",
+        targetMuscles: "Clavicular Head (Upper Chest), Anterior Deltoids, Triceps",
+        specs: "30\u00b0 biomechanically optimal incline \u2022 Multi-level steel racking hooks \u2022 Adjustable height seat bottom \u2022 Heavy commercial boxed frame",
+        coachTip: "Ameer's Tip: The 30\u00b0 angle hits the upper chest fibers right under the clavicle without transferring load to your neck or rotator cuffs.",
+        image: "/assets/equipment/viva-fitness-incline-bench-press.webp",
+        alt: "Viva Fitness Olympic incline bench press station at Power House Gym Kolhapur"
+      },
+      {
+        id: "olympic-squat-rack-stands",
+        name: "Adjustable Olympic Squat Stands & Spotter Rack",
+        category: "Strength & Free Weights",
+        categorySlug: "strength",
+        tag: "Squats & Heavy Lifts",
+        shortDesc: "Heavy-duty adjustable Olympic squat stands equipped with multi-height J-cups, extended safety spotter arms, and rear weight storage pegs positioned in front of full-length mirrors.",
+        targetMuscles: "Quadriceps, Glutes, Hamstrings, Adductors, Spinal Erectors, Core",
+        specs: "Heavy commercial steel uprights \u2022 Quick-adjust safety pin catches \u2022 Extended safety spotter catch arms \u2022 Rear weight horns for stability",
+        coachTip: "Ameer's Tip: Use the full-length mirror to check your hip crease depth below parallel on back squats to ensure true quad recruitment.",
+        image: "/assets/equipment/olympic-squat-rack-stands.webp",
+        alt: "Adjustable Olympic squat stands with safety spotter arms at Power House Gym Kolhapur"
+      },
+      {
+        id: "dumbbell-rack-free-weights",
+        name: "Heavy-Duty Dumbbell Racks & Olympic Weight Plate Tree",
+        category: "Strength & Free Weights",
+        categorySlug: "strength",
+        tag: "Free Weights Arsenal",
+        shortDesc: "Extensive free-weights lineup featuring heavy-duty rubber hex dumbbells and pro-style round urethane dumbbells from 2.5 kg up to 28+ kg, alongside chrome Olympic barbells and Olympic weight plates.",
+        targetMuscles: "Full-Body Hypertrophy, Chest, Shoulders, Arms, Back, Legs",
+        specs: "2.5 kg to 28+ kg continuous dumbbell pairs \u2022 Ergonomic knurled handles \u2022 Heavy rubber floor protection \u2022 3-tier angled heavy-gauge steel rack",
+        coachTip: "Ameer's Tip: Free-weight dumbbells force both sides of your body to work equally, correcting imbalances and building functional stabilization.",
+        image: "/assets/equipment/dumbbell-rack-free-weights.webp",
+        alt: "Commercial dumbbell racks and Olympic plate tree at Power House Gym Shahupuri"
+      },
+      {
+        id: "preacher-curl-ez-barbell-bench",
+        name: "Ergonomic Preacher Curl Bench with Olympic EZ Barbell",
+        category: "Strength & Free Weights",
+        categorySlug: "strength",
+        tag: "Biceps Isolation",
+        shortDesc: "Dedicated bicep isolation bench with dense angled arm pad contoured to prevent shoulder recruitment, complete with an Olympic EZ curl barbell resting on durable cradle hooks.",
+        targetMuscles: "Biceps Brachii (Short & Long Heads), Brachialis, Forearm Flexors",
+        specs: "Anatomical 45\u00b0 arm support angle \u2022 Heavy-duty barbell cradle hooks \u2022 Chrome Olympic EZ curl bar \u2022 Tear-resistant vinyl padding",
+        coachTip: "Ameer's Tip: Preacher curls eliminate cheating and body momentum, placing 100% of the load on the bicep peak for faster muscle growth.",
+        image: "/assets/equipment/preacher-curl-ez-barbell-bench.webp",
+        alt: "Preacher curl bench with Olympic EZ barbell at Power House Gym Kolhapur"
+      },
+      {
+        id: "viva-fitness-45-leg-press",
+        name: "Viva Fitness Optima 45\u00b0 Incline Leg Press & Hack Squat",
+        category: "Machines & Cables",
+        categorySlug: "machines",
+        tag: "Heavy 45\u00b0 Leg Press",
+        shortDesc: "Heavy commercial 45-degree linear bearing leg press featuring an oversized diamond tread footplate, dual safety lockouts, and Olympic plate horns for massive lower-body power without spinal compression.",
+        targetMuscles: "Quadriceps, Gluteus Maximus, Hamstrings, Adductors, Calves",
+        specs: "45-degree angle of travel \u2022 Industrial linear guide bearings \u2022 Oversized diamond steel footplate \u2022 Dual safety release handles \u2022 Olympic plate storage horns",
+        coachTip: "Ameer's Tip: Place feet shoulder-width in the middle of the plate for balanced quad and glute drive. Never lock out your knees at the top.",
+        image: "/assets/equipment/viva-fitness-45-leg-press.webp",
+        alt: "Viva Fitness Optima 45 degree incline leg press machine at Power House Gym Kolhapur"
+      },
+      {
+        id: "lat-pulldown-cable-station",
+        name: "Commercial Lat Pulldown & High Cable Machine",
+        category: "Machines & Cables",
+        categorySlug: "machines",
+        tag: "Back Width & Lat Pulldown",
+        shortDesc: "Commercial cable tower equipped with wide neutral-grip lat attachment, ultra-smooth aircraft steel cables, and adjustable contoured thigh hold-down pads for back width and strength.",
+        targetMuscles: "Latissimus Dorsi (Lats), Rhomboids, Rear Deltoids, Biceps, Forearms",
+        specs: "Selectorized weight stack \u2022 Nylon-jacketed aircraft cable \u2022 Multi-height adjustable roller thigh lock \u2022 Ergonomic wide neutral-grip lat bar",
+        coachTip: "Ameer's Tip: Drive down with your elbows rather than pulling with your forearms to maximize back lats width and achieve that classic V-taper.",
+        image: "/assets/equipment/lat-pulldown-cable-station.webp",
+        alt: "Commercial lat pulldown cable machine at Power House Gym Kolhapur"
+      },
+      {
+        id: "pec-fly-rear-delt-machine",
+        name: "Dual Pectoral Fly & Rear Deltoid Machine",
+        category: "Machines & Cables",
+        categorySlug: "machines",
+        tag: "Chest Fly & Rear Delts",
+        shortDesc: "Dual-function selectorized machine with dual overhead cam pivots, multi-position rotating handles, and adjustable seat for isolated chest flyes and posterior shoulder development.",
+        targetMuscles: "Pectoralis Major (Chest Squeeze), Posterior Deltoid (Rear Shoulder), Rhomboids",
+        specs: "Dual independent overhead pivot arms \u2022 360\u00b0 rotating hand grips \u2022 Multi-position range-of-motion selector pins \u2022 Pin-loaded weight stack",
+        coachTip: "Ameer's Tip: Face the machine for reverse flyes to strengthen your rear delts and fix hunched posture from sitting at computers.",
+        image: "/assets/equipment/pec-fly-rear-delt-machine.webp",
+        alt: "Dual pectoral fly and rear deltoid machine at Power House Gym Kolhapur"
+      },
+      {
+        id: "viva-fitness-leg-extension-curl",
+        name: "Viva Fitness Optima Seated Leg Extension & Leg Curl",
+        category: "Machines & Cables",
+        categorySlug: "machines",
+        tag: "Quad & Hamstring Isolation",
+        shortDesc: "Dual-function selectorized lower body machine featuring an anatomical cam for variable resistance matching the human strength curve, isolating quadriceps and hamstrings safely.",
+        targetMuscles: "Quadriceps (Rectus Femoris, Vastus Medialis/Lateralis), Hamstrings",
+        specs: "Biomechanical cam matched to muscle curve \u2022 Self-aligning padded shin roller \u2022 Adjustable backrest depth \u2022 Yellow quick-action selector levers",
+        coachTip: "Ameer's Tip: Pause for a full second at peak extension to build the teardrop vastus medialis muscle above your knee.",
+        image: "/assets/equipment/viva-fitness-leg-extension-curl.webp",
+        alt: "Viva Fitness Optima seated leg extension and leg curl machine at Power House Gym"
+      },
+      {
+        id: "commercial-treadmills-elliptical",
+        name: "Commercial Motorized Treadmills & Elliptical Cross Trainer",
+        category: "Cardio Zone",
+        categorySlug: "cardio",
+        tag: "Treadmills & Cross Trainer",
+        shortDesc: "Heavy-duty commercial grade treadmills with multi-level motorized incline and impact-cushioned running decks, paired with an ergonomic elliptical trainer for zero-impact joint cardio.",
+        targetMuscles: "Aerobic Conditioning, Fat Loss, Calves, Quads, Hamstrings, Core",
+        specs: "High-torque AC commercial motor \u2022 Shock-absorbing multi-ply running belt \u2022 Power incline adjustment \u2022 Dual-action synchronized elliptical motion",
+        coachTip: "Ameer's Tip: Incline walking at 8-12% grade burns maximum fat while saving your knee joints compared to flat outdoor running.",
+        image: "/assets/equipment/commercial-treadmills-elliptical.webp",
+        alt: "Commercial motorized treadmills and elliptical cross trainer at Power House Gym Kolhapur"
+      },
+      {
+        id: "viva-fitness-spin-bikes",
+        name: "Viva Fitness Commercial Spin Bikes & Upright Cycle",
+        category: "Cardio Zone",
+        categorySlug: "cardio",
+        tag: "Spinning & Endurance",
+        shortDesc: "High-performance commercial studio cycling bikes with heavy perimeter-weighted flywheels, micro-adjustable resistance knobs, and a digital upright cycle for intense cardiovascular conditioning.",
+        targetMuscles: "Cardiovascular Endurance, Quadriceps, Hamstrings, Calves, Glutes",
+        specs: "Heavy perimeter-weighted flywheel \u2022 SPD toe-cage pedals \u2022 Emergency push-stop brake \u2022 Multi-grip aero handlebars",
+        coachTip: "Ameer's Tip: Use high-cadence intervals (30s sprint / 30s recovery) for 15 minutes to torch calories and maximize VO2 max after heavy lifting.",
+        image: "/assets/equipment/viva-fitness-spin-bikes.webp",
+        alt: "Viva Fitness commercial spin bikes and upright exercise cycle at Power House Gym"
+      },
+      {
+        id: "captains-chair-knee-raise-dip-twister",
+        name: "Captain's Chair Power Tower, Dip Station & Core Twister",
+        category: "Core & Conditioning",
+        categorySlug: "core",
+        tag: "Knee Raise, Dips & Twister",
+        shortDesc: "All-in-one bodyweight core and upper body station featuring vertical knee raise back support, cushioned forearm rests, dip handles, and an integrated rotational oblique twister disc.",
+        targetMuscles: "Lower Abdominals (Hanging Knee Raise), Triceps, Chest (Dips), Obliques (Twister)",
+        specs: "High-density lumbar and forearm cushions \u2022 Dual textured vertical handles \u2022 Welded steel stability base \u2022 Integrated ball-bearing waist twister plate",
+        coachTip: "Ameer's Tip: Keep your torso still and lift your knees using your lower abs without swinging your legs for maximum core isolation.",
+        image: "/assets/equipment/captains-chair-knee-raise-dip-twister.webp",
+        alt: "Captains chair vertical knee raise dip station and twister at Power House Gym"
+      },
+      {
+        id: "decline-abdominal-crunch-bench",
+        name: "Adjustable Decline Sit-Up & Abdominal Crunch Bench",
+        category: "Core & Conditioning",
+        categorySlug: "core",
+        tag: "Abdominal & Core Strength",
+        shortDesc: "Heavy commercial abdominal bench with multi-angle decline adjustments and oversized padded leg-lock rollers for intense core compression, decline sit-ups, and weighted ab crunches.",
+        targetMuscles: "Rectus Abdominis (Upper & Lower Abs), Hip Flexors, Core Stabilizers",
+        specs: "Multi-position decline angle pin selector \u2022 4-point high-density foam leg rollers \u2022 Ergonomic front grab handle \u2022 Transport mobility wheels",
+        coachTip: "Ameer's Tip: Don't pull with your neck\u2014focus on curling your ribcage towards your pelvis to fully fire your abdominal wall.",
+        image: "/assets/equipment/decline-abdominal-crunch-bench.webp",
+        alt: "Adjustable decline sit up and crunch bench at Power House Gym"
+      },
+      {
+        id: "core-situp-bench-dumbbells",
+        name: "Core & Abdominal Conditioning Bench with Free Weights",
+        category: "Core & Conditioning",
+        categorySlug: "core",
+        tag: "Weighted Core Conditioning",
+        shortDesc: "Reinforced decline core board with companion dumbbells ready for weighted Russian twists, incline dragon flags, and progressive abdominal overload routines.",
+        targetMuscles: "Transverse Abdominis, Obliques, Rectus Abdominis, Core Rotational Power",
+        specs: "Thick non-slip back support cushion \u2022 Reinforced steel spinal spine \u2022 Quick angle pin adjust \u2022 Compact floor footprint",
+        coachTip: "Ameer's Tip: Add 2.5 kg or 5 kg dumbbells across your chest on decline crunches to stimulate dense, visible abdominal bricks.",
+        image: "/assets/equipment/core-situp-bench-dumbbells.webp",
+        alt: "Core conditioning decline bench with dumbbells at Power House Gym Kolhapur"
+      },
+      {
         id: "supplements-protein-counter",
         name: "Power House High-Protein Nutrition Bar & Healthy Snacks",
         category: "Supplements & Nutrition",
@@ -459,7 +654,7 @@
         tag: "Protein Snacks & Oats",
         shortDesc: "Genuine fitness nutrition including Pintola High Protein Chocolate Oats (26g protein per serving), RiteBite Max Protein 7-grain crisps (Chilli Lemon, Cream & Onion, Sweet Thai Chilli), and Max Protein Active bars. Sold separately at our reception counter for members and visitors.",
         targetMuscles: "Muscle Recovery, Clean Daily Macros, Post-Workout Fuel",
-        specs: "Authentic batch verified • 100% FSSAI certified • 10g to 26g clean protein per serving • Zero maida & no added sugar",
+        specs: "Authentic batch verified \u2022 100% FSSAI certified \u2022 10g to 26g clean protein per serving \u2022 Zero maida & no added sugar",
         coachTip: "Ameer's Tip: Grab a pack of Max Protein or Pintola oats directly after your session to hit your post-workout protein window without empty calories.",
         image: "/assets/equipment/supplements-protein-counter.webp",
         alt: "Power House Gym supplement and high-protein snack counter in Shahupuri Kolhapur"
@@ -472,205 +667,10 @@
         tag: "Supplements & Health Spreads",
         shortDesc: "100% authentic fitness nutrition stock including Pro-Muscle Energy Blast Watermelon intra-workout hydration, MuscleTech 100% Fish Oil (Omega-3), Kuike Pre-Workout, MyFitness Chocolate Peanut Butter, Max Protein Peanut Butter, and daily multivitamins. Available for direct purchase.",
         targetMuscles: "Endurance, Intra-Workout Hydration, Joint Health, Healthy Fats",
-        specs: "Sealed manufacturer batches • Pre-workout explosive pump • Pure EPA/DHA Omega-3 • High-protein crispy peanut butter",
+        specs: "Sealed manufacturer batches \u2022 Pre-workout explosive pump \u2022 Pure EPA/DHA Omega-3 \u2022 High-protein crispy peanut butter",
         coachTip: "Ameer's Tip: We stock only genuine, lab-verified supplements. Talk to Coach Ameer to pick the exact supplement tailored to your training goal.",
         image: "/assets/equipment/supplements-nutrition-shelf.webp",
         alt: "Authentic workout supplements protein and preworkout at Power House Gym Kolhapur"
-      },
-      {
-        id: "viva-fitness-spin-bikes",
-        name: "Viva Fitness Commercial Spin Bikes & Upright Cycle",
-        category: "Cardio Zone",
-        categorySlug: "cardio",
-        tag: "Spinning & Endurance",
-        shortDesc: "High-performance commercial studio cycling bikes with heavy perimeter-weighted flywheels, micro-adjustable resistance knobs, and a digital upright cycle for intense cardiovascular conditioning.",
-        targetMuscles: "Cardiovascular Endurance, Quadriceps, Hamstrings, Calves, Glutes",
-        specs: "Heavy perimeter-weighted flywheel • SPD toe-cage pedals • Emergency push-stop brake • Multi-grip aero handlebars",
-        coachTip: "Ameer's Tip: Use high-cadence intervals (30s sprint / 30s recovery) for 15 minutes to torch calories and maximize VO2 max after heavy lifting.",
-        image: "/assets/equipment/viva-fitness-spin-bikes.webp",
-        alt: "Viva Fitness commercial spin bikes and upright exercise cycle at Power House Gym"
-      },
-      {
-        id: "commercial-treadmills-elliptical",
-        name: "Commercial Motorized Treadmills & Elliptical Cross Trainer",
-        category: "Cardio Zone",
-        categorySlug: "cardio",
-        tag: "Treadmills & Cross Trainer",
-        shortDesc: "Heavy-duty commercial grade treadmills with multi-level motorized incline and impact-cushioned running decks, paired with an ergonomic elliptical trainer for zero-impact joint cardio.",
-        targetMuscles: "Aerobic Conditioning, Fat Loss, Calves, Quads, Hamstrings, Core",
-        specs: "High-torque AC commercial motor • Shock-absorbing multi-ply running belt • Power incline adjustment • Dual-action synchronized elliptical motion",
-        coachTip: "Ameer's Tip: Incline walking at 8-12% grade burns maximum fat while saving your knee joints compared to flat outdoor running.",
-        image: "/assets/equipment/commercial-treadmills-elliptical.webp",
-        alt: "Commercial motorized treadmills and elliptical cross trainer at Power House Gym Kolhapur"
-      },
-      {
-        id: "dumbbell-rack-free-weights",
-        name: "Heavy-Duty Dumbbell Racks & Olympic Weight Plate Tree",
-        category: "Strength & Free Weights",
-        categorySlug: "strength",
-        tag: "Free Weights Arsenal",
-        shortDesc: "Extensive free-weights lineup featuring heavy-duty rubber hex dumbbells and pro-style round urethane dumbbells from 2.5 kg up to 28+ kg, alongside chrome Olympic barbells and Olympic weight plates.",
-        targetMuscles: "Full-Body Hypertrophy, Chest, Shoulders, Arms, Back, Legs",
-        specs: "2.5 kg to 28+ kg continuous dumbbell pairs • Ergonomic knurled handles • Heavy rubber floor protection • 3-tier angled heavy-gauge steel rack",
-        coachTip: "Ameer's Tip: Free-weight dumbbells force both sides of your body to work equally, correcting imbalances and building functional stabilization.",
-        image: "/assets/equipment/dumbbell-rack-free-weights.webp",
-        alt: "Commercial dumbbell racks and Olympic plate tree at Power House Gym Shahupuri"
-      },
-      {
-        id: "olympic-flat-bench-battle-ropes",
-        name: "Viva Fitness Olympic Flat Bench & Conditioning Battle Ropes",
-        category: "Strength & Free Weights",
-        categorySlug: "strength",
-        tag: "Chest & Battle Ropes",
-        shortDesc: "Viva Fitness heavy-gauge steel flat bench press station with knurled Olympic barbell and safety bar catches, paired with heavy conditioning battle ropes for high-intensity metabolic conditioning.",
-        targetMuscles: "Pectoralis Major (Mid-Chest), Anterior Deltoids, Triceps, Core, Grip",
-        specs: "Heavy-duty Viva Fitness steel bench • Dual-height bar rest catches • 50mm poly-dacron battle ropes • Floor-anchored safety hook",
-        coachTip: "Ameer's Tip: Retract your scapula and keep feet firmly planted to push maximum weight safely without shoulder strain.",
-        image: "/assets/equipment/olympic-flat-bench-battle-ropes.webp",
-        alt: "Viva Fitness Olympic flat bench press and battle ropes at Power House Gym"
-      },
-      {
-        id: "olympic-squat-rack-stands",
-        name: "Adjustable Olympic Squat Stands & Spotter Rack",
-        category: "Strength & Free Weights",
-        categorySlug: "strength",
-        tag: "Squats & Heavy Lifts",
-        shortDesc: "Heavy-duty adjustable Olympic squat stands equipped with multi-height J-cups, extended safety spotter arms, and rear weight storage pegs positioned in front of full-length mirrors.",
-        targetMuscles: "Quadriceps, Glutes, Hamstrings, Adductors, Spinal Erectors, Core",
-        specs: "Heavy commercial steel uprights • Quick-adjust safety pin catches • Extended safety spotter catch arms • Rear weight horns for stability",
-        coachTip: "Ameer's Tip: Use the full-length mirror to check your hip crease depth below parallel on back squats to ensure true quad recruitment.",
-        image: "/assets/equipment/olympic-squat-rack-stands.webp",
-        alt: "Adjustable Olympic squat stands with safety spotter arms at Power House Gym Kolhapur"
-      },
-      {
-        id: "viva-fitness-flat-bench-press",
-        name: "Viva Fitness Olympic Flat Bench Press (Floor Perspective)",
-        category: "Strength & Free Weights",
-        categorySlug: "strength",
-        tag: "Olympic Bench Press",
-        shortDesc: "Full training floor view of the Viva Fitness Olympic flat bench press station showing Olympic bar knurling, bumper plates, conditioning battle ropes, and mirror alignment.",
-        targetMuscles: "Pectoralis Major, Triceps Brachii, Anterior Deltoids",
-        specs: "Wide-base stability frame • High-density sweat-resistant upholstery • Competition width bench pad • Non-slip rubber footings",
-        coachTip: "Ameer's Tip: Always control the eccentric descent to your sternum before driving up with explosive power.",
-        image: "/assets/equipment/viva-fitness-flat-bench-press.webp",
-        alt: "Viva Fitness Olympic flat bench press floor station at Power House Gym"
-      },
-      {
-        id: "viva-fitness-incline-bench-press",
-        name: "Viva Fitness Olympic Incline Bench Press Station",
-        category: "Strength & Free Weights",
-        categorySlug: "strength",
-        tag: "Upper Chest & Shoulders",
-        shortDesc: "Dedicated Olympic incline bench press featuring a 30-degree ergonomic press angle, multi-tiered gun-rack bar catches, and an adjustable contoured seat to isolate upper chest development.",
-        targetMuscles: "Clavicular Head (Upper Chest), Anterior Deltoids, Triceps",
-        specs: "30° biomechanically optimal incline • Multi-level steel racking hooks • Adjustable height seat bottom • Heavy commercial boxed frame",
-        coachTip: "Ameer's Tip: The 30° angle hits the upper chest fibers right under the clavicle without transferring load to your neck or rotator cuffs.",
-        image: "/assets/equipment/viva-fitness-incline-bench-press.webp",
-        alt: "Viva Fitness Olympic incline bench press station at Power House Gym Kolhapur"
-      },
-      {
-        id: "decline-abdominal-crunch-bench",
-        name: "Adjustable Decline Sit-Up & Abdominal Crunch Bench",
-        category: "Core & Conditioning",
-        categorySlug: "core",
-        tag: "Abdominal & Core Strength",
-        shortDesc: "Heavy commercial abdominal bench with multi-angle decline adjustments and oversized padded leg-lock rollers for intense core compression, decline sit-ups, and weighted ab crunches.",
-        targetMuscles: "Rectus Abdominis (Upper & Lower Abs), Hip Flexors, Core Stabilizers",
-        specs: "Multi-position decline angle pin selector • 4-point high-density foam leg rollers • Ergonomic front grab handle • Transport mobility wheels",
-        coachTip: "Ameer's Tip: Don't pull with your neck—focus on curling your ribcage towards your pelvis to fully fire your abdominal wall.",
-        image: "/assets/equipment/decline-abdominal-crunch-bench.webp",
-        alt: "Adjustable decline sit up and crunch bench at Power House Gym"
-      },
-      {
-        id: "core-situp-bench-dumbbells",
-        name: "Core & Abdominal Conditioning Bench with Free Weights",
-        category: "Core & Conditioning",
-        categorySlug: "core",
-        tag: "Weighted Core Conditioning",
-        shortDesc: "Reinforced decline core board with companion dumbbells ready for weighted Russian twists, incline dragon flags, and progressive abdominal overload routines.",
-        targetMuscles: "Transverse Abdominis, Obliques, Rectus Abdominis, Core Rotational Power",
-        specs: "Thick non-slip back support cushion • Reinforced steel spinal spine • Quick angle pin adjust • Compact floor footprint",
-        coachTip: "Ameer's Tip: Add 2.5 kg or 5 kg dumbbells across your chest on decline crunches to stimulate dense, visible abdominal bricks.",
-        image: "/assets/equipment/core-situp-bench-dumbbells.webp",
-        alt: "Core conditioning decline bench with dumbbells at Power House Gym Kolhapur"
-      },
-      {
-        id: "lat-pulldown-cable-station",
-        name: "Commercial Lat Pulldown & High Cable Machine",
-        category: "Machines & Cables",
-        categorySlug: "machines",
-        tag: "Back Width & Lat Pulldown",
-        shortDesc: "Commercial cable tower equipped with wide neutral-grip lat attachment, ultra-smooth aircraft steel cables, and adjustable contoured thigh hold-down pads for back width and strength.",
-        targetMuscles: "Latissimus Dorsi (Lats), Rhomboids, Rear Deltoids, Biceps, Forearms",
-        specs: "Selectorized weight stack • Nylon-jacketed aircraft cable • Multi-height adjustable roller thigh lock • Ergonomic wide neutral-grip lat bar",
-        coachTip: "Ameer's Tip: Drive down with your elbows rather than pulling with your forearms to maximize back lats width and achieve that classic V-taper.",
-        image: "/assets/equipment/lat-pulldown-cable-station.webp",
-        alt: "Commercial lat pulldown cable machine at Power House Gym Kolhapur"
-      },
-      {
-        id: "viva-fitness-leg-extension-curl",
-        name: "Viva Fitness Optima Seated Leg Extension & Leg Curl",
-        category: "Machines & Cables",
-        categorySlug: "machines",
-        tag: "Quad & Hamstring Isolation",
-        shortDesc: "Dual-function selectorized lower body machine featuring an anatomical cam for variable resistance matching the human strength curve, isolating quadriceps and hamstrings safely.",
-        targetMuscles: "Quadriceps (Rectus Femoris, Vastus Medialis/Lateralis), Hamstrings",
-        specs: "Biomechanical cam matched to muscle curve • Self-aligning padded shin roller • Adjustable backrest depth • Yellow quick-action selector levers",
-        coachTip: "Ameer's Tip: Pause for a full second at peak extension to build the teardrop vastus medialis muscle above your knee.",
-        image: "/assets/equipment/viva-fitness-leg-extension-curl.webp",
-        alt: "Viva Fitness Optima seated leg extension and leg curl machine at Power House Gym"
-      },
-      {
-        id: "pec-fly-rear-delt-machine",
-        name: "Dual Pectoral Fly & Rear Deltoid Machine",
-        category: "Machines & Cables",
-        categorySlug: "machines",
-        tag: "Chest Fly & Rear Delts",
-        shortDesc: "Dual-function selectorized machine with dual overhead cam pivots, multi-position rotating handles, and adjustable seat for isolated chest flyes and posterior shoulder development.",
-        targetMuscles: "Pectoralis Major (Chest Squeeze), Posterior Deltoid (Rear Shoulder), Rhomboids",
-        specs: "Dual independent overhead pivot arms • 360° rotating hand grips • Multi-position range-of-motion selector pins • Pin-loaded weight stack",
-        coachTip: "Ameer's Tip: Face the machine for reverse flyes to strengthen your rear delts and fix hunched posture from sitting at computers.",
-        image: "/assets/equipment/pec-fly-rear-delt-machine.webp",
-        alt: "Dual pectoral fly and rear deltoid machine at Power House Gym Kolhapur"
-      },
-      {
-        id: "captains-chair-knee-raise-dip-twister",
-        name: "Captain's Chair Power Tower, Dip Station & Core Twister",
-        category: "Core & Conditioning",
-        categorySlug: "core",
-        tag: "Knee Raise, Dips & Twister",
-        shortDesc: "All-in-one bodyweight core and upper body station featuring vertical knee raise back support, cushioned forearm rests, dip handles, and an integrated rotational oblique twister disc.",
-        targetMuscles: "Lower Abdominals (Hanging Knee Raise), Triceps, Chest (Dips), Obliques (Twister)",
-        specs: "High-density lumbar and forearm cushions • Dual textured vertical handles • Welded steel stability base • Integrated ball-bearing waist twister plate",
-        coachTip: "Ameer's Tip: Keep your torso still and lift your knees using your lower abs without swinging your legs for maximum core isolation.",
-        image: "/assets/equipment/captains-chair-knee-raise-dip-twister.webp",
-        alt: "Captains chair vertical knee raise dip station and twister at Power House Gym"
-      },
-      {
-        id: "viva-fitness-45-leg-press",
-        name: "Viva Fitness Optima 45° Incline Leg Press & Hack Squat",
-        category: "Machines & Cables",
-        categorySlug: "machines",
-        tag: "Heavy 45° Leg Press",
-        shortDesc: "Heavy commercial 45-degree linear bearing leg press featuring an oversized diamond tread footplate, dual safety lockouts, and Olympic plate horns for massive lower-body power without spinal compression.",
-        targetMuscles: "Quadriceps, Gluteus Maximus, Hamstrings, Adductors, Calves",
-        specs: "45-degree angle of travel • Industrial linear guide bearings • Oversized diamond steel footplate • Dual safety release handles • Olympic plate storage horns",
-        coachTip: "Ameer's Tip: Place feet shoulder-width in the middle of the plate for balanced quad and glute drive. Never lock out your knees at the top.",
-        image: "/assets/equipment/viva-fitness-45-leg-press.webp",
-        alt: "Viva Fitness Optima 45 degree incline leg press machine at Power House Gym Kolhapur"
-      },
-      {
-        id: "preacher-curl-ez-barbell-bench",
-        name: "Ergonomic Preacher Curl Bench with Olympic EZ Barbell",
-        category: "Strength & Free Weights",
-        categorySlug: "strength",
-        tag: "Biceps Isolation",
-        shortDesc: "Dedicated bicep isolation bench with dense angled arm pad contoured to prevent shoulder recruitment, complete with an Olympic EZ curl barbell resting on durable cradle hooks.",
-        targetMuscles: "Biceps Brachii (Short & Long Heads), Brachialis, Forearm Flexors",
-        specs: "Anatomical 45° arm support angle • Heavy-duty barbell cradle hooks • Chrome Olympic EZ curl bar • Tear-resistant vinyl padding",
-        coachTip: "Ameer's Tip: Preacher curls eliminate cheating and body momentum, placing 100% of the load on the bicep peak for faster muscle growth.",
-        image: "/assets/equipment/preacher-curl-ez-barbell-bench.webp",
-        alt: "Preacher curl bench with Olympic EZ barbell at Power House Gym Kolhapur"
       }
     ];
 
@@ -687,9 +687,13 @@
           e.preventDefault();
           const filterSlug = (btn.getAttribute('data-filter') || btn.textContent.trim().toLowerCase()).trim();
 
-          // Update active button state
-          filterBtns.forEach(b => b.classList.remove('active'));
+          // Update active button state and ARIA tabs
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
           btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
 
           currentFilter = filterSlug;
 
@@ -743,13 +747,30 @@
     const modalSpecs = document.getElementById('modal-specs');
     const modalTip = document.getElementById('modal-tip');
     const modalWaLink = document.getElementById('modal-wa-link');
+    const modalTrialBtn = document.getElementById('modal-trial-btn');
+    const modalSpecLabel1 = document.getElementById('modal-spec-label-1');
+    const modalSpecLabel2 = document.getElementById('modal-spec-label-2');
     const prevBtn = document.getElementById('modal-prev-btn');
     const nextBtn = document.getElementById('modal-next-btn');
+
+    function preloadNearbyImages(idx) {
+      if (!currentFilteredList.length) return;
+      const nextIdx = (idx + 1) % currentFilteredList.length;
+      const prevIdx = (idx - 1 + currentFilteredList.length) % currentFilteredList.length;
+      [nextIdx, prevIdx].forEach(i => {
+        const it = currentFilteredList[i];
+        if (it && it.image) {
+          const img = new Image();
+          img.src = it.image;
+        }
+      });
+    }
 
     function renderModal(index) {
       if (!currentFilteredList.length) return;
       currentIndex = (index + currentFilteredList.length) % currentFilteredList.length;
       const item = currentFilteredList[currentIndex];
+      const isSupplement = item.categorySlug === 'supplements';
 
       if (modalImg) {
         modalImg.src = item.image;
@@ -765,10 +786,46 @@
       if (modalSpecs) modalSpecs.textContent = item.specs;
       if (modalTip) modalTip.textContent = item.coachTip;
 
+      // Dynamic Spec Labels
+      if (modalSpecLabel1) {
+        modalSpecLabel1.textContent = isSupplement ? '🎯 Nutritional Benefit / Primary Focus' : '🎯 Target Muscles / Primary Focus';
+      }
+      if (modalSpecLabel2) {
+        modalSpecLabel2.textContent = isSupplement ? '📦 Product Batch & Certification' : '⚙️ Machine Construction & Specs';
+      }
+
+      // Dynamic CTA buttons for supplements vs equipment
+      if (modalTrialBtn) {
+        if (isSupplement) {
+          modalTrialBtn.innerHTML = '⚡ Purchase at Reception Desk';
+          modalTrialBtn.href = '#supplements';
+          modalTrialBtn.onclick = (e) => {
+            e.preventDefault();
+            closeModal();
+            const suppSec = document.getElementById('supplements');
+            if (suppSec) {
+              suppSec.scrollIntoView({ behavior: 'smooth' });
+            }
+          };
+        } else {
+          modalTrialBtn.innerHTML = '⚡ Book Free Trial to Train Here';
+          modalTrialBtn.href = '/visit?trial=1#book-trial';
+          modalTrialBtn.onclick = null;
+        }
+      }
+
+      // Dynamic WhatsApp message
       if (modalWaLink) {
-        const waMsg = `Hello Coach Ameer, I saw the ${item.name} on the Power House Gym website and I'd like to learn more about training on this in Shahupuri.`;
+        let waMsg;
+        if (isSupplement) {
+          waMsg = `Hello Coach Ameer, I saw ${item.name} on the Power House Gym website and I'd like to check price and availability at your Shahupuri gym.`;
+        } else {
+          waMsg = `Hello Coach Ameer, I saw the ${item.name} on the Power House Gym website and I'd like to learn more about training on this in Shahupuri.`;
+        }
         modalWaLink.href = `https://wa.me/919860252720?text=${encodeURIComponent(waMsg)}`;
       }
+
+      preloadNearbyImages(currentIndex);
     }
 
     function openModal(itemIndex) {
@@ -778,24 +835,84 @@
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       const closeBtn = modal.querySelector('.equipment-modal-close');
-      if (closeBtn) closeBtn.focus();
+      if (closeBtn) {
+        if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
+          window.requestAnimationFrame(() => {
+            closeBtn.focus();
+          });
+        } else {
+          closeBtn.focus();
+        }
+      }
+
+      try {
+        window.history.pushState({ powerhouseModal: true }, '');
+      } catch (err) {}
     }
 
-    function closeModal() {
+    function closeModal(shouldGoBack = true) {
+      if (!modal.classList.contains('is-open')) return;
       modal.classList.remove('is-open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
         lastActiveElement.focus();
       }
+
+      if (shouldGoBack && window.history.state && window.history.state.powerhouseModal) {
+        try {
+          window.history.back();
+        } catch (err) {}
+      }
     }
+
+    // Focus Trap function for WAI-ARIA modal dialog compliance
+    function trapFocus(e) {
+      if (e.key !== 'Tab' || !modal.classList.contains('is-open')) return;
+      const focusable = modal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first || !modal.contains(document.activeElement)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last || !modal.contains(document.activeElement)) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', trapFocus);
 
     // Attach click and Enter listeners to equipment cards
     equipmentCards.forEach((card) => {
       const equipId = card.getAttribute('data-equipment-id');
       const clickHandler = (e) => {
         e.preventDefault();
-        const foundIdx = currentFilteredList.findIndex(it => it.id === equipId);
+        let foundIdx = currentFilteredList.findIndex(it => it.id === equipId);
+        if (foundIdx === -1) {
+          currentFilter = 'all';
+          currentFilteredList = [...EQUIPMENT_CATALOG];
+          if (filterContainer) {
+            filterContainer.querySelectorAll('button').forEach(b => {
+              const slug = (b.getAttribute('data-filter') || '').trim();
+              const isAll = slug === 'all';
+              b.classList.toggle('active', isAll);
+              b.setAttribute('aria-selected', isAll ? 'true' : 'false');
+            });
+          }
+          equipmentCards.forEach(c => {
+            c.style.display = 'flex';
+            c.style.opacity = '1';
+            c.style.transform = 'translateY(0)';
+          });
+          foundIdx = currentFilteredList.findIndex(it => it.id === equipId);
+        }
         openModal(foundIdx >= 0 ? foundIdx : 0);
       };
 
@@ -808,12 +925,12 @@
       });
     });
 
-    // Close on backdrop or close button
-    modal.querySelectorAll('[data-close-modal]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    // Close on backdrop or overlay click or close button
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.classList.contains('equipment-modal-backdrop') || e.target.closest('[data-close-modal]')) {
         e.preventDefault();
         closeModal();
-      });
+      }
     });
 
     // Prev / Next button listeners
@@ -835,26 +952,41 @@
     document.addEventListener('keydown', (e) => {
       if (!modal.classList.contains('is-open')) return;
       if (e.key === 'Escape') {
+        e.preventDefault();
         closeModal();
       } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
         renderModal(currentIndex - 1);
       } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
         renderModal(currentIndex + 1);
       }
     });
 
-    // Touch swipe support for modal on mobile
+    // Mobile popstate / Back button handling
+    window.addEventListener('popstate', () => {
+      if (modal.classList.contains('is-open')) {
+        closeModal(false);
+      }
+    });
+
+    // Touch swipe support for modal on mobile with diagonal scroll protection
     const mediaWrap = modal.querySelector('.equipment-modal-media-wrap');
     if (mediaWrap) {
       let touchStartX = 0;
+      let touchStartY = 0;
       mediaWrap.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
       }, { passive: true });
 
       mediaWrap.addEventListener('touchend', (e) => {
         const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
         const diffX = touchEndX - touchStartX;
-        if (Math.abs(diffX) > 40) {
+        const diffY = touchEndY - touchStartY;
+        // Require horizontal intent: diffX significantly greater than vertical movement
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.4) {
           if (diffX < 0) {
             renderModal(currentIndex + 1); // Swipe left = next
           } else {
@@ -863,6 +995,20 @@
         }
       }, { passive: true });
     }
+
+    // Deep link check on load (e.g., ?equip=id or #equip-id)
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const equipParam = params.get('equip') || params.get('equipment');
+      const hashEquip = window.location.hash.startsWith('#equip-') ? window.location.hash.replace('#equip-', '') : null;
+      const targetId = equipParam || hashEquip;
+      if (targetId) {
+        const targetIdx = currentFilteredList.findIndex(it => it.id === targetId);
+        if (targetIdx >= 0) {
+          setTimeout(() => openModal(targetIdx), 150);
+        }
+      }
+    } catch (err) {}
   }
 
   // --- 6. Personal Training Pricing Selector ---
