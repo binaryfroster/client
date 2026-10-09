@@ -2404,3 +2404,880 @@ html.ph-intro-playing #brand-intro {
 .price-card.is-selected p {
   color: rgba(255, 255, 255, 0.8) !important;
 }
+
+
+/* ==========================================================================
+   POWER HOUSE GYM - EQUIPMENT GALLERY & MODAL POPUP STYLES
+   Dark Athletic System (#080808, #111111, Neon Lime #a8ff00, Bebas Neue)
+   ========================================================================== */
+
+/* --- Gallery Filter Tabs --- */
+.equipment-gallery-section {
+  padding: 40px 24px 80px;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.gallery-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.gallery-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: #e4e4e7;
+  font-family: var(--font-sans, "Manrope", sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-filter-btn:hover {
+  background: #18181b;
+  border-color: rgba(168, 255, 0, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.gallery-filter-btn.active {
+  background: var(--primary, #a8ff00) !important;
+  color: #080808 !important;
+  border-color: var(--primary, #a8ff00) !important;
+  box-shadow: 0 4px 20px -2px rgba(168, 255, 0, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+.filter-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  transition: all 0.2s ease;
+}
+
+.gallery-filter-btn.active .filter-badge {
+  background: rgba(0, 0, 0, 0.18);
+  color: #080808;
+}
+
+/* --- Equipment Cards Grid --- */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .equipment-grid {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.equipment-card {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease,
+              box-shadow 0.28s ease;
+  position: relative;
+}
+
+.equipment-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 255, 0, 0.45);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9), 0 0 25px -8px rgba(168, 255, 0, 0.2);
+}
+
+.equipment-card:focus-visible {
+  outline: 2px solid var(--primary, #a8ff00) !important;
+  outline-offset: 3px !important;
+}
+
+.equipment-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #09090b;
+}
+
+.equipment-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.equipment-card:hover .equipment-card-media img {
+  transform: scale(1.06);
+}
+
+.equipment-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--primary, #a8ff00);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.equipment-hover-inspect {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(8, 8, 8, 0.85) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 3;
+}
+
+.equipment-card:hover .equipment-hover-inspect {
+  opacity: 1;
+}
+
+.inspect-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  padding: 7px 13px;
+  border-radius: 4px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: translateY(8px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.equipment-card:hover .inspect-pill {
+  transform: translateY(0);
+}
+
+.equipment-card-body {
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.equipment-tagline {
+  color: var(--primary, #a8ff00);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.equipment-card-title {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.equipment-card-summary {
+  color: #a1a1aa;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.equipment-card-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+
+.equipment-card-meta-label {
+  color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.equipment-card-meta-val {
+  color: #e4e4e7;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
+
+/* --- Equipment Detail Modal System --- */
+.equipment-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.equipment-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.equipment-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.equipment-modal-dialog {
+  position: relative;
+  z-index: 10;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  max-width: 1080px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.98), 0 0 45px -10px rgba(168, 255, 0, 0.16);
+  transform: scale(0.95) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.equipment-modal-overlay.is-open .equipment-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.equipment-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(24, 24, 27, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.equipment-modal-close:hover {
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  transform: rotate(90deg) scale(1.06);
+}
+
+.equipment-modal-nav-floating {
+  position: absolute;
+  top: 50%;
+  inset-inline: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.modal-nav-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.modal-nav-arrow:hover {
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  border-color: var(--primary, #a8ff00);
+  transform: scale(1.1);
+}
+
+.equipment-modal-body-split {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  height: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 860px) {
+  .equipment-modal-body-split {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+  }
+  .equipment-modal-nav-floating {
+    top: 220px;
+  }
+}
+
+.equipment-modal-media-wrap {
+  background: #09090b;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 380px;
+}
+
+@media (max-width: 860px) {
+  .equipment-modal-media-wrap {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 280px;
+    padding: 20px;
+  }
+}
+
+.equipment-modal-media-wrap img {
+  max-width: 100%;
+  max-height: 65vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.9));
+  transition: opacity 0.2s ease;
+}
+
+.modal-media-badge-group {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+}
+
+.modal-category-badge {
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--primary, #a8ff00);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modal-counter-badge {
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #a1a1aa;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.equipment-modal-info-panel {
+  padding: 36px 40px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #111111;
+}
+
+@media (max-width: 640px) {
+  .equipment-modal-info-panel {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+}
+
+.modal-header-tagline {
+  color: var(--primary, #a8ff00);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.modal-heading {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-top: -6px;
+}
+
+.modal-full-desc {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.modal-specs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.spec-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-row-label {
+  color: var(--primary, #a8ff00);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spec-row-content {
+  color: #f4f4f5;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.modal-coach-box {
+  background: rgba(168, 255, 0, 0.04);
+  border: 1px solid rgba(168, 255, 0, 0.22);
+  border-left: 4px solid var(--primary, #a8ff00);
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+
+.modal-coach-box-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.coach-avatar-tag {
+  width: 22px;
+  height: 22px;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 900;
+}
+
+.modal-coach-box-text {
+  color: #a1a1aa;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.modal-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-btn-trial {
+  flex: 1 1 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary, #a8ff00);
+  color: #080808;
+  border: 1px solid var(--primary, #a8ff00);
+  padding: 13px 22px;
+  border-radius: 4px;
+  font-family: var(--font-sans, "Manrope", sans-serif);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(168, 255, 0, 0.3);
+}
+
+.modal-btn-trial:hover {
+  background: var(--accent, #c4ff45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(168, 255, 0, 0.4);
+}
+
+.modal-btn-wa {
+  flex: 1 1 180px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 13px 20px;
+  border-radius: 4px;
+  font-family: var(--font-sans, "Manrope", sans-serif);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-btn-wa:hover {
+  border-color: #25d366;
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.06);
+  transform: translateY(-2px);
+}
+
+/* --- Supplement Retail Section --- */
+.supplement-retail-section {
+  padding: 80px 24px;
+  max-width: 1340px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.supplement-section-head {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px;
+}
+
+.supplement-section-head h2 {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 12px 0 16px;
+}
+
+.supplement-section-head p {
+  color: #a1a1aa;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.supplement-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 900px) {
+  .supplement-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.supplement-card {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease,
+              box-shadow 0.28s ease;
+}
+
+.supplement-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 255, 0, 0.4);
+  box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.9), 0 0 25px -8px rgba(168, 255, 0, 0.15);
+}
+
+.supplement-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #09090b;
+}
+
+.supplement-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.supplement-card:hover .supplement-card-media img {
+  transform: scale(1.04);
+}
+
+.supplement-media-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--primary, #a8ff00);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.supplement-card-content {
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.supplement-card-content h3 {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.supplement-card-content > p {
+  color: #a1a1aa;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.supplement-product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.supplement-product-list li {
+  position: relative;
+  padding-left: 22px;
+  color: #d4d4d8;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.supplement-product-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary, #a8ff00);
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.supplement-product-list strong {
+  color: #ffffff;
+}
+
+.supplement-card-btn-wrap {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-supplement-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: var(--font-sans, "Manrope", sans-serif);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.btn-supplement-wa:hover {
+  background: #25d366;
+  color: #080808;
+  border-color: #25d366;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  transform: translateY(-2px);
+}
+
+/* --- Supplement Trust Features Row --- */
+.supplement-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 900px) {
+  .supplement-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .supplement-perks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.supplement-perk-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perk-icon-wrap {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.supplement-perk-card h4 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.supplement-perk-card p {
+  color: #71717a;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Supplement Legal & Trademark Disclaimer --- */
+.supplement-disclaimer-box {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 16px 20px;
+  color: #71717a;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.supplement-disclaimer-box strong {
+  color: #a1a1aa;
+}
+

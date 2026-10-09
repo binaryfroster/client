@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://powerhouse.in/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,19 +13,45 @@
       <image:caption>Power House Gym Strength &amp; Fitness Facility in Shahupuri Kolhapur</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://powerhouse.in/__l5e/assets-v1/069c83c9-0c52-4fc3-a585-47e21258efc0/gym-floor-2.jpeg</image:loc>
+      <image:loc>https://powerhouse.in/assets/equipment/viva-fitness-flat-bench-press.webp</image:loc>
       <image:title>Power House Gym Training Floor</image:title>
     </image:image>
   </url>
   <url>
+    <loc>https://powerhouse.in/gallery</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://powerhouse.in/assets/equipment/viva-fitness-flat-bench-press.webp</image:loc>
+      <image:title>Viva Fitness Olympic Bench Press</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://powerhouse.in/assets/equipment/supplements-protein-counter.webp</image:loc>
+      <image:title>Power House Gym High Protein Oats and Snacks Counter</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://powerhouse.in/assets/equipment/supplements-nutrition-shelf.webp</image:loc>
+      <image:title>Certified Gym Supplements &amp; Workout Nutrition Shelf</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://powerhouse.in/assets/equipment/dumbbell-rack-free-weights.webp</image:loc>
+      <image:title>Commercial Dumbbells and Free Weights Racks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://powerhouse.in/assets/equipment/viva-fitness-45-leg-press.webp</image:loc>
+      <image:title>Viva Fitness 45 Degree Incline Leg Press</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://powerhouse.in/programs</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://powerhouse.in/personal-training</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -35,38 +61,32 @@
   </url>
   <url>
     <loc>https://powerhouse.in/visit</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://powerhouse.in/reviews</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://powerhouse.in/about</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://powerhouse.in/gallery</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://powerhouse.in/terms</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>
     <loc>https://powerhouse.in/privacy-policy</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
 </urlset>
