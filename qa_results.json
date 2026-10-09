@@ -23,43 +23,43 @@
         {
           "route": "/",
           "status": 200,
-          "latency_ms": 7827,
+          "latency_ms": 466,
           "success": true
         },
         {
           "route": "/about",
           "status": 200,
-          "latency_ms": 135,
+          "latency_ms": 130,
           "success": true
         },
         {
           "route": "/programs",
           "status": 200,
-          "latency_ms": 181,
+          "latency_ms": 94,
           "success": true
         },
         {
           "route": "/personal-training",
           "status": 200,
-          "latency_ms": 158,
+          "latency_ms": 99,
           "success": true
         },
         {
           "route": "/gallery",
           "status": 200,
-          "latency_ms": 219,
+          "latency_ms": 133,
           "success": true
         },
         {
           "route": "/reviews",
           "status": 200,
-          "latency_ms": 161,
+          "latency_ms": 145,
           "success": true
         },
         {
           "route": "/visit",
           "status": 200,
-          "latency_ms": 114,
+          "latency_ms": 160,
           "success": true
         }
       ]
@@ -94,43 +94,43 @@
         {
           "route": "/",
           "status": 200,
-          "latency_ms": 384,
+          "latency_ms": 431,
           "success": true
         },
         {
           "route": "/about",
           "status": 200,
-          "latency_ms": 99,
+          "latency_ms": 104,
           "success": true
         },
         {
           "route": "/programs",
           "status": 200,
-          "latency_ms": 102,
+          "latency_ms": 100,
           "success": true
         },
         {
           "route": "/personal-training",
           "status": 200,
-          "latency_ms": 90,
+          "latency_ms": 92,
           "success": true
         },
         {
           "route": "/gallery",
           "status": 200,
-          "latency_ms": 141,
+          "latency_ms": 128,
           "success": true
         },
         {
           "route": "/reviews",
           "status": 200,
-          "latency_ms": 87,
+          "latency_ms": 101,
           "success": true
         },
         {
           "route": "/visit",
           "status": 200,
-          "latency_ms": 128,
+          "latency_ms": 137,
           "success": true
         }
       ]
@@ -160,8 +160,8 @@
   "telemetry": {
     "console_errors": [],
     "network_errors": [
-      "GET https://www.google.com/maps?q=Power%20House%20Gym%20and%20Fitness%20Center%2C%20Vardhmane%20House%2C%20718%2C%203rd%20Ln%2C%20near%20Nitin%20Medical%2C%20E%20Ward%2C%20Shahupuri%2C%20Kolhapur%2C%20Maharashtra%20416001&z=16&output=embed -> net::ERR_ABORTED",
-      "GET https://www.google.com/maps?q=Power%20House%20Gym%20and%20Fitness%20Center%2C%20Vardhmane%20House%2C%20718%2C%203rd%20Ln%2C%20near%20Nitin%20Medical%2C%20E%20Ward%2C%20Shahupuri%2C%20Kolhapur%2C%20Maharashtra%20416001&z=16&output=embed -> net::ERR_ABORTED"
+      "GET https://maps.google.com/maps?q=16.704987,74.243253+(Power+House+Gym+and+Fitness+Center)&t=&z=16&ie=UTF8&iwloc=&output=embed -> net::ERR_ABORTED",
+      "GET https://maps.google.com/maps?q=16.704987,74.243253+(Power+House+Gym+and+Fitness+Center)&t=&z=16&ie=UTF8&iwloc=&output=embed -> net::ERR_ABORTED"
     ]
   },
   "screenshots": [
