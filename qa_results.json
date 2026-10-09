@@ -23,43 +23,43 @@
         {
           "route": "/",
           "status": 200,
-          "latency_ms": 490,
+          "latency_ms": 7827,
           "success": true
         },
         {
           "route": "/about",
           "status": 200,
-          "latency_ms": 136,
+          "latency_ms": 135,
           "success": true
         },
         {
           "route": "/programs",
           "status": 200,
-          "latency_ms": 100,
+          "latency_ms": 181,
           "success": true
         },
         {
           "route": "/personal-training",
           "status": 200,
-          "latency_ms": 102,
+          "latency_ms": 158,
           "success": true
         },
         {
           "route": "/gallery",
           "status": 200,
-          "latency_ms": 270,
+          "latency_ms": 219,
           "success": true
         },
         {
           "route": "/reviews",
           "status": 200,
-          "latency_ms": 143,
+          "latency_ms": 161,
           "success": true
         },
         {
           "route": "/visit",
           "status": 200,
-          "latency_ms": 98,
+          "latency_ms": 114,
           "success": true
         }
       ]
@@ -94,43 +94,43 @@
         {
           "route": "/",
           "status": 200,
-          "latency_ms": 420,
+          "latency_ms": 384,
           "success": true
         },
         {
           "route": "/about",
           "status": 200,
-          "latency_ms": 129,
+          "latency_ms": 99,
           "success": true
         },
         {
           "route": "/programs",
           "status": 200,
-          "latency_ms": 112,
+          "latency_ms": 102,
           "success": true
         },
         {
           "route": "/personal-training",
           "status": 200,
-          "latency_ms": 100,
+          "latency_ms": 90,
           "success": true
         },
         {
           "route": "/gallery",
           "status": 200,
-          "latency_ms": 122,
+          "latency_ms": 141,
           "success": true
         },
         {
           "route": "/reviews",
           "status": 200,
-          "latency_ms": 97,
+          "latency_ms": 87,
           "success": true
         },
         {
           "route": "/visit",
           "status": 200,
-          "latency_ms": 122,
+          "latency_ms": 128,
           "success": true
         }
       ]

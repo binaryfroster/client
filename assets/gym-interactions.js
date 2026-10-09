@@ -735,7 +735,6 @@
     const modalImg = document.getElementById('modal-img');
     const modalBadgeCat = document.getElementById('modal-badge-cat');
     const modalCounter = document.getElementById('modal-counter');
-    const modalBarCounter = document.getElementById('modal-bar-counter');
     const modalTagline = document.getElementById('modal-tagline');
     const modalHeading = document.getElementById('modal-heading-text');
     const modalDesc = document.getElementById('modal-desc');
@@ -748,8 +747,6 @@
     const modalSpecLabel2 = document.getElementById('modal-spec-label-2');
     const prevBtn = document.getElementById('modal-prev-btn');
     const nextBtn = document.getElementById('modal-next-btn');
-    const barPrevBtn = document.getElementById('modal-bar-prev-btn');
-    const barNextBtn = document.getElementById('modal-bar-next-btn');
 
     function preloadNearbyImages(idx) {
       if (!currentFilteredList.length) return;
@@ -786,9 +783,7 @@
 
       if (modalBadgeCat) modalBadgeCat.textContent = item.category;
       const counterText = `${currentIndex + 1} / ${currentFilteredList.length}`;
-      const counterFullText = `Equipment ${currentIndex + 1} of ${currentFilteredList.length}`;
       if (modalCounter) modalCounter.textContent = counterText;
-      if (modalBarCounter) modalBarCounter.textContent = counterFullText;
       if (modalTagline) modalTagline.textContent = item.tag;
       if (modalHeading) modalHeading.textContent = item.name;
       if (modalDesc) modalDesc.textContent = item.shortDesc;
@@ -799,8 +794,6 @@
       // Update titles/tooltips on navigation buttons with adjacent equipment names
       if (prevBtn) prevBtn.title = `Previous: ${prevItem.name} (or press ← key)`;
       if (nextBtn) nextBtn.title = `Next: ${nextItem.name} (or press → key)`;
-      if (barPrevBtn) barPrevBtn.title = `Previous: ${prevItem.name}`;
-      if (barNextBtn) barNextBtn.title = `Next: ${nextItem.name}`;
 
       // Dynamic Spec Labels
       if (modalSpecLabel1) {
@@ -946,8 +939,6 @@
 
     if (prevBtn) prevBtn.addEventListener('click', handlePrev);
     if (nextBtn) nextBtn.addEventListener('click', handleNext);
-    if (barPrevBtn) barPrevBtn.addEventListener('click', handlePrev);
-    if (barNextBtn) barNextBtn.addEventListener('click', handleNext);
 
     // Keyboard navigation (Escape, Left Arrow, Right Arrow)
     document.addEventListener('keydown', (e) => {
