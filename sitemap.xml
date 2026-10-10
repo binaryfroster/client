@@ -1,103 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:geo="http://www.google.com/geo/schemas/sitemap/1.0"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://powerhouse.in/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://powerhouse.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png</image:loc>
-      <image:title>Power House Gym &amp; Fitness Center</image:title>
-      <image:caption>Power House Gym Strength &amp; Fitness Facility in Shahupuri Kolhapur</image:caption>
+      <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png</image:loc>
+      <image:title>Power House Gym &amp; Fitness Center Official Logo</image:title>
+      <image:caption>Official Logo Emblem of Power House Gym &amp; Fitness Center in Shahupuri, Kolhapur, Maharashtra</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://powerhouse.in/assets/equipment/viva-fitness-flat-bench-press.webp</image:loc>
-      <image:title>Power House Gym Training Floor</image:title>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp</image:loc>
+      <image:title>Power House Gym Main Strength &amp; Weightlifting Floor in Shahupuri, Kolhapur</image:title>
+      <image:caption>Main strength training floor with cable crossover, squat racks, and Olympic free weights at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-cardio-machines.webp</image:loc>
+      <image:title>Power House Gym Commercial Cardio Zone in Shahupuri, Kolhapur</image:title>
+      <image:caption>Commercial motorized treadmills, elliptical cross trainers, and spin bikes at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg</image:loc>
+      <image:title>Coach Ameer Mullani — Founder &amp; Head Trainer at Power House Gym Kolhapur</image:title>
+      <image:caption>Ameer Mullani, Founder and Certified Head Coach with 12+ years experience at Power House Gym in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/supplements-protein-counter.webp</image:loc>
+      <image:title>Power House Gym High-Protein Oats &amp; Nutrition Counter in Kolhapur</image:title>
+      <image:caption>Pintola High-Protein Chocolate Oats and RiteBite Max Protein snacks counter at Power House Gym Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
     </image:image>
   </url>
   <url>
-    <loc>https://powerhouse.in/gallery</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://powerhouse.in/assets/equipment/viva-fitness-flat-bench-press.webp</image:loc>
-      <image:title>Viva Fitness Olympic Bench Press</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://powerhouse.in/assets/equipment/supplements-protein-counter.webp</image:loc>
-      <image:title>Power House Gym High Protein Oats and Snacks Counter</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://powerhouse.in/assets/equipment/supplements-nutrition-shelf.webp</image:loc>
-      <image:title>Certified Gym Supplements &amp; Workout Nutrition Shelf</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://powerhouse.in/assets/equipment/dumbbell-rack-free-weights.webp</image:loc>
-      <image:title>Commercial Dumbbells and Free Weights Racks</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://powerhouse.in/assets/equipment/viva-fitness-45-leg-press.webp</image:loc>
-      <image:title>Viva Fitness 45 Degree Incline Leg Press</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://powerhouse.in/programs</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://powerhouse.in/personal-training</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://powerhouse.in/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg</image:loc>
-      <image:title>Coach Ameer Mullani - Head Trainer</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://powerhouse.in/visit</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/about</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png</image:loc>
+      <image:title>Power House Gym &amp; Fitness Center Official Logo</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/ameer-mullani-red.webp</image:loc>
+      <image:title>Coach Ameer Mullani — Certified Bodybuilding &amp; Transformation Coach in Kolhapur</image:title>
+      <image:caption>Founder and Head Coach Ameer Mullani on the training floor at Power House Gym in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg</image:loc>
+      <image:title>Portrait of Founder &amp; Head Coach Ameer Mullani — Power House Gym Kolhapur</image:title>
+      <image:caption>Coach Ameer Mullani — 12+ years of hands-on coaching and transformation experience in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
   </url>
   <url>
-    <loc>https://powerhouse.in/reviews</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/programs</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-cardio-machines.webp</image:loc>
+      <image:title>Power House Gym Membership &amp; Cardio Training Programs in Kolhapur</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp</image:loc>
+      <image:title>Power House Gym Strength Training Floor — Regular &amp; Personal Training Plans</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/dumbbell-rack-free-weights.webp</image:loc>
+      <image:title>Commercial Dumbbell Racks &amp; Free Weights — Power House Gym Kolhapur</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/supplements-nutrition-shelf.webp</image:loc>
+      <image:title>Custom Diet Plan &amp; Certified Nutrition Shelf — Power House Gym Kolhapur</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.powerhousegymkolhapur.in/personal-training</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp</image:loc>
+      <image:title>1-on-1 Personal Training Floor at Power House Gym Shahupuri, Kolhapur</image:title>
+      <image:caption>Dedicated 1-on-1 personal training environment led by Head Coach Ameer Mullani in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg</image:loc>
+      <image:title>Coach Ameer Mullani — 1-on-1 Personal Trainer in Kolhapur</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.powerhousegymkolhapur.in/gallery</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/supplements-protein-counter.webp</image:loc>
+      <image:title>Power House High-Protein Nutrition Bar &amp; Healthy Snacks</image:title>
+      <image:caption>Pintola High-Protein Chocolate Oats (26g protein) and RiteBite Max Protein snacks at Power House Gym reception counter in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/supplements-nutrition-shelf.webp</image:loc>
+      <image:title>Certified Workout Supplements &amp; Daily Nutrition Corner</image:title>
+      <image:caption>100% authentic workout supplements including Kuike Pre-Workout, Pro-Muscle Intra-Workout, MuscleTech Omega-3 Fish Oil, and MyFitness Peanut Butter at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/viva-fitness-spin-bikes.webp</image:loc>
+      <image:title>Viva Fitness Commercial Spin Bikes &amp; Upright Cycle</image:title>
+      <image:caption>Viva Fitness commercial indoor cycling spin bikes and digital upright exercise bike in the cardio zone at Power House Gym Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/commercial-treadmills-elliptical.webp</image:loc>
+      <image:title>Commercial Motorized Treadmills &amp; Elliptical Cross Trainer</image:title>
+      <image:caption>Heavy-duty commercial AC motorized incline treadmills and zero-impact elliptical cross trainer at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/dumbbell-rack-free-weights.webp</image:loc>
+      <image:title>Heavy-Duty Dumbbell Racks &amp; Olympic Weight Plate Tree</image:title>
+      <image:caption>Commercial 3-tier dumbbell racks (2.5 kg to 28+ kg hex and urethane dumbbells) and Olympic weight plates at Power House Gym Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/olympic-flat-bench-battle-ropes.webp</image:loc>
+      <image:title>Viva Fitness Olympic Flat Bench &amp; Conditioning Battle Ropes</image:title>
+      <image:caption>Viva Fitness commercial Olympic flat bench press station paired with 50mm conditioning battle ropes at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/olympic-squat-rack-stands.webp</image:loc>
+      <image:title>Adjustable Olympic Squat Stands &amp; Spotter Rack</image:title>
+      <image:caption>Heavy-gauge steel adjustable Olympic squat rack stands with safety spotter arms at Power House Gym in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/viva-fitness-flat-bench-press.webp</image:loc>
+      <image:title>Viva Fitness Olympic Flat Bench Press (Floor Perspective)</image:title>
+      <image:caption>Training floor perspective of the Viva Fitness Olympic flat bench press station with Olympic barbell and plates at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/viva-fitness-incline-bench-press.webp</image:loc>
+      <image:title>Viva Fitness Olympic Incline Bench Press Station</image:title>
+      <image:caption>Viva Fitness 30-degree ergonomic Olympic incline bench press station for upper pectoral hypertrophy at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/decline-abdominal-crunch-bench.webp</image:loc>
+      <image:title>Adjustable Decline Sit-Up &amp; Abdominal Crunch Bench</image:title>
+      <image:caption>Multi-angle adjustable commercial decline abdominal crunch and sit-up bench at Power House Gym Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/core-situp-bench-dumbbells.webp</image:loc>
+      <image:title>Core &amp; Abdominal Conditioning Bench with Free Weights</image:title>
+      <image:caption>Core conditioning decline board with companion free-weight dumbbells for weighted ab workouts at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/lat-pulldown-cable-station.webp</image:loc>
+      <image:title>Commercial Lat Pulldown &amp; High Cable Machine</image:title>
+      <image:caption>Selectorized commercial lat pulldown and high cable pulley tower for back width at Power House Gym in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/viva-fitness-leg-extension-curl.webp</image:loc>
+      <image:title>Viva Fitness Optima Seated Leg Extension &amp; Leg Curl</image:title>
+      <image:caption>Viva Fitness Optima dual-function seated quadriceps leg extension and hamstring leg curl machine at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/pec-fly-rear-delt-machine.webp</image:loc>
+      <image:title>Dual Pectoral Fly &amp; Rear Deltoid Machine</image:title>
+      <image:caption>Dual-function selectorized pectoral fly and posterior deltoid reverse fly machine at Power House Gym Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/captains-chair-knee-raise-dip-twister.webp</image:loc>
+      <image:title>Captain's Chair Power Tower, Dip Station &amp; Core Twister</image:title>
+      <image:caption>All-in-one Captain's chair vertical knee raise, parallel bar dip station, and oblique waist twister at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/viva-fitness-45-leg-press.webp</image:loc>
+      <image:title>Viva Fitness Optima 45° Incline Leg Press &amp; Hack Squat</image:title>
+      <image:caption>Heavy-duty Viva Fitness Optima 45-degree linear bearing incline leg press and hack squat machine at Power House Gym Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/preacher-curl-ez-barbell-bench.webp</image:loc>
+      <image:title>Ergonomic Preacher Curl Bench with Olympic EZ Barbell</image:title>
+      <image:caption>Contoured 45-degree bicep preacher curl bench with chrome Olympic EZ curl barbell at Power House Gym in Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.powerhousegymkolhapur.in/reviews</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-cardio-machines.webp</image:loc>
+      <image:title>4.4 Star Google Rated Power House Gym in Shahupuri, Kolhapur</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
   </url>
   <url>
-    <loc>https://powerhouse.in/about</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://www.powerhousegymkolhapur.in/visit</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-entrance-reception.webp</image:loc>
+      <image:title>Power House Gym Entrance &amp; Reception — 3rd Lane Shahupuri, Kolhapur</image:title>
+      <image:caption>Entrance reception and workout floor at Power House Gym in 3rd Lane Shahupuri, Kolhapur</image:caption>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp</image:loc>
+      <image:title>Power House Gym Shahupuri Training Floor — Book Free 1-Day Trial Pass</image:title>
+      <image:geo_location>Shahupuri, Kolhapur, Maharashtra, India</image:geo_location>
+    </image:image>
   </url>
   <url>
-    <loc>https://powerhouse.in/terms</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/terms</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://powerhouse.in/privacy-policy</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/privacy-policy</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://powerhouse.in/cookie-policy</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/cookie-policy</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://powerhouse.in/refund-policy</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://www.powerhousegymkolhapur.in/refund-policy</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>

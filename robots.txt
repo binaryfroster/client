@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
 
-# Search Engine Crawlers
+# Search Engine & Image Crawlers
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
@@ -22,6 +25,9 @@ Allow: /
 
 # Dedicated AI Answer Engines & LLM Retrieval Agents (AEO / GEO)
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
@@ -50,10 +56,9 @@ Disallow: /scripts/
 Disallow: /assets/*.bak
 Disallow: /assets/*.map
 
-# Generative Engine Optimization (GEO) Resources
-# LLMs.txt authoritative markdown context: https://powerhouse.in/llms.txt
+# Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO) Resources
+# LLMs.txt authoritative markdown context: https://www.powerhousegymkolhapur.in/llms.txt
+# LLMs-full.txt complete knowledge base: https://www.powerhousegymkolhapur.in/llms-full.txt
 
-Host: https://powerhouse.in
-Sitemap: https://powerhouse.in/sitemap.xml
-Sitemap: https://gym-two-pink.vercel.app/sitemap.xml
-
+Host: https://www.powerhousegymkolhapur.in
+Sitemap: https://www.powerhousegymkolhapur.in/sitemap.xml

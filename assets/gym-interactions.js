@@ -93,7 +93,7 @@
         <nav class="mobile-drawer-nav" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
           <div class="mobile-drawer-header">
             <a href="/" class="mobile-drawer-brand">
-              <img src="/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png" alt="Power House" width="32" height="32" />
+              <img src="/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png" alt="Power House Gym &amp; Fitness Center Official Logo — Shahupuri, Kolhapur" title="Power House Gym &amp; Fitness Center — Official Brand Logo (Shahupuri, Kolhapur)" width="32" height="32" decoding="async" />
               <span>POWER HOUSE</span>
             </a>
             <button class="mobile-drawer-close" aria-label="Close navigation">
@@ -888,6 +888,7 @@
         modalImg.style.opacity = '0.35';
         modalImg.src = item.image;
         modalImg.alt = item.alt;
+        modalImg.title = `${item.name} — Power House Gym & Fitness Center, Shahupuri, Kolhapur`;
         setTimeout(() => {
           modalImg.style.opacity = '1';
         }, 80);
@@ -1192,7 +1193,7 @@
         3: 4000,
         6: 6000,
         12: 9000,
-        img: '/__l5e/assets-v1/999a7365-6d25-41c6-9039-422f61c11750/gym-floor-1.jpeg',
+        img: '/assets/facility/power-house-gym-main-floor.webp',
         objectPosition: 'center center'
       },
       'Personal Training': {
@@ -1251,7 +1252,8 @@
       if (imgDisplay && pricing[activeType].img) {
         imgDisplay.src = pricing[activeType].img;
         imgDisplay.style.objectPosition = pricing[activeType].objectPosition || 'center center';
-        imgDisplay.alt = activeType === 'Personal Training' ? 'Coach Ameer Mullani - Power House Gym 1-on-1 Personal Trainer' : 'Power House Gym training floor';
+        imgDisplay.alt = activeType === 'Personal Training' ? 'Coach Ameer Mullani — Power House Gym 1-on-1 Personal Trainer in Shahupuri, Kolhapur' : 'Power House Gym strength and free weights training floor in Shahupuri, Kolhapur';
+        imgDisplay.title = activeType === 'Personal Training' ? '1-on-1 Personal Training with Coach Ameer Mullani — Power House Gym Kolhapur' : 'Regular Gym Membership Training Floor — Power House Gym Kolhapur';
       }
       if (ctaBtn) {
         const planStr = `${months} Month${months > 1 ? 's' : ''} ${activeType} (₹${price.toLocaleString('en-IN')})`;
@@ -1288,7 +1290,7 @@
         title: 'REGULAR TRAINING.',
         desc: 'A standard, fully-equipped gym membership and training environment for your independent, consistent routine.',
         price: 'From ₹1,500',
-        img: '/__l5e/assets-v1/999a7365-6d25-41c6-9039-422f61c11750/gym-floor-1.jpeg'
+        img: '/assets/facility/power-house-gym-main-floor.webp'
       },
       'pt': {
         title: 'PERSONAL TRAINING.',
@@ -1301,7 +1303,7 @@
         title: 'CUSTOM DIET PLAN.',
         desc: 'General fitness nutrition guidance tailored around authentic Kolhapuri home food without expensive imports or unsustainable fads.',
         price: 'Add-On ₹800',
-        img: '/__l5e/assets-v1/4e34613a-5a9f-4229-a167-484b83333d3f/gym-cardio.jpeg',
+        img: '/assets/facility/power-house-gym-cardio-machines.webp',
         objectPosition: 'center center'
       }
     };
@@ -1324,7 +1326,8 @@
           if (imgEl && item.img) {
             imgEl.src = item.img;
             imgEl.style.objectPosition = item.objectPosition || '50% 40%';
-            imgEl.alt = key === 'pt' ? 'Coach Ameer Mullani - 1-on-1 Personal Training' : (key === 'diet' ? 'Custom Diet & Nutrition Planning' : 'Power House strength training floor');
+            imgEl.alt = key === 'pt' ? 'Coach Ameer Mullani — 1-on-1 Personal Training at Power House Gym Kolhapur' : (key === 'diet' ? 'Custom Indian Diet & Nutrition Planning at Power House Gym Kolhapur' : 'Power House Gym Olympic strength training floor in Shahupuri, Kolhapur');
+            imgEl.title = key === 'pt' ? '1-on-1 Personal Training with Coach Ameer Mullani — Power House Gym Kolhapur' : (key === 'diet' ? 'Custom ₹800 Kolhapuri Diet & Nutrition Plan — Power House Gym Kolhapur' : 'Regular Gym Membership Training Floor — Power House Gym Kolhapur');
           }
         }
       });

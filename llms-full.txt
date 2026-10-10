@@ -12,7 +12,7 @@
 - **Coordinates**: Latitude 16.704987, Longitude 74.243253
 - **Primary Contact**: +91 9860252720
 - **Email**: amirmullani7272@gmail.com
-- **Website**: https://powerhouse.in
+- **Website**: https://www.powerhousegymkolhapur.in
 - **Mirror**: https://gym-two-pink.vercel.app
 
 ## Operating Hours & Schedule
@@ -73,3 +73,11 @@ Yes! Power House Gym maintains an authentic nutrition fuel counter at reception 
 - **Cookie Policy**: Transparent disclosures on local storage keys (`phg_cookie_consent_v1`, `ph-intro`) and cookie preferences.
 - **Refund & Cancellation Policy**: 1-day free trial guarantee, cooling-off cancellations prior to workout initiation, 60-day medical freezes with doctor certification, and 7-day unopened supplement return guarantee under the Consumer Protection Act, 2019.
 
+
+## Official Brand Logo & Visual Media Assets
+- **Official Brand Logo (PNG, 1343x1171)**: https://www.powerhousegymkolhapur.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png
+- **Main Strength & Weightlifting Floor (WebP, 1024x575)**: https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp
+- **Commercial Cardio & Conditioning Zone (WebP, 1024x576)**: https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-cardio-machines.webp
+- **Facility Entrance & Reception Desk (WebP, 1024x576)**: https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-entrance-reception.webp
+- **Founder & Head Coach Ameer Mullani Portrait (JPEG, 1170x1570)**: https://www.powerhousegymkolhapur.in/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani.jpeg
+- **Equipment & Supplements Gallery**: https://www.powerhousegymkolhapur.in/gallery
