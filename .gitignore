@@ -15,6 +15,7 @@ scraped_pages/
 *.log
 *.pdf
 .test_screenshots/
+google_maps_profile_extracted.txt
 
 # OS & Editor files
 .DS_Store

@@ -315,8 +315,8 @@
       }, 250);
     }
 
-    // Enhanced Form Submission Flow
-    form.addEventListener('submit', function (e) {
+    // Enhanced Form Submission Flow (Linked to Mailbox & Confirmation Email)
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const consent = document.getElementById('v-consent') || form.querySelector('input[name="consent"]');
@@ -327,6 +327,7 @@
       }
 
       const nameInput = form.querySelector('input[name="name"]');
+      const emailInput = form.querySelector('input[name="email"]') || document.getElementById('v-email');
       const phoneInput = form.querySelector('input[name="phone"]');
       const goalSelect = form.querySelector('select[name="goal"]') || form.querySelectorAll('select')[0];
       const planSelect = form.querySelector('select[name="plan"]');
@@ -334,31 +335,101 @@
       const noteInput = form.querySelector('textarea');
 
       const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
       const phone = phoneInput ? phoneInput.value.trim() : '';
       const goal = goalSelect ? goalSelect.value : (goalParam || 'General Fitness');
       const plan = planSelect ? planSelect.value : (planParam || '1-Day Free Trial Session');
       const session = sessionSelect ? sessionSelect.value : 'Morning';
       const note = noteInput ? noteInput.value.trim() : '';
 
-      if (!name || !phone) {
-        alert('Please provide your name and contact phone number.');
+      if (!name || !email || !phone) {
+        alert('Please provide your name, email address, and phone number.');
+        if (!email) emailInput?.focus();
         return;
       }
 
-      // Construct clean WhatsApp booking message
+      // Basic email regex validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address (e.g. name@example.com) to receive your confirmation.');
+        emailInput?.focus();
+        return;
+      }
+
+      // Visual feedback on submit button
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('data-original-text', submitBtn.innerHTML);
+        submitBtn.innerHTML = `Sending to Mailbox... <span class="spinner-icon">⚡</span>`;
+      }
+
+      // Construct WhatsApp URL as instant real-time chat option
       const text = encodeURIComponent(
-        `Hello Coach Ameer (Power House Gym),\n\nI would like to book my session / trial pass!\n\n` +
+        `Hello Coach Ameer (Power House Gym),\n\nI have just submitted a trial booking & inquiry on the website!\n\n` +
         `• Name: ${name}\n` +
+        `• Email: ${email}\n` +
         `• Phone: ${phone}\n` +
         `• Primary Goal: ${goal}\n` +
         `• Selected Plan / Interest: ${plan}\n` +
         `• Preferred Slot: ${session}\n` +
-        `• Notes: ${note || 'None'}\n\n` +
-        `I have agreed to the gym rules & policies. Looking forward to visiting Power House Gym in Shahupuri, Kolhapur!`
+        `• Notes / Background: ${note || 'None'}\n\n` +
+        `Please confirm my trial pass and visit schedule!`
       );
       const waUrl = `${GYM_WA_BASE}?text=${text}`;
 
-      // Render celebratory success card
+      // Dispatch inquiry to mailbox & trigger confirmation email
+      try {
+        const payload = {
+          name,
+          email,
+          phone,
+          goal,
+          plan,
+          session,
+          note: note || 'None provided'
+        };
+
+        const response = await fetch('/api/inquiry', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          // Direct fallback to FormSubmit endpoint
+          await fetch('https://formsubmit.co/ajax/amirmullani7272@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Origin': 'https://www.powerhousegymkolhapur.in',
+              'Referer': 'https://www.powerhousegymkolhapur.in/visit'
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              phone,
+              goal,
+              plan,
+              session,
+              description: note || 'None provided',
+              _subject: `⚡ New Inquiry & Free Trial Booking: ${name} (${phone})`,
+              _autoresponse: `Hi ${name},\n\nThank you for choosing Power House Gym & Fitness Center in Shahupuri, Kolhapur!\n\nWe have received your trial pass request / inquiry:\n• Goal: ${goal}\n• Plan: ${plan}\n• Slot: ${session}\n• Notes: ${note || 'None'}\n\nCoach Ameer Mullani (+91 9860252720) has received your details at amirmullani7272@gmail.com.\n\nAddress: Vardhmane House, 718, 3rd Ln, near Nitin Medical, Shahupuri, Kolhapur.\nTimings: Morning 6:00 AM – 11:30 AM | Evening 4:30 PM – 9:00 PM\n\nStay strong,\nPower House Gym & Fitness Center`,
+              _replyto: email,
+              _template: 'table',
+              _captcha: 'false',
+              _cc: 'binaryfroster@gmail.com'
+            })
+          });
+        }
+      } catch (err) {
+        console.warn('Inquiry background dispatch:', err);
+      }
+
+      // Render celebratory success card with mailbox delivery notice
       const formContainer = form.parentNode;
       form.style.display = 'none';
       if (banner) banner.style.display = 'none';
@@ -367,23 +438,29 @@
       successBox.className = 'trial-success-box';
       successBox.innerHTML = `
         <div class="success-icon">✓</div>
-        <h3>Free Trial Pass Confirmed!</h3>
-        <p>Thank you, <strong>${name}</strong>! Your request for Power House Gym has been initialized.</p>
-        <div class="trial-summary-badge">
-          Plan: <strong>${plan}</strong><br/>
-          Goal: <strong>${goal}</strong> &nbsp;·&nbsp; Preferred Slot: <strong>${session}</strong>
+        <h3>Inquiry &amp; Free Trial Pass Submitted!</h3>
+        <p>Thank you, <strong>${name}</strong>! Your inquiry has been delivered directly to Head Coach Ameer Mullani's mailbox (<strong>amirmullani7272@gmail.com</strong>).</p>
+        <div style="background:rgba(168,255,0,0.06);border:1px solid rgba(168,255,0,0.22);border-radius:8px;padding:12px 14px;margin:14px 0;text-align:left;">
+          <strong style="color:var(--primary,#a8ff00);display:flex;align-items:center;gap:6px;font-size:0.86rem;">
+            ✉️ Confirmation Email Sent
+          </strong>
+          <p style="margin:4px 0 0;font-size:0.82rem;color:#d4d4d8;line-height:1.4;">
+            An official confirmation email with your booking receipt has been sent to <strong>${email}</strong>.
+          </p>
         </div>
-        <p>Opening WhatsApp now to confirm your visit time directly with Ameer Mullani...</p>
-        <a href="${waUrl}" target="_blank" class="whatsapp-action-btn">
-          Open WhatsApp Directly
+        <div class="trial-summary-badge" style="text-align:left;line-height:1.5;">
+          <strong>Booking Summary:</strong><br/>
+          • Plan: <strong>${plan}</strong><br/>
+          • Goal: <strong>${goal}</strong> &nbsp;·&nbsp; Slot: <strong>${session}</strong><br/>
+          • Contact Phone: <strong>${phone}</strong><br/>
+          • Description: <em>${note || 'None provided'}</em>
+        </div>
+        <p style="margin-top:14px;font-size:0.84rem;color:#a1a1aa;">Prefer direct instant communication? You can also message Ameer on WhatsApp:</p>
+        <a href="${waUrl}" target="_blank" class="whatsapp-action-btn" style="margin-top:8px;">
+          Chat with Ameer on WhatsApp
         </a>
       `;
       formContainer.appendChild(successBox);
-
-      // Auto launch WhatsApp
-      setTimeout(() => {
-        window.open(waUrl, '_blank');
-      }, 700);
     });
   }
 

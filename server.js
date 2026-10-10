@@ -35,6 +35,39 @@ const server = http.createServer((req, res) => {
     urlPath = '/index.html';
   }
 
+  // Serverless API simulation: /api/inquiry
+  if (urlPath === '/api/inquiry') {
+    if (req.method === 'POST') {
+      let bodyData = '';
+      req.on('data', chunk => { bodyData += chunk; });
+      req.on('end', async () => {
+        try {
+          const parsed = JSON.parse(bodyData || '{}');
+          const { default: handler } = await import('./api/inquiry.js');
+          const mockRes = {
+            statusCode: 200,
+            headers: {},
+            setHeader(k, v) { this.headers[k] = v; },
+            status(code) { this.statusCode = code; return this; },
+            json(data) {
+              res.writeHead(this.statusCode, { 'Content-Type': 'application/json; charset=UTF-8', ...this.headers });
+              res.end(JSON.stringify(data));
+            },
+            end(data) {
+              res.writeHead(this.statusCode, this.headers);
+              res.end(data);
+            }
+          };
+          await handler({ method: 'POST', body: parsed }, mockRes);
+        } catch (err) {
+          res.writeHead(500, { 'Content-Type': 'application/json; charset=UTF-8' });
+          res.end(JSON.stringify({ success: false, error: err.message }));
+        }
+      });
+      return;
+    }
+  }
+
   // Explicit redirect from /membership and /contact to /visit
   if (urlPath === '/membership' || urlPath === '/membership.html' || urlPath === '/contact' || urlPath === '/contact.html') {
     res.writeHead(301, { 'Location': '/visit' });
