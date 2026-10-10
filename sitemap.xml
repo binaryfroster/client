@@ -3,9 +3,6 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.powerhousegymkolhapur.in/</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png</image:loc>
       <image:title>Power House Gym &amp; Fitness Center Official Logo</image:title>
@@ -39,9 +36,6 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/about</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png</image:loc>
       <image:title>Power House Gym &amp; Fitness Center Official Logo</image:title>
@@ -62,9 +56,6 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/programs</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-cardio-machines.webp</image:loc>
       <image:title>Power House Gym Membership &amp; Cardio Training Programs in Kolhapur</image:title>
@@ -88,9 +79,6 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/personal-training</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp</image:loc>
       <image:title>1-on-1 Personal Training Floor at Power House Gym Shahupuri, Kolhapur</image:title>
@@ -105,9 +93,6 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/gallery</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/assets/equipment/supplements-protein-counter.webp</image:loc>
       <image:title>Power House High-Protein Nutrition Bar &amp; Healthy Snacks</image:title>
@@ -213,9 +198,6 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/reviews</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-cardio-machines.webp</image:loc>
       <image:title>4.4 Star Google Rated Power House Gym in Shahupuri, Kolhapur</image:title>
@@ -224,9 +206,6 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/visit</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
     <image:image>
       <image:loc>https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-entrance-reception.webp</image:loc>
       <image:title>Power House Gym Entrance &amp; Reception — 3rd Lane Shahupuri, Kolhapur</image:title>
@@ -241,26 +220,14 @@
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/terms</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/privacy-policy</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/cookie-policy</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://www.powerhousegymkolhapur.in/refund-policy</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
   </url>
 </urlset>

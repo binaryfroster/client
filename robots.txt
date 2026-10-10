@@ -62,3 +62,5 @@ Disallow: /assets/*.map
 
 Host: https://www.powerhousegymkolhapur.in
 Sitemap: https://www.powerhousegymkolhapur.in/sitemap.xml
+Sitemap: https://www.powerhousegymkolhapur.in/sitemap-pages.xml
+Sitemap: https://www.powerhousegymkolhapur.in/sitemap_index.xml
