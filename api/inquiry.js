@@ -33,20 +33,41 @@ export default async function handler(req, res) {
       }
     }
 
-    const {
-      name,
-      email,
-      phone,
-      goal = 'General Fitness',
-      plan = '1-Day Free Trial Session (Complimentary)',
-      session = 'Morning (6:00 AM – 11:30 AM)',
-      note = ''
-    } = body || {};
+    // Honeypot antispam trap
+    if (body._honey || body.honeypot || body.website) {
+      return res.status(200).json({
+        success: true,
+        message: 'Inquiry processed successfully.'
+      });
+    }
+
+    const name = typeof body.name === 'string' ? body.name.trim() : '';
+    const email = typeof body.email === 'string' ? body.email.trim() : '';
+    const phone = typeof body.phone === 'string' ? body.phone.trim() : '';
+    const goal = typeof body.goal === 'string' ? body.goal.trim() : 'General Fitness';
+    const plan = typeof body.plan === 'string' ? body.plan.trim() : '1-Day Free Trial Session (Complimentary)';
+    const session = typeof body.session === 'string' ? body.session.trim() : 'Morning (6:00 AM – 11:30 AM)';
+    const note = typeof body.note === 'string' ? body.note.trim() : '';
 
     if (!name || !email || !phone) {
       return res.status(400).json({
         success: false,
         message: 'Name, email address, and phone number are required.'
+      });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.length > 254 || !emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide a valid email address.'
+      });
+    }
+
+    if (name.length > 150 || phone.length > 30 || note.length > 3000) {
+      return res.status(400).json({
+        success: false,
+        message: 'One or more fields exceed the maximum length.'
       });
     }
 
@@ -80,17 +101,17 @@ Website: https://www.powerhousegymkolhapur.in
 Google Maps: https://maps.app.goo.gl/baXPDWPsxsrzSxm6A`;
 
     const payload = {
-      name: name.trim(),
-      email: email.trim(),
-      phone: phone.trim(),
-      goal,
-      plan,
-      session,
-      description: note.trim() || 'No additional notes provided',
+      name: name,
+      email: email,
+      phone: phone,
+      goal: goal,
+      plan: plan,
+      session: session,
+      description: note || 'None provided',
       submissionDate: new Date().toISOString(),
-      _subject: `⚡ New Inquiry & Free Trial Booking: ${name} (${phone})`,
+      _subject: `⚡ New Athlete Inquiry: ${name} (${phone})`,
       _autoresponse: confirmationMessage,
-      _replyto: email.trim(),
+      _replyto: email,
       _template: 'table',
       _captcha: 'false'
     };

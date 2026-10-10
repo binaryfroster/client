@@ -315,14 +315,33 @@
       }, 250);
     }
 
-    // Enhanced Form Submission Flow (Linked to Mailbox & Confirmation Email)
+    // Enhanced Form Submission Flow (Binary Froster Standard: Linked to Mailbox & Confirmation)
+    let isSubmitting = false;
+
+    function markFieldError(inputEl) {
+      if (!inputEl) return;
+      inputEl.classList.add('field-error');
+      const parentField = inputEl.closest('.field') || inputEl.parentElement;
+      if (parentField) {
+        parentField.classList.add('shake-element');
+        setTimeout(() => parentField.classList.remove('shake-element'), 500);
+      }
+      inputEl.focus();
+      inputEl.addEventListener('input', function onInputClear() {
+        inputEl.classList.remove('field-error');
+        inputEl.removeEventListener('input', onInputClear);
+      });
+    }
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const consent = document.getElementById('v-consent') || form.querySelector('input[name="consent"]');
-      if (!consent || !consent.checked) {
-        alert('Please confirm that you agree to the Terms of Service & Privacy Policy.');
-        consent?.focus();
+      if (isSubmitting) return;
+
+      // Antispam honeypot trap
+      const honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value) {
+        // Silently terminate bot submissions
         return;
       }
 
@@ -333,6 +352,7 @@
       const planSelect = form.querySelector('select[name="plan"]');
       const sessionSelect = form.querySelector('select[name="session"]') || form.querySelectorAll('select')[1];
       const noteInput = form.querySelector('textarea');
+      const consent = document.getElementById('v-consent') || form.querySelector('input[name="consent"]');
 
       const name = nameInput ? nameInput.value.trim() : '';
       const email = emailInput ? emailInput.value.trim() : '';
@@ -342,19 +362,35 @@
       const session = sessionSelect ? sessionSelect.value : 'Morning';
       const note = noteInput ? noteInput.value.trim() : '';
 
-      if (!name || !email || !phone) {
-        alert('Please provide your name, email address, and phone number.');
-        if (!email) emailInput?.focus();
+      if (!name) {
+        markFieldError(nameInput);
         return;
       }
 
-      // Basic email regex validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address (e.g. name@example.com) to receive your confirmation.');
-        emailInput?.focus();
+      if (!email || !emailRegex.test(email)) {
+        markFieldError(emailInput);
         return;
       }
+
+      if (!phone || phone.length < 8) {
+        markFieldError(phoneInput);
+        return;
+      }
+
+      if (!consent || !consent.checked) {
+        if (consent) {
+          const consentWrap = consent.closest('.checkbox-field') || consent.parentElement;
+          if (consentWrap) {
+            consentWrap.classList.add('shake-element');
+            setTimeout(() => consentWrap.classList.remove('shake-element'), 500);
+          }
+          consent.focus();
+        }
+        return;
+      }
+
+      isSubmitting = true;
 
       // Visual feedback on submit button
       if (submitBtn) {
@@ -416,7 +452,7 @@
               plan,
               session,
               description: note || 'None provided',
-              _subject: `⚡ New Inquiry & Free Trial Booking: ${name} (${phone})`,
+              _subject: `⚡ New Athlete Inquiry: ${name} (${phone})`,
               _autoresponse: `Hi ${name},\n\nThank you for choosing Power House Gym & Fitness Center in Shahupuri, Kolhapur!\n\nWe have received your trial pass request / inquiry:\n• Goal: ${goal}\n• Plan: ${plan}\n• Slot: ${session}\n• Notes: ${note || 'None'}\n\nCoach Ameer Mullani (+91 9860252720) has received your details at amirmullani7272@gmail.com.\n\nAddress: Vardhmane House, 718, 3rd Ln, near Nitin Medical, Shahupuri, Kolhapur.\nTimings: Morning 6:00 AM – 11:30 AM | Evening 4:30 PM – 9:00 PM\n\nStay strong,\nPower House Gym & Fitness Center`,
               _replyto: email,
               _template: 'table',

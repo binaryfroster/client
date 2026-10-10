@@ -163,6 +163,34 @@ a.bg-primary:active {
   outline: none !important;
 }
 
+/* --- Field Validation & Shake (Binary Froster Standard) --- */
+.field input.field-error,
+.field select.field-error,
+.field textarea.field-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.shake-element {
+  animation: shake 0.45s ease-in-out;
+}
+
+.form-inline-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 /* --- Trial Pass Activation Badge --- */
 .trial-active-banner {
   display: flex;
