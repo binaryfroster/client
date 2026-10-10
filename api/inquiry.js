@@ -1,7 +1,7 @@
 /**
  * Serverless API Endpoint: /api/inquiry
  * Handles trial booking and membership inquiries for Power House Gym & Fitness Center.
- * Dispatches the inquiry to amirmullani7272@gmail.com (and binaryfroster@gmail.com)
+ * Dispatches the inquiry directly and exclusively to amirmullani7272@gmail.com
  * and sends an automated confirmation email to the submitter's email address.
  */
 
@@ -92,8 +92,7 @@ Google Maps: https://maps.app.goo.gl/baXPDWPsxsrzSxm6A`;
       _autoresponse: confirmationMessage,
       _replyto: email.trim(),
       _template: 'table',
-      _captcha: 'false',
-      _cc: 'binaryfroster@gmail.com'
+      _captcha: 'false'
     };
 
     // Forward to FormSubmit endpoint for verified email transport

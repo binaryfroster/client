@@ -420,8 +420,7 @@
               _autoresponse: `Hi ${name},\n\nThank you for choosing Power House Gym & Fitness Center in Shahupuri, Kolhapur!\n\nWe have received your trial pass request / inquiry:\n• Goal: ${goal}\n• Plan: ${plan}\n• Slot: ${session}\n• Notes: ${note || 'None'}\n\nCoach Ameer Mullani (+91 9860252720) has received your details at amirmullani7272@gmail.com.\n\nAddress: Vardhmane House, 718, 3rd Ln, near Nitin Medical, Shahupuri, Kolhapur.\nTimings: Morning 6:00 AM – 11:30 AM | Evening 4:30 PM – 9:00 PM\n\nStay strong,\nPower House Gym & Fitness Center`,
               _replyto: email,
               _template: 'table',
-              _captcha: 'false',
-              _cc: 'binaryfroster@gmail.com'
+              _captcha: 'false'
             })
           });
         }
