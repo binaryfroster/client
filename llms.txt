@@ -15,7 +15,11 @@
 - **Official WhatsApp**: +91 9860252720
 - **Official Email**: amirmullani7272@gmail.com
 - **Official Website**: https://www.powerhousegymkolhapur.in
-- **Live Deployment Mirror**: https://gym-two-pink.vercel.app
+- **Local Landmarks & Transit Proximity**:
+  - 450 meters from Chhatrapati Shahu Maharaj Terminus (Kolhapur Railway Station)
+  - 600 meters from Kolhapur Central Bus Stand (CBS)
+  - Landmark: Vardhmane House, 3rd Lane, near Nitin Medical, Shahupuri
+- **Primary Catchment & Service Neighborhoods**: Shahupuri (1st to 4th Lane), Tarabai Park, Rajarampuri, Nagala Park, Ruikar Colony, Station Road, CBS, Mahalaxmi Chambers, E Ward, Kolhapur 416001.
 
 ## Operating Hours
 - **Monday – Saturday (Split Shift)**:
