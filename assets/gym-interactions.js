@@ -273,10 +273,22 @@
     if (planParam) {
       const planSelect = form.querySelector('select[name="plan"]');
       if (planSelect) {
+        const lowerPlan = planParam.toLowerCase();
+        let matched = false;
         for (let opt of planSelect.options) {
-          if (opt.text.toLowerCase().includes(planParam.toLowerCase()) || opt.value.toLowerCase().includes(planParam.toLowerCase())) {
+          if (opt.text.toLowerCase().includes(lowerPlan) || opt.value.toLowerCase().includes(lowerPlan)) {
             opt.selected = true;
+            matched = true;
             break;
+          }
+        }
+        if (!matched) {
+          if (lowerPlan.includes('personal') || lowerPlan.includes('pt') || lowerPlan.includes('coaching')) {
+            planSelect.value = '1-on-1 Personal Training';
+          } else if (lowerPlan.includes('regular')) {
+            planSelect.value = 'Regular Gym Membership';
+          } else if (lowerPlan.includes('diet') || lowerPlan.includes('nutrition')) {
+            planSelect.value = 'Custom Diet & Nutrition Plan';
           }
         }
       }

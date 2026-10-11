@@ -591,18 +591,50 @@ a.bg-primary:active {
 .mobile-actions {
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
-  background: rgba(14, 14, 14, 0.92) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.7) !important;
+  background: rgba(14, 14, 14, 0.96) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.85) !important;
 }
 
 .mobile-actions a {
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.15 !important;
+  gap: 4px !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.14) !important;
+  text-decoration: none !important;
+}
+
+.mobile-actions a svg {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-actions a:first-child {
+  color: #ffffff !important;
+}
+
+.mobile-actions a:first-child svg {
+  color: var(--primary, #a8ff00) !important;
+  stroke: var(--primary, #a8ff00) !important;
+}
+
+.mobile-actions a:nth-child(2) {
+  color: #ffffff !important;
 }
 
 .mobile-actions a:last-child {
-  color: var(--primary, #a8ff00) !important;
+  color: #080808 !important;
+  background: var(--primary, #a8ff00) !important;
+  border-right: none !important;
+}
+
+.mobile-actions a:last-child svg {
+  color: #080808 !important;
+  stroke: #080808 !important;
 }
 
 /* ==========================================================================
@@ -648,19 +680,10 @@ select:focus,
   box-shadow: 0 0 0 3px rgba(168, 255, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
-select option,
-select optgroup {
+select option {
   background-color: #141414 !important;
   color: #ffffff !important;
-  padding: 10px 14px !important;
-}
-
-select optgroup {
-  font-weight: 800 !important;
-  color: var(--primary, #a8ff00) !important;
-  font-size: 0.85rem !important;
-  letter-spacing: 0.06em !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 8px 12px !important;
 }
 
 /* ==========================================================================
