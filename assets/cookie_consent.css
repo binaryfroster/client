@@ -29,7 +29,7 @@
 
 #cookie-consent-banner .cookie-text {
   flex: 1;
-  min-width: 280px;
+  min-width: min(100%, 280px);
   line-height: 1.55;
   color: #cbd5e1;
 }
@@ -58,6 +58,10 @@
 }
 
 #cookie-consent-banner .cookie-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   padding: 10px 20px;
   border-radius: 4px;
   font-size: 12px;

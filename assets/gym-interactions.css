@@ -339,12 +339,14 @@ a.bg-primary:active {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 280ms cubic-bezier(0.32, 0.72, 0, 1);
+  transition: opacity 280ms cubic-bezier(0.32, 0.72, 0, 1), visibility 280ms ease;
 }
 
 .mobile-drawer.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
@@ -398,8 +400,8 @@ a.bg-primary:active {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -506,12 +508,14 @@ a.bg-primary:active {
   justify-content: center;
   padding: 24px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 240ms cubic-bezier(0.32, 0.72, 0, 1);
+  transition: opacity 240ms cubic-bezier(0.32, 0.72, 0, 1), visibility 240ms ease;
 }
 
 .gallery-modal-overlay.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
@@ -550,13 +554,13 @@ a.bg-primary:active {
 
 .gallery-modal-close {
   position: absolute;
-  top: -46px;
+  top: -50px;
   right: 0;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -874,7 +878,7 @@ select optgroup {
 
 .plan-finder-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
   background: #111111;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -888,6 +892,25 @@ select optgroup {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.plan-finder-controls .field,
+.field {
+  min-width: 0;
+  max-width: 100%;
+}
+
+select,
+.field select,
+.trial-form select {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 .plan-finder-tabs {
@@ -897,11 +920,14 @@ select optgroup {
   padding: 4px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .plan-finder-tab-btn {
   flex: 1;
-  padding: 10px 16px;
+  min-height: 44px;
+  padding: 10px 14px;
   border: none;
   background: transparent;
   color: #a1a1aa;
@@ -928,6 +954,8 @@ select optgroup {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .plan-finder-result-img {
@@ -953,8 +981,30 @@ select optgroup {
 
 @media (max-width: 850px) {
   .plan-finder-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 24px 20px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .plan-finder-section {
+    padding: 40px 16px;
+  }
+  .plan-finder-grid {
+    padding: 20px 16px;
+    gap: 22px;
+  }
+  .plan-finder-tabs {
+    flex-wrap: wrap;
+  }
+  .plan-finder-tab-btn {
+    flex: 1 1 130px;
+    font-size: 0.78rem;
+    padding: 10px 10px;
+  }
+  .plan-finder-result {
+    padding: 18px 16px;
   }
 }
 
@@ -997,4 +1047,56 @@ select optgroup {
     padding: 60px 20px 24px;
   }
 }
+
+/* ==========================================================================
+   ADAPTIVE MULTI-BREAKPOINT LAYOUT OPTIMIZATION (MOBILE, TABLET, DESKTOP)
+   ========================================================================== */
+
+/* Tablet Landscape (<= 1100px): Give 4-column step grids room to breathe */
+@media (max-width: 1100px) {
+  .visit-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Tablet Portrait (<= 900px): Prevent cramped nested 2-column form inputs & card grids */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 36px !important;
+  }
+
+  .visit-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .ai-preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .visit-photo,
+  .owner-home {
+    max-height: 520px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+/* Mobile Viewports (<= 560px): Prevent horizontal overflow & cramped 2-column preview cards */
+@media (max-width: 560px) {
+  .ai-preview {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .ai-preview a {
+    min-height: 120px !important;
+    padding: 18px 20px !important;
+  }
+
+  .visit-steps {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
 
