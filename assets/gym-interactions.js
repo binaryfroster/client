@@ -1131,22 +1131,34 @@
   // --- 6. Personal Training Pricing Selector ---
   function initPTPricing() {
     const ptCards = document.querySelectorAll('.price-grid .price-card');
+    const summaryCard = document.querySelector('.plan-summary');
+    const summaryTitle = document.getElementById('pt-selected-title') || (summaryCard ? summaryCard.querySelector('h3') : null);
+    const summaryPrice = document.getElementById('pt-selected-price') || (summaryCard ? summaryCard.querySelector('strong') : null);
+    const summaryCta = document.getElementById('pt-selected-cta') || (summaryCard ? summaryCard.querySelector('a') : null);
+
     if (!ptCards.length) return;
 
     ptCards.forEach(card => {
-      card.addEventListener('click', () => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
         ptCards.forEach(c => c.classList.remove('selected', 'is-selected'));
         card.classList.add('selected', 'is-selected');
 
         const span = card.querySelector('span');
         const strong = card.querySelector('strong');
-        const planName = span ? span.textContent.trim() : 'Personal Training';
-        const price = strong ? strong.textContent.trim() : '';
+        const duration = card.getAttribute('data-duration') || (span ? span.textContent.trim() : '1 Month');
+        const price = card.getAttribute('data-price') || (strong ? strong.textContent.trim() : '₹6,000');
 
-        // Update Enquire button if present
-        const enquireBtn = document.querySelector('a[href*="/visit"]');
-        if (enquireBtn && !enquireBtn.classList.contains('nav-cta')) {
-          enquireBtn.href = `/visit?plan=${encodeURIComponent(`${planName} (${price})`)}&trial=1#book-trial`;
+        if (summaryTitle) {
+          summaryTitle.textContent = `${duration} Personal Training`;
+        }
+        if (summaryPrice) {
+          summaryPrice.textContent = price;
+        }
+        if (summaryCta) {
+          const planQuery = `${duration} Personal Training (${price})`;
+          summaryCta.href = `/visit?trial=1&plan=${encodeURIComponent(planQuery)}#book-trial`;
+          summaryCta.setAttribute('data-mcp-description', `Book consultation for ${duration} Personal Training (${price})`);
         }
       });
     });
@@ -1190,6 +1202,7 @@
   function initPlanFinder() {
     const goalSelect = document.getElementById('finder-goal');
     const durationSelect = document.getElementById('finder-duration');
+    const durationWrapper = document.getElementById('finder-duration-wrapper') || (durationSelect ? durationSelect.closest('.field') : null);
     const tabs = document.querySelectorAll('#finder-type-tabs .plan-finder-tab-btn');
     const priceDisplay = document.getElementById('finder-price');
     const titleDisplay = document.getElementById('finder-rec-title');
@@ -1206,6 +1219,8 @@
         6: 6000,
         12: 9000,
         img: '/assets/facility/power-house-gym-main-floor.webp',
+        alt: 'Power House Gym strength and free weights training floor in Shahupuri, Kolhapur',
+        title: 'Regular Gym Membership Training Floor — Power House Gym Kolhapur',
         objectPosition: 'center center'
       },
       'Personal Training': {
@@ -1213,8 +1228,20 @@
         3: 15000,
         6: 27500,
         12: 52500,
-        img: '/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani-portrait.jpeg',
-        objectPosition: 'center 35%'
+        img: '/assets/facility/power-house-gym-main-floor.webp',
+        alt: 'Power House Gym Olympic strength training floor for 1-on-1 Personal Training in Shahupuri, Kolhapur',
+        title: '1-on-1 Personal Training Facility Floor — Power House Gym Kolhapur',
+        objectPosition: 'center center'
+      },
+      'Diet Plan': {
+        1: 800,
+        3: 800,
+        6: 800,
+        12: 800,
+        img: '/assets/facility/power-house-gym-custom-diet-plan.webp',
+        alt: 'Custom high-protein fitness diet and nutrition meal plan with macro targets at Power House Gym Kolhapur',
+        title: 'Custom ₹800 Indian Diet & Nutrition Meal Plan — Power House Gym Kolhapur',
+        objectPosition: 'center center'
       }
     };
 
@@ -1250,26 +1277,43 @@
     function updateFinder() {
       const months = Number(durationSelect.value) || 1;
       const goal = goalSelect.value;
-      const price = pricing[activeType][months] || 1500;
+      const isDiet = activeType === 'Diet Plan';
+      const typeData = pricing[activeType] || pricing['Regular Training'];
+      const price = isDiet ? 800 : (typeData[months] || 1500);
       const insight = goalInsights[goal] || goalInsights['General Fitness'];
 
       priceDisplay.textContent = `₹${price.toLocaleString('en-IN')}`;
       if (titleDisplay) {
-        const durText = durationSelect.options[durationSelect.selectedIndex]?.text || '';
-        titleDisplay.textContent = `${activeType} · ${durText}`;
+        if (isDiet) {
+          titleDisplay.textContent = 'Custom Diet Plan · One-Time Add-On';
+        } else {
+          const durText = durationSelect.options[durationSelect.selectedIndex]?.text || '';
+          titleDisplay.textContent = `${activeType} · ${durText}`;
+        }
       }
       if (subDisplay) {
-        subDisplay.innerHTML = `<b>Fitness need:</b> ${insight.need}. ${insight.reason}`;
+        if (isDiet) {
+          subDisplay.innerHTML = `<b>Nutrition need:</b> Calorie &amp; macro targets specifically calculated for <b>${goal}</b>. Integrated with local Kolhapuri home food without extreme restrictions.`;
+        } else {
+          subDisplay.innerHTML = `<b>Fitness need:</b> ${insight.need}. ${insight.reason}`;
+        }
       }
-      if (imgDisplay && pricing[activeType].img) {
-        imgDisplay.src = pricing[activeType].img;
-        imgDisplay.style.objectPosition = pricing[activeType].objectPosition || 'center center';
-        imgDisplay.alt = activeType === 'Personal Training' ? 'Coach Ameer Mullani — Power House Gym 1-on-1 Personal Trainer in Shahupuri, Kolhapur' : 'Power House Gym strength and free weights training floor in Shahupuri, Kolhapur';
-        imgDisplay.title = activeType === 'Personal Training' ? '1-on-1 Personal Training with Coach Ameer Mullani — Power House Gym Kolhapur' : 'Regular Gym Membership Training Floor — Power House Gym Kolhapur';
+      if (imgDisplay && typeData.img) {
+        imgDisplay.src = typeData.img;
+        imgDisplay.style.objectPosition = typeData.objectPosition || 'center center';
+        imgDisplay.alt = typeData.alt || 'Power House Gym training plans in Shahupuri, Kolhapur';
+        imgDisplay.title = typeData.title || 'Power House Gym Plan Finder — Shahupuri, Kolhapur';
       }
       if (ctaBtn) {
-        const planStr = `${months} Month${months > 1 ? 's' : ''} ${activeType} (₹${price.toLocaleString('en-IN')})`;
-        ctaBtn.href = `/visit?trial=1&plan=${encodeURIComponent(planStr)}&goal=${encodeURIComponent(goal)}#book-trial`;
+        if (isDiet) {
+          const dietPlanStr = `Custom Diet Plan Add-On (₹800)`;
+          ctaBtn.href = `/visit?trial=1&plan=${encodeURIComponent(dietPlanStr)}&goal=${encodeURIComponent(goal)}#book-trial`;
+          ctaBtn.innerHTML = `Add Diet Plan with Visit Pass <svg class="lucide lucide-arrow-right" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>`;
+        } else {
+          const planStr = `${months} Month${months > 1 ? 's' : ''} ${activeType} (₹${price.toLocaleString('en-IN')})`;
+          ctaBtn.href = `/visit?trial=1&plan=${encodeURIComponent(planStr)}&goal=${encodeURIComponent(goal)}#book-trial`;
+          ctaBtn.innerHTML = `Book Free Trial with This Plan <svg class="lucide lucide-arrow-right" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>`;
+        }
       }
     }
 
@@ -1278,6 +1322,15 @@
         tabs.forEach(t => t.classList.remove('is-active'));
         tab.classList.add('is-active');
         activeType = tab.getAttribute('data-type') || 'Regular Training';
+        if (durationWrapper) {
+          if (activeType === 'Diet Plan') {
+            durationWrapper.style.opacity = '0.5';
+            durationWrapper.style.pointerEvents = 'none';
+          } else {
+            durationWrapper.style.opacity = '1';
+            durationWrapper.style.pointerEvents = 'auto';
+          }
+        }
         updateFinder();
       });
     });
@@ -1302,20 +1355,27 @@
         title: 'REGULAR TRAINING.',
         desc: 'A standard, fully-equipped gym membership and training environment for your independent, consistent routine.',
         price: 'From ₹1,500',
-        img: '/assets/facility/power-house-gym-main-floor.webp'
+        img: '/assets/facility/power-house-gym-main-floor.webp',
+        alt: 'Power House Gym Olympic strength training floor for Regular Membership in Shahupuri, Kolhapur',
+        titleAttr: 'Regular Gym Membership Training Floor — Power House Gym & Fitness Center, Shahupuri, Kolhapur',
+        objectPosition: 'center center'
       },
       'pt': {
         title: 'PERSONAL TRAINING.',
         desc: 'A more individualized experience with focused attention, structure and accountability led directly by Ameer Mullani.',
         price: 'From ₹6,000',
-        img: '/__l5e/assets-v1/b1c39f20-0db3-4049-804f-80a49562f10f/ameer-mullani-portrait.jpeg',
-        objectPosition: 'center 35%'
+        img: '/assets/facility/power-house-gym-main-floor.webp',
+        alt: 'Power House Gym Olympic strength training floor for 1-on-1 Personal Training in Shahupuri, Kolhapur',
+        titleAttr: '1-on-1 Personal Training Facility Floor — Power House Gym & Fitness Center, Shahupuri, Kolhapur',
+        objectPosition: 'center center'
       },
       'diet': {
         title: 'CUSTOM DIET PLAN.',
         desc: 'General fitness nutrition guidance tailored around authentic Kolhapuri home food without expensive imports or unsustainable fads.',
         price: 'Add-On ₹800',
-        img: '/assets/facility/power-house-gym-cardio-machines.webp',
+        img: '/assets/facility/power-house-gym-custom-diet-plan.webp',
+        alt: 'Custom high-protein fitness diet and nutrition meal plan with macro targets at Power House Gym Kolhapur',
+        titleAttr: 'Custom ₹800 Indian Diet & Nutrition Meal Plan — Power House Gym Kolhapur',
         objectPosition: 'center center'
       }
     };
@@ -1337,9 +1397,9 @@
           priceEl.textContent = item.price;
           if (imgEl && item.img) {
             imgEl.src = item.img;
-            imgEl.style.objectPosition = item.objectPosition || '50% 40%';
-            imgEl.alt = key === 'pt' ? 'Coach Ameer Mullani — 1-on-1 Personal Training at Power House Gym Kolhapur' : (key === 'diet' ? 'Custom Indian Diet & Nutrition Planning at Power House Gym Kolhapur' : 'Power House Gym Olympic strength training floor in Shahupuri, Kolhapur');
-            imgEl.title = key === 'pt' ? '1-on-1 Personal Training with Coach Ameer Mullani — Power House Gym Kolhapur' : (key === 'diet' ? 'Custom ₹800 Kolhapuri Diet & Nutrition Plan — Power House Gym Kolhapur' : 'Regular Gym Membership Training Floor — Power House Gym Kolhapur');
+            imgEl.style.objectPosition = item.objectPosition || 'center center';
+            imgEl.alt = item.alt || 'Power House Gym Program';
+            imgEl.title = item.titleAttr || 'Power House Gym Program';
           }
         }
       });
