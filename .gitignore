@@ -4,6 +4,7 @@ package-lock.json
 
 # Vercel
 .vercel/
+.env*
 
 # Internal Tooling & Scratch Scripts
 scripts/

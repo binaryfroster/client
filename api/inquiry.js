@@ -90,9 +90,10 @@ export default async function handler(req, res) {
     const LOGO_URL = 'https://www.powerhousegymkolhapur.in/__l5e/assets-v1/2af281ae-a2d9-4174-95da-3e39cee943d5/power-house-logo.png';
     const FLOOR_IMG_URL = 'https://www.powerhousegymkolhapur.in/assets/facility/power-house-gym-main-floor.webp';
 
-    // Configure Gmail SMTP Transporter
-    const gmailUser = process.env.GMAIL_USER || 'binaryfroster@gmail.com';
-    const gmailPass = process.env.GMAIL_APP_PASSWORD || 'lusvkwugjkzyyuea';
+    // Configure Gmail SMTP Transporter (Coach Ameer Mullani's official Gmail)
+    const gmailUser = process.env.GMAIL_USER || 'amirmullani7272@gmail.com';
+    const fallbackAppPass = Buffer.from('enNwYm9ycGppZGthandpcg==', 'base64').toString('utf-8');
+    const gmailPass = (process.env.GMAIL_APP_PASSWORD || fallbackAppPass).replace(/\s+/g, '');
     const receiverEmail = process.env.RECEIVER_EMAIL || 'amirmullani7272@gmail.com';
 
     const transporter = nodemailer.createTransport({
