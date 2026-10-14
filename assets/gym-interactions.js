@@ -1805,6 +1805,83 @@
     renderStep(0);
   }
 
+  // --- 16. Transformation Showcase & Expand Modal Controller ---
+  function initTransformationModals() {
+    const expandButtons = document.querySelectorAll('.btn-expand-transformation, .transformation-card-media');
+    const modals = document.querySelectorAll('.transformation-modal');
+    if (!expandButtons.length && !modals.length) return;
+
+    let activeModal = null;
+    let lastActiveTrigger = null;
+
+    function openModal(modalId, triggerEl) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+
+      activeModal = modal;
+      lastActiveTrigger = triggerEl;
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (triggerEl) {
+        triggerEl.setAttribute('aria-expanded', 'true');
+      }
+
+      const closeBtn = modal.querySelector('.transformation-modal-close');
+      if (closeBtn) {
+        closeBtn.focus();
+      }
+    }
+
+    function closeModal() {
+      if (!activeModal) return;
+
+      activeModal.classList.remove('is-open');
+      activeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (lastActiveTrigger) {
+        lastActiveTrigger.setAttribute('aria-expanded', 'false');
+        lastActiveTrigger.focus();
+      }
+
+      activeModal = null;
+      lastActiveTrigger = null;
+    }
+
+    expandButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = btn.getAttribute('data-modal-target') || 
+          btn.closest('.transformation-card')?.querySelector('.btn-expand-transformation')?.getAttribute('data-modal-target');
+        if (targetId) {
+          openModal(targetId, btn);
+        }
+      });
+    });
+
+    modals.forEach(modal => {
+      const closeBtn = modal.querySelector('.transformation-modal-close');
+      const backdrop = modal.querySelector('.transformation-modal-backdrop');
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', closeModal);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && activeModal) {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+  }
+
   // --- Initialize Everything on DOM Ready ---
   function init() {
     initBrandIntro();
@@ -1822,6 +1899,7 @@
     initContactFormAutofill();
     initVisitFAQ();
     initPTJourney();
+    initTransformationModals();
   }
 
   if (document.readyState === 'loading') {
