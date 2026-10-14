@@ -35,15 +35,16 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: 'Method Not Allowed' });
   }
 
-  try {
-    let body = req.body;
-    if (typeof body === 'string') {
-      try {
-        body = JSON.parse(body);
-      } catch (e) {
-        // body remains string or parsed
-      }
+  let body = req.body || {};
+  if (typeof body === 'string') {
+    try {
+      body = JSON.parse(body);
+    } catch (e) {
+      // body remains string or parsed
     }
+  }
+
+  try {
 
     // Honeypot antispam trap
     if (body._honey || body.honeypot || body.website) {

@@ -76,6 +76,13 @@ const server = http.createServer((req, res) => {
   }
 
   let filePath = path.join(ROOT, urlPath);
+  const normalizedPath = path.normalize(filePath);
+  if (!normalizedPath.startsWith(ROOT)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end('403 Forbidden');
+    return;
+  }
+  filePath = normalizedPath;
 
   // If path doesn't have an extension, try appending .html (clean URL support)
   if (!path.extname(filePath)) {
